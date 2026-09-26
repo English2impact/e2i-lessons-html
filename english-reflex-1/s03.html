@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#061c37">
+<meta name="description" content="English Reflex 1 · Session 03 — I give John the apple. S + V + IO (người nhận) + DO (vật). Bảy phần luyện, 90 phút.">
+<title>English Reflex 1 · Session 03 — I give John the apple</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
+<style>
+/* ============================================================
+   English Reflex 1 — session page (built from English Reflex 2 · S01)
+   ONE stylesheet, mobile-first, no override layers.
+   Change a token, never append a patch block at the bottom.
+   ============================================================ */
+
+:root{
+  /* page frame — content never runs edge to edge: the gutter grows with the
+     window (16px on a phone, up to 56px on a laptop) and the content caps at
+     --page-max, so a wide screen gets margin rather than longer lines */
+  --page-max:1120px;
+  --gutter:clamp(16px, 5vw, 56px);
+
+  /* type scale — nothing below 12px, never for running text */
+  --fs-micro:12px; --fs-meta:13px; --fs-small:15px;
+  --fs-body:17px;  --fs-lead:18px; --fs-h3:20px;
+
+  /* brand */
+  --paper:#f4f3ef; --card:#ffffff; --card-2:#faf9f6;
+  --navy:#061c37;  --navy-2:#0d2c4e;
+  --terra:#dd7958; --terra-ink:#c3512b;
+  --ink:#10233b;   --mute:#59635e;  --faint:#636c66;
+  --line:#e3ddd2;  --line-2:#efeae0;
+  --ok:#1a7a4c;    --ok-bg:#eaf6ef;
+  --no:#b3261e;    --no-bg:#fdeeec;
+
+  /* skill accents — from the four-leaf logo */
+  --listen:#006838; --speak:#1d8a1d; --read:#4f9a12; --write:#7a9e21;
+
+  --measure:40rem;      /* ~72 characters */
+  --nav-h:59px;         /* the fixed bar, below 900px */
+  --host-offset:0px;    /* raised by the Odoo embed build */
+  --radius:14px;
+  --shadow:0 1px 2px rgba(6,28,55,.05), 0 8px 24px -16px rgba(6,28,55,.35);
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:var(--fs-body); line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none !important; animation:none !important} }
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif; font-weight:600; line-height:1.18; margin:0}
+p{margin:0 0 .85em}
+a{color:var(--terra-ink)}
+b,strong{font-weight:600}
+u{text-decoration-color:var(--terra); text-underline-offset:3px}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace}
+.measure{max-width:var(--measure)}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 14px;z-index:99;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+
+:focus-visible{outline:3px solid var(--terra); outline-offset:2px; border-radius:6px}
+
+/* boot guard — the failsafe in script removes this after 2.5s no matter what */
+.lesson-booting .lesson-viewport{visibility:hidden}
+
+/* ============================ masthead ============================ */
+
+.masthead{background:var(--navy); color:#eef2f7; padding:22px 0 24px; border-bottom:3px solid var(--terra)}
+.shell{max-width:calc(var(--page-max) + 2 * var(--gutter)); margin:0 auto; padding:0 var(--gutter)}
+.topline{display:flex; gap:13px; align-items:center; margin:0 0 12px}
+.brand{flex:none; display:block; line-height:0; text-decoration:none; border-radius:8px}
+.brand:hover{opacity:.82}
+.brand img{display:block; width:auto; height:46px}
+.eyebrow{
+  font-size:var(--fs-micro); letter-spacing:.13em; text-transform:uppercase;
+  color:#9fb2c8; margin:0; display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+}
+.eyebrow b{color:var(--terra); font-weight:600}
+.eyebrow i{color:#7d93ab; font-style:normal}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0}
+.masthead h1{font-size:clamp(25px,6.4vw,40px); color:#fff; max-width:22ch}
+.masthead h1 em{color:var(--terra); font-style:italic}
+.subline{margin:12px 0 0; color:#c9d5e3; font-size:var(--fs-small); max-width:var(--measure)}
+.chips{display:flex; flex-wrap:wrap; gap:7px; margin:14px 0 0; padding:0; list-style:none}
+.chip{
+  font-size:var(--fs-micro); letter-spacing:.02em; color:#d7e1ed;
+  border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:5px 11px; white-space:nowrap;
+}
+.chip.now{border-color:var(--terra); color:#fff; background:rgba(221,121,88,.18); font-weight:600}
+.structure{
+  margin:14px 0 0; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16);
+  border-radius:10px; padding:11px 13px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:var(--fs-meta); color:#e7eef6; overflow-wrap:anywhere;
+}
+.structure span{
+  display:block; font-size:var(--fs-micro); letter-spacing:.13em; text-transform:uppercase;
+  color:var(--terra); margin-bottom:3px; font-family:inherit;
+}
+
+/* ============================ layout ============================ */
+
+.wrap{max-width:calc(var(--page-max) + 2 * var(--gutter)); margin:0 auto; padding:0 var(--gutter) calc(var(--nav-h) + 30px)}
+.lesson-viewport{scroll-padding-bottom:var(--nav-h)}
+
+/* ============================ stage (one part per page) ============================ */
+
+.stage{padding:22px 0 0}
+.stage[hidden]{display:none}
+
+.stage-head{border-bottom:2px solid var(--navy); padding-bottom:14px; margin-bottom:18px}
+.kicker{
+  display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin:0 0 9px;
+  font-size:var(--fs-micro); letter-spacing:.13em; text-transform:uppercase; color:var(--faint);
+}
+.kicker .dot{width:10px; height:10px; border-radius:50%; background:var(--c,var(--terra)); flex:none}
+.kicker .skill{color:var(--c,var(--terra-ink)); font-weight:600}
+.kicker .skill::before, .kicker span:last-child::before{content:"·"; margin-right:8px; color:#b9b2a5}
+.stage-head h2{font-size:clamp(22px,5.4vw,31px)}
+.goal{margin:8px 0 0; color:var(--mute); font-size:var(--fs-small); max-width:var(--measure)}
+
+.stage-meter{display:flex; align-items:center; gap:10px; margin-top:13px}
+.stage-meter .track{flex:1; height:7px; border-radius:999px; background:var(--line-2); overflow:hidden; max-width:320px}
+.stage-meter .fill{display:block; height:100%; width:0; background:var(--c,var(--terra)); border-radius:999px; transition:width .3s ease}
+.stage-meter b{font-size:var(--fs-meta); color:var(--mute); font-weight:500; font-variant-numeric:tabular-nums}
+.stage-meter.done b{color:var(--ok); font-weight:600}
+
+.lede{font-size:var(--fs-lead); max-width:var(--measure); margin:0 0 16px}
+.hint{font-size:var(--fs-small); color:var(--mute); max-width:var(--measure)}
+.block{margin:0 0 26px}
+.block-head{margin:30px 0 12px; padding-top:22px; border-top:1px solid var(--line)}
+.block-head h3{font-size:var(--fs-h3)}
+.block-head .sub{display:block; font-size:var(--fs-small); color:var(--mute); margin-top:5px; max-width:var(--measure)}
+
+/* guide boxes */
+.rule{
+  background:var(--card); border:1px solid var(--line); border-left:4px solid var(--terra);
+  border-radius:0 var(--radius) var(--radius) 0; padding:14px 16px; margin:0 0 16px;
+  max-width:var(--measure);
+}
+/* only the direct child is the heading — an inline <b> inside an example
+   must stay inline, or every emphasised word starts its own row */
+.rule > b{display:block; color:var(--terra-ink); margin-bottom:9px; font-size:var(--fs-body); line-height:1.35}
+.rule .ex{display:grid; gap:7px; font-size:var(--fs-small); color:var(--ink)}
+.ln{display:grid; grid-template-columns:19px minmax(0,1fr); gap:9px; align-items:start; margin:0; line-height:1.55}
+.ln>.yes,.ln>.no{text-align:center; line-height:1.55}
+.ln.note{display:block}
+.ln.note .k{
+  display:inline-block; margin-right:8px; font-size:var(--fs-micro); font-weight:600;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--faint);
+}
+.ln.note.form{display:grid; grid-template-columns:84px minmax(0,1fr); gap:10px; align-items:baseline}
+.ln.form .k{
+  justify-self:start; margin:0; padding:2px 8px; border-radius:6px;
+  background:var(--terra-tint,#fbeee8); color:var(--terra-ink);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:var(--fs-meta);
+  font-weight:600; letter-spacing:0; text-transform:none; white-space:nowrap;
+}
+.ln.form + .ln.form{margin-top:1px}
+.ln .say{
+  display:inline-block; margin-left:6px; padding:0 7px; border-radius:999px;
+  background:#eef2f7; color:var(--mute); font-size:var(--fs-micro); font-weight:600;
+  letter-spacing:.03em; vertical-align:1px;
+}
+.ln + .ln.note{margin-top:2px}
+.yes{color:var(--ok); font-weight:600}
+.no{color:var(--no); font-weight:600}
+
+.tag{
+  display:inline-block; font-family:ui-monospace,Menlo,monospace; font-size:var(--fs-micro);
+  background:#fff; border:1px solid #d8e2ee; border-radius:5px; padding:1px 6px; color:var(--navy-2);
+}
+
+/* ============================ buttons ============================ */
+
+.btn{
+  font:inherit; font-size:var(--fs-meta); font-weight:600; letter-spacing:.01em;
+  min-height:48px; padding:0 17px; border-radius:10px; cursor:pointer;
+  background:var(--card); color:var(--navy); border:1.5px solid var(--navy);
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+}
+.btn:hover{background:#eef2f7}
+.btn.accent{background:var(--terra); border-color:var(--terra); color:#fff}
+.btn.accent:hover{background:#cf6a49}
+.btn.quiet{border-color:var(--line); color:var(--mute); font-weight:500}
+.btn.quiet:hover{background:var(--card-2); color:var(--ink)}
+.btn[disabled]{opacity:.5; cursor:not-allowed}
+.btn.sm{min-height:40px; padding:0 13px; font-size:var(--fs-meta)}
+
+.toolbar{display:flex; flex-wrap:wrap; gap:9px; align-items:center; margin:14px 0 0}
+.toolbar .spacer{flex:1 1 auto}
+.tally{font-size:var(--fs-meta); color:var(--mute); font-variant-numeric:tabular-nums}
+.tally.good{color:var(--ok); font-weight:600}
+
+/* the deferred-check bar — every exercise waits for it */
+.checkbar{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+  margin:16px 0 0; padding:13px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+}
+.checkbar .btn{flex:0 0 auto}
+.checkbar .res{font-size:var(--fs-meta); color:var(--mute); font-variant-numeric:tabular-nums}
+.checkbar .res.good{color:var(--ok); font-weight:600}
+.checkbar .res.part{color:var(--terra-ink); font-weight:600}
+
+/* ============================ 1 · sort ============================ */
+
+.pool{
+  display:flex; flex-wrap:wrap; gap:8px; padding:12px; min-height:60px;
+  background:var(--card); border:1px dashed var(--line); border-radius:var(--radius); margin:0 0 14px;
+}
+.pool:empty::after{content:"Đã xếp hết."; font-size:var(--fs-small); color:var(--faint)}
+.word{
+  font:inherit; font-size:var(--fs-body); font-weight:500; cursor:pointer;
+  min-height:48px; padding:0 14px; border-radius:10px;
+  background:var(--card-2); border:1.5px solid var(--line); color:var(--ink);
+}
+.word[aria-pressed="true"]{border-color:var(--terra); background:#fdf1ec; box-shadow:0 0 0 3px rgba(221,121,88,.18)}
+.word.ok{border-color:var(--ok); background:var(--ok-bg); color:#0f5a36}
+.word.no{border-color:var(--no); background:var(--no-bg); color:#8d1e18}
+.sort-grid{display:grid; gap:11px; grid-template-columns:1fr}
+.bucket{background:var(--card); border:1.5px solid var(--line); border-radius:var(--radius); padding:12px}
+.bucket.armed{border-color:var(--terra); background:#fffaf8}
+.bucket h4{margin:0; font-family:inherit; font-size:var(--fs-h3); font-weight:600; color:var(--navy)}
+.bucket .sub{display:block; font-size:var(--fs-micro); color:var(--faint); margin:2px 0 9px}
+.bucket .slot{display:flex; flex-wrap:wrap; gap:8px; min-height:52px; align-content:flex-start}
+.bucket .slot:empty::after{content:"Chạm vào đây để thả từ đã chọn"; font-size:var(--fs-meta); color:var(--faint)}
+
+/* ============================ 2 · term lab ============================ */
+
+.lab{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:15px; box-shadow:var(--shadow)}
+.lab-top{
+  display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+  font-size:var(--fs-micro); letter-spacing:.1em; text-transform:uppercase; color:var(--faint);
+}
+.lab-top .known b{color:var(--ok)} .lab-top .todrill b{color:var(--terra-ink)}
+.ticks{display:flex; gap:5px; margin:11px 0 15px}
+.ticks i{flex:1; height:5px; border-radius:999px; background:var(--line-2)}
+.ticks i.on{background:var(--ok)} .ticks i.cur{background:var(--terra)}
+.lab h3{font-size:clamp(19px,4.6vw,23px); color:var(--navy)}
+.lab .gloss{font-size:var(--fs-small); color:var(--mute); margin-top:4px}
+.lab .src{
+  margin:13px 0; padding:12px 13px; background:var(--card-2); border:1px solid var(--line-2);
+  border-radius:10px; font-size:var(--fs-body);
+}
+.lab .src .k{
+  display:block; font-size:var(--fs-micro); letter-spacing:.11em; text-transform:uppercase;
+  color:var(--faint); margin-bottom:5px;
+}
+.lab .src u{display:inline-block; min-width:92px; border-bottom:2px solid var(--terra); text-decoration:none}
+.opts{display:grid; gap:9px}
+.opt{
+  font:inherit; font-size:var(--fs-body); text-align:left; cursor:pointer;
+  min-height:52px; padding:9px 13px; border-radius:11px;
+  background:var(--card); border:1.5px solid var(--line); color:var(--ink);
+  display:flex; align-items:center; gap:11px;
+}
+.opt:hover:not([disabled]){border-color:var(--navy); background:#f7f9fc}
+.opt .num{
+  flex:none; width:26px; height:26px; border-radius:7px; background:var(--card-2); border:1px solid var(--line);
+  display:grid; place-items:center; font-size:var(--fs-meta); font-weight:600; color:var(--mute);
+}
+.opt.ok{border-color:var(--ok); background:var(--ok-bg)} .opt.ok .num{background:var(--ok); color:#fff; border-color:var(--ok)}
+.opt.no{border-color:var(--no); background:var(--no-bg)} .opt.no .num{background:var(--no); color:#fff; border-color:var(--no)}
+.lab-foot{display:flex; gap:9px; align-items:center; margin-top:14px; flex-wrap:wrap}
+.lab-foot .keys{font-size:var(--fs-micro); color:var(--faint); margin-left:auto}
+.lab-banner{
+  font-size:var(--fs-meta); font-weight:600; color:var(--terra-ink); background:#fdf1ec;
+  border:1px solid #f3d6c9; border-radius:9px; padding:9px 12px; margin:0 0 13px;
+}
+.lab-done{text-align:center; padding:14px 0}
+.lab-done .big{font-family:"Playfair Display",serif; font-size:24px; color:var(--ok); margin-bottom:7px}
+
+/* word list — the one template (claude/word-list-template.md, from EF3 S04):
+   a stack of entries on a phone, a fixed three-column table from 600px */
+.vocab{width:100%; border-collapse:collapse; font-size:var(--fs-small); margin-top:8px}
+.vocab, .vocab tbody, .vocab tr, .vocab td{display:block}
+.vocab thead{display:none}
+.vocab tr{padding:13px 0; border-bottom:1px solid var(--line-2)}
+.vocab tr:last-child{border-bottom:0}
+.vocab td{padding:0; border:0; line-height:1.55}
+.vocab td.t{font-size:var(--fs-body); font-weight:600; color:var(--navy)}
+.vocab td.g{margin:2px 0 4px; color:var(--mute)}
+.vocab td.ex{color:var(--ink)}
+.vocab .term, .vocab .exrow{display:flex; align-items:center; justify-content:space-between; gap:8px}
+.vocab .tw{display:flex; flex-direction:column; gap:1px; min-width:0}
+.vocab .exrow > span{min-width:0}
+.vocab .ipa{font-size:var(--fs-small); font-weight:400; color:var(--mute); letter-spacing:.01em}
+.vocab .spk{width:36px; height:36px; border-color:var(--line)}
+.vocab .spk svg{width:17px; height:17px}
+.vocab .spk:hover{border-color:var(--navy)}
+.vocab .spk.is-playing{background:var(--navy); border-color:var(--navy); color:#fff}
+.embed{
+  border:1px solid var(--line); border-radius:var(--radius); background:var(--card);
+  overflow:hidden; margin:0 0 10px;
+}
+.embed iframe{display:block; width:100%; height:500px; border:0}
+@media (max-width:599px){ .embed iframe{height:440px} }
+.export{
+  width:100%; min-height:150px; margin-top:11px; padding:11px; border-radius:10px;
+  border:1px solid var(--line); background:var(--card-2); font-family:ui-monospace,Menlo,monospace;
+  font-size:16px; line-height:1.5; color:var(--ink);
+}
+
+/* ============================ 3–5 · drills ============================ */
+
+.drill{display:grid; gap:11px}
+.item{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:13px}
+.item.ok{border-color:var(--ok); background:var(--ok-bg)}
+.item.no{border-color:var(--no); background:var(--no-bg)}
+.item.said{border-color:var(--ok); background:var(--ok-bg)}
+.prompt{display:flex; gap:11px; align-items:flex-start; font-size:var(--fs-body)}
+.idx{
+  flex:none; width:27px; height:27px; border-radius:8px; background:var(--navy); color:#fff;
+  display:grid; place-items:center; font-size:var(--fs-meta); font-weight:600;
+}
+.item.ok .idx{background:var(--ok)} .item.no .idx{background:var(--no)}
+.cue{font-family:ui-monospace,Menlo,monospace; font-size:var(--fs-small)}
+.polchip{
+  display:inline-block; min-width:34px; text-align:center; margin-right:4px; padding:1px 7px; border-radius:7px;
+  font-family:ui-monospace,Menlo,monospace; font-size:var(--fs-small); font-weight:600; line-height:1.5;
+  color:var(--ok); background:var(--ok-bg); border:1px solid currentColor; white-space:nowrap;
+}
+.polchip.neg{color:var(--no); background:#fdf0ee}
+.answer-row{margin-top:10px}
+.answer-row input{
+  width:100%; font:inherit; font-size:var(--fs-body); min-height:50px; padding:10px 13px;
+  border-radius:10px; border:1.5px solid var(--line); background:var(--card-2); color:var(--ink);
+}
+.answer-row input:focus{background:#fff; border-color:var(--navy)}
+.item.ok .answer-row input{border-color:var(--ok); background:#fff; color:#0f5a36; font-weight:500}
+.item.no .answer-row input{border-color:var(--no); background:#fff}
+.verdict{display:none; margin-top:9px; font-size:var(--fs-small)}
+.verdict.show{display:block}
+.verdict .mark{font-weight:600; display:block}
+.verdict.is-ok .mark{color:var(--ok)} .verdict.is-no .mark{color:var(--no)}
+.verdict .model{display:block; color:var(--ink)}
+.verdict .model:not(:empty)::before{content:"Mẫu: "; color:var(--faint); font-size:var(--fs-meta)}
+.trap{
+  margin-top:8px; font-size:var(--fs-meta); color:#7a4a12; background:#fdf5e6;
+  border:1px solid #f0e0bd; border-radius:8px; padding:7px 10px;
+}
+
+/* spoken exchange rows */
+.worked{background:var(--card-2); border:1px solid var(--line); border-radius:var(--radius); padding:13px; margin:0 0 13px}
+.worked .w{
+  display:block; font-size:var(--fs-micro); letter-spacing:.11em; text-transform:uppercase;
+  color:var(--faint); margin-bottom:9px;
+}
+.turn{display:flex; gap:9px; align-items:flex-start; margin:0 0 8px; font-size:var(--fs-body)}
+.turn:last-child{margin-bottom:0}
+/* speaker marks: A outlined navy, B filled terracotta — neither looks like
+   the item number, which is plain text in its own gutter */
+.who-badge{
+  flex:none; width:25px; height:25px; border-radius:7px; display:grid; place-items:center;
+  font-size:var(--fs-micro); font-weight:600; color:var(--navy); background:transparent;
+  border:1.5px solid var(--navy); margin-top:1px;
+}
+.who-badge.b{background:var(--terra); border-color:var(--terra); color:#fff}
+.pol{
+  font-family:ui-monospace,Menlo,monospace; font-size:var(--fs-meta); color:var(--terra-ink);
+  margin-right:6px; white-space:nowrap;
+}
+.say-item{display:grid; grid-template-columns:24px minmax(0,1fr); column-gap:10px}
+.say-item > .idx{
+  grid-row:1 / span 2; width:auto; height:auto; background:none; border-radius:0;
+  color:var(--faint); font-size:var(--fs-small); font-weight:600; font-variant-numeric:tabular-nums;
+  display:block; text-align:right; padding-top:2px;
+}
+.item.say-item.said > .idx{background:none; color:var(--ok)}
+.say-a, .say-row{grid-column:2}
+.say-row{
+  display:flex; flex-wrap:wrap; gap:9px; align-items:center;
+  margin-top:10px; padding-top:10px; border-top:1px dashed var(--line);
+}
+.ans{
+  flex:1 1 200px; min-width:0; font:inherit; font-size:var(--fs-body); text-align:left; cursor:pointer;
+  background:transparent; border:0; padding:2px 0; color:var(--ink); line-height:1.5;
+}
+.ans .ph{color:var(--faint); font-size:var(--fs-small); font-style:italic}
+.ans .ph b{font-style:normal; color:var(--terra-ink); font-weight:600}
+.ans .tx{display:none}
+.ans.show .ph{display:none}
+.ans.show .tx{display:inline}
+.say-btns{display:flex; gap:8px; margin-left:auto}
+.say-row .btn{min-height:44px}
+
+/* voiced A lines: the voice comes first, the words stay blurred until the
+   learner asks for them — listen, answer, then look */
+.turn.voiced{align-items:center; flex-wrap:wrap; row-gap:6px}
+.spk{
+  flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; padding:0;
+  display:grid; place-items:center; background:var(--card); color:var(--navy);
+  border:1.5px solid var(--navy);
+}
+.spk svg{width:19px; height:19px; fill:currentColor}
+.spk:hover{background:#eef2f7}
+.spk.is-playing{background:var(--terra); border-color:var(--terra); color:#fff}
+.spk.is-playing svg{animation:e2i-pulse .9s ease-in-out infinite}
+.spk.sm{width:34px; height:34px} .spk.sm svg{width:16px; height:16px}
+@keyframes e2i-pulse{50%{transform:scale(.82)}}
+.veil{
+  flex:1 1 180px; min-width:0; font:inherit; font-size:var(--fs-body); line-height:1.5; text-align:left;
+  cursor:pointer; background:transparent; border:0; border-radius:8px; padding:3px 6px; margin:0 0 0 -6px; color:var(--ink);
+  display:flex; align-items:center; gap:10px;
+}
+.veil .vt{flex:1 1 auto; min-width:0}
+.veil .vt{filter:blur(6px); user-select:none; -webkit-user-select:none; transition:filter .2s ease}
+.veil:hover .vt{filter:blur(5px)}
+.veil .veil-tip{
+  flex:none; font-size:var(--fs-micro); letter-spacing:.06em; text-transform:uppercase;
+  color:var(--faint); font-weight:600; white-space:nowrap;
+  border:1px solid var(--line); border-radius:999px; padding:3px 9px; background:var(--card-2);
+}
+.veil.open .vt{filter:none; user-select:text; -webkit-user-select:text}
+.veil.open .veil-tip{display:none}
+.veil .vi{display:block; font-size:var(--fs-small); color:var(--mute)}
+.ans .tx .spk{vertical-align:middle; margin-left:8px}
+.cue-vi{display:block; font-size:var(--fs-small); color:var(--mute); margin-top:2px}
+.cue-vi.top{display:inline; margin:0}
+/* Drill B spoken: two blurred rows, the hint above the question, opened one at a time —
+   tap 1 shows the hint, tap 2 the question, tap 3 blurs both again */
+.veil.stack{display:grid; grid-template-columns:minmax(0,1fr) auto; column-gap:10px; row-gap:1px; align-items:center}
+.veil.stack .vrow{grid-column:1; min-width:0}
+.veil.stack .vh{grid-row:1; font-size:var(--fs-small); color:var(--mute)}
+.veil.stack .vq{grid-row:2}
+.veil.stack .veil-tip{grid-column:2; grid-row:1 / span 2}
+.veil.stack[data-stage="1"] .vh .vt, .veil.stack[data-stage="2"] .vt{filter:none; user-select:text; -webkit-user-select:text}
+
+/* the voice bar — speed and voice, shared by every voiced line on the page */
+.voicebar{
+  display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center;
+  margin:0 0 14px; padding:10px 12px; background:var(--card); border:1px solid var(--line); border-radius:12px;
+  font-size:var(--fs-meta); color:var(--mute);
+}
+.voicebar .lbl{font-size:var(--fs-micro); letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:600}
+.seg{display:inline-flex; border:1.5px solid var(--navy); border-radius:9px; overflow:hidden}
+.seg button{
+  font:inherit; font-size:var(--fs-meta); font-weight:600; min-height:38px; padding:0 12px; cursor:pointer;
+  background:var(--card); color:var(--navy); border:0;
+}
+.seg button + button{border-left:1.5px solid var(--navy)}
+.seg button[aria-pressed="true"]{background:var(--navy); color:#fff}
+.voicebar select{
+  font:inherit; font-size:16px; min-height:40px; max-width:100%; padding:0 8px; border-radius:9px;
+  border:1.5px solid var(--line); background:var(--card-2); color:var(--ink);
+}
+.voicebar .vb-field{display:inline-flex; align-items:center; gap:8px; min-width:0; max-width:100%}
+.voicebar .vb-field select{min-width:0; width:100%}
+.voicebar .vb-note{flex:1 1 100%; font-size:var(--fs-meta); color:var(--faint); margin:0}
+
+/* ============================ 6 · decode ============================ */
+
+.scn{position:relative}
+/* part 6 · the scene picture, between the context line and the listening instructions */
+/* full column width, so its edges line up with the audio bar above it; the picture is a
+   plain <img> (Drive's thumbnail URL) so it fills the frame edge to edge with no Drive chrome */
+.scene{margin:0 0 18px}
+.scene-frame{position:relative; background:var(--card-2); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; aspect-ratio:16/9}
+.scene-frame.loaded{aspect-ratio:auto; border-color:transparent}
+.scene-frame img{display:block; width:100%; height:auto}
+.scene-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.scene-frame.as-frame{aspect-ratio:4/3; background:var(--navy)}
+.scene figcaption{font-size:var(--fs-meta); color:var(--mute); margin-top:6px}
+.audio-sentinel{height:1px; margin-bottom:-1px}
+.audio{position:sticky; top:calc(8px + var(--host-offset)); z-index:30; min-height:var(--audio-h,auto); margin:0 0 16px}
+.audio.stuck{pointer-events:none}
+.audio-dock{
+  position:relative; background:var(--navy); color:#eef2f7; border-radius:var(--radius); padding:10px 12px;
+  box-shadow:var(--shadow); pointer-events:auto;
+}
+.audio.stuck .audio-dock{box-shadow:0 10px 26px rgba(6,28,55,.28)}
+.audio.stuck .audio-dock{padding:7px 11px}
+.audio.stuck .transport{gap:11px}
+.audio.stuck .tbtn.play{width:40px; height:40px}
+.audio.stuck .tbtn.play svg{width:16px; height:16px}
+.audio.stuck .seek{height:20px}
+.qchip{
+  flex:none; font-size:var(--fs-micro); background:rgba(255,255,255,.12); border-radius:999px;
+  padding:4px 9px; color:#fff; letter-spacing:.04em; font-variant-numeric:tabular-nums;
+}
+@media (max-width:419px){ .qchip{display:none} }
+.transport{display:flex; align-items:center; gap:13px}
+.tbtn{
+  flex:none; font:inherit; cursor:pointer; border-radius:50%; border:1.5px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.08); color:#fff; display:grid; place-items:center;
+}
+.tbtn:hover{background:rgba(255,255,255,.18)}
+.tbtn.play{background:var(--terra); border-color:var(--terra); width:46px; height:46px}
+.tbtn.play:hover{background:#cf6a49}
+.tbtn svg{width:18px; height:18px; fill:currentColor}
+.time{
+  flex:none; font-size:var(--fs-micro); color:#9fb2c8; font-variant-numeric:tabular-nums;
+  letter-spacing:.02em;
+}
+.seek{
+  flex:1 1 auto; min-width:60px; position:relative; height:26px; display:flex; align-items:center;
+  cursor:pointer; touch-action:none;
+}
+.seek .rail-bg{position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); height:7px; border-radius:999px; background:rgba(255,255,255,.2)}
+.seek .rail-fill{position:absolute; left:0; top:50%; transform:translateY(-50%); height:7px; border-radius:999px; background:var(--terra); width:0}
+.seek .knob{
+  position:absolute; width:16px; height:16px; border-radius:50%; background:#fff; left:0; top:50%;
+  transform:translate(-8px,-50%); box-shadow:0 1px 4px rgba(0,0,0,.4);
+}
+.seek:focus-visible{outline-offset:6px}
+.credit{font-size:var(--fs-micro); color:#9fb2c8; margin:7px 0 0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.credit a{color:#cfdcea}
+.audio.stuck .credit{display:none}   /* the bar is a control strip; the attribution shows undocked */
+/* The iframe is never shown unless the Widget API fails (.sc-fallback after 8s): the one-row bar is
+   on screen from the first paint, in a loading state, so nothing swaps or jumps when the track arrives. */
+.sc-frame{position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; border:0}
+.sc-fallback .sc-frame{position:static; width:100%; height:120px; opacity:1; pointer-events:auto; border-radius:10px; display:block}
+.sc-fallback .transport{display:none}
+.sc-tap{display:none; margin:7px 0 0; font-size:var(--fs-micro); color:#cfdcea}
+.sc-tapmode .sc-tap{display:block}
+.has-transport .sc-fallback-note{display:none}
+/* loading: the bar is laid out at full size; the rail shimmers and the play button spins */
+.transport .time, .seek, .qchip{transition:opacity .25s ease}
+.is-loading .seek{cursor:progress}
+.is-loading .seek .knob{opacity:0}
+.is-loading .time{opacity:.55}
+.is-loading .seek .rail-bg{
+  background:linear-gradient(90deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.34) 50%, rgba(255,255,255,.14) 100%);
+  background-size:200% 100%; animation:e2i-shimmer 1.3s linear infinite;
+}
+@keyframes e2i-shimmer{from{background-position:100% 0} to{background-position:-100% 0}}
+.tbtn.play{position:relative}
+.tbtn .spin{
+  position:absolute; inset:-4px; border-radius:50%; border:2.5px solid transparent; border-top-color:#fff;
+  opacity:0; transition:opacity .2s ease; pointer-events:none;
+}
+.is-loading .tbtn .spin, .is-buffering .tbtn .spin{opacity:.9; animation:e2i-spin .8s linear infinite}
+.is-loading .tbtn.play{cursor:progress; background:#b8664a; border-color:#b8664a}
+.is-loading .tbtn.play svg{opacity:.55}
+@keyframes e2i-spin{to{transform:rotate(360deg)}}
+/* one custom property drives the fill and the knob; it is updated every frame while playing */
+.seek .rail-fill{width:calc(var(--p,0) * 100%)}
+.seek .knob{left:calc(var(--p,0) * 100%)}
+/* docking eases instead of snapping */
+.audio-dock{transition:padding .2s ease, box-shadow .2s ease}
+.tbtn.play{transition:width .2s ease, height .2s ease, background-color .2s ease}
+.seek{transition:height .2s ease}
+
+.qa{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:13px; margin:0 0 11px}
+.qa.ok{border-color:var(--ok); background:var(--ok-bg)}
+.qa .q{font-size:var(--fs-body); margin-bottom:9px}
+.qa textarea{
+  width:100%; min-height:76px; font:inherit; font-size:var(--fs-body); padding:10px 13px;
+  border-radius:10px; border:1.5px solid var(--line); background:var(--card-2); color:var(--ink); resize:vertical;
+}
+.qa textarea:focus{background:#fff; border-color:var(--navy)}
+.model-ans{
+  display:none; margin-top:10px; padding:10px 12px; background:#f3f6fa; border-left:3px solid var(--navy);
+  border-radius:0 9px 9px 0; font-size:var(--fs-small);
+}
+.model-ans.show{display:block}
+.model-ans::before{
+  content:"Câu mẫu"; display:block; font-size:var(--fs-micro); letter-spacing:.1em;
+  text-transform:uppercase; color:var(--faint); margin-bottom:4px;
+}
+.rev-panel{display:none; margin-top:13px}
+.rev-panel.show{display:block}
+.dlg{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:13px}
+.line{display:grid; grid-template-columns:72px 1fr; gap:10px; padding:7px 0; border-bottom:1px solid var(--line-2); font-size:var(--fs-body)}
+.line:last-child{border-bottom:0}
+.line .who{font-size:var(--fs-meta); font-weight:600; color:var(--terra-ink)}
+
+/* ============================ 7 · exit ============================ */
+
+.checkline{
+  display:flex; gap:12px; align-items:flex-start; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:13px; cursor:pointer; font-size:var(--fs-body);
+}
+.checkline input{width:24px; height:24px; flex:none; margin:2px 0 0; accent-color:var(--ok)}
+.checkline.done{border-color:var(--ok); background:var(--ok-bg)}
+
+/* ============================ report ============================ */
+
+.report{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:17px; box-shadow:var(--shadow)}
+.report-grid{display:grid; gap:9px; grid-template-columns:1fr 1fr; margin:14px 0}
+.rep-tile{background:var(--card-2); border:1px solid var(--line-2); border-radius:11px; padding:11px}
+.rep-tile .k{font-size:var(--fs-micro); letter-spacing:.08em; text-transform:uppercase; color:var(--faint)}
+.rep-tile .v{font-size:var(--fs-h3); font-weight:600; font-variant-numeric:tabular-nums}
+.rep-tile.done{border-color:var(--ok); background:var(--ok-bg)} .rep-tile.done .v{color:var(--ok)}
+.foot{
+  margin:28px 0 0; padding:16px 0 0; border-top:1px solid var(--line); display:flex; flex-wrap:wrap;
+  gap:8px; justify-content:space-between; font-size:var(--fs-meta); color:var(--faint);
+}
+
+/* ============================ stage footer strip ============================ */
+
+.stage-foot{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:26px 0 0; padding-top:16px; border-top:1px solid var(--line)}
+.stage-foot .spacer{flex:1 1 auto}
+.nextlink{
+  display:inline-flex; align-items:center; gap:9px; min-height:48px; padding:0 17px; border-radius:10px;
+  background:var(--navy); color:#fff; text-decoration:none; font-size:var(--fs-meta); font-weight:600;
+}
+.nextlink:hover{background:var(--navy-2)}
+.nextlink small{font-weight:400; color:#a9bdd4; font-size:var(--fs-micro)}
+
+/* ============================ roadmap rail ============================ */
+
+.rail{margin:30px 0 0}
+.rail-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:15px; box-shadow:var(--shadow)}
+.ring-row{display:flex; gap:13px; align-items:center; margin-bottom:14px}
+.ring{width:56px; height:56px; flex:none}
+.ring .track{fill:none; stroke:var(--line-2); stroke-width:4}
+.ring .bar{fill:none; stroke:var(--terra); stroke-width:4; stroke-linecap:round; transition:stroke-dasharray .4s ease}
+.ring-num{font-size:12px; font-weight:600; fill:var(--navy); font-family:"Be Vietnam Pro",sans-serif}
+.ring-lab b{display:block; font-size:var(--fs-small); font-weight:600}
+.ring-lab span{font-size:var(--fs-meta); color:var(--mute)}
+.rail h3{
+  font-family:inherit; font-size:var(--fs-micro); letter-spacing:.12em; text-transform:uppercase;
+  color:var(--faint); font-weight:600; margin:0 0 9px;
+}
+.toc{list-style:none; margin:0; padding:0; display:grid; gap:7px; grid-template-columns:1fr 1fr}
+.toc a{
+  display:grid; grid-template-columns:24px 1fr; gap:9px; align-items:start; min-height:58px;
+  padding:9px 10px; border-radius:11px; border:1px solid var(--line-2); background:var(--card-2);
+  text-decoration:none; color:var(--ink); font-size:var(--fs-meta); line-height:1.35;
+}
+.toc a:hover{border-color:var(--navy)}
+.toc .n{
+  width:24px; height:24px; border-radius:7px; display:grid; place-items:center; font-weight:600;
+  background:var(--card); border:1px solid var(--line); color:var(--mute); font-size:var(--fs-micro);
+}
+.toc .t{font-weight:500}
+.toc .cnt{grid-column:2; font-size:var(--fs-micro); color:var(--faint); font-variant-numeric:tabular-nums}
+.toc a.active{border-color:var(--terra); background:#fdf1ec}
+.toc a.active .n{background:var(--terra); border-color:var(--terra); color:#fff}
+.toc a.done .n{background:var(--ok); border-color:var(--ok); color:#fff}
+.toc a.done .cnt{color:var(--ok)}
+.rail-reset{
+  width:100%; margin-top:12px; min-height:44px; font:inherit; font-size:var(--fs-meta); cursor:pointer;
+  border-radius:9px; border:1px solid var(--line); background:var(--card-2); color:var(--mute);
+}
+.rail-reset:hover{color:var(--no); border-color:var(--no)}
+.rail-note{margin-top:11px; font-size:var(--fs-meta); color:var(--mute); padding:12px 13px}
+
+/* ============================ fixed bar + parts sheet (below 900px) ============================ */
+
+.pagenav{
+  position:fixed; left:0; right:0; bottom:0; z-index:60; height:var(--nav-h);
+  display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:7px; align-items:center;
+  padding:7px 10px calc(7px + env(safe-area-inset-bottom,0px));
+  background:rgba(255,255,255,.96); backdrop-filter:blur(8px); border-top:1px solid var(--line);
+}
+.pagenav button{
+  font:inherit; font-size:var(--fs-meta); font-weight:600; min-height:44px; cursor:pointer;
+  border-radius:9px; border:1.5px solid var(--navy); background:var(--card); color:var(--navy);
+  display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:0 12px;
+}
+.pagenav button[disabled]{opacity:.4; cursor:not-allowed}
+.pagenav .page-parts{
+  min-width:0; border-color:var(--line); background:var(--card-2); font-weight:500; color:var(--ink);
+  justify-content:space-between; gap:8px;
+}
+.page-parts .lbl{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.page-parts .num{
+  display:none; flex:none; font-size:var(--fs-micro); font-weight:600; color:var(--mute);
+  background:var(--card); border:1px solid var(--line); border-radius:6px; padding:1px 6px;
+}
+.page-parts .caret{flex:none; color:var(--mute); transition:transform .2s}
+.page-parts[aria-expanded="true"] .caret{transform:rotate(180deg)}
+
+/* A wide, compact menu rather than a narrow scroller: nearly the full width
+   of the phone (capped at 460px), one 48px row per part — number, title and
+   count on one line — so all eight fit without scrolling on most phones.
+   Only the list scrolls, inside the panel's padding, so the scrollbar never
+   runs over the rounded corners. */
+.partsheet{
+  position:fixed; inset:auto; margin:0; padding:0; border:0; border-radius:16px;
+  width:min(calc(100vw - 16px), 460px); max-width:none; max-height:none;
+  background:var(--card); box-shadow:0 20px 50px rgba(6,28,55,.32), 0 0 0 1px rgba(6,28,55,.06);
+  overflow:hidden; color:var(--ink);
+}
+.partsheet::backdrop{background:rgba(6,28,55,.45)}
+.sheet-in{display:flex; flex-direction:column; max-height:min(calc(100dvh - var(--nav-h) - 24px), 640px)}
+.sheet-head{
+  flex:none; display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:14px 12px 12px 18px; border-bottom:1px solid var(--line-2);
+}
+.sheet-head h3{margin:0; font-size:var(--fs-h3); line-height:1.2}
+.sheet-sub{display:block; margin-top:2px; font-size:var(--fs-meta); color:var(--mute)}
+.sheet-close{
+  flex:none; width:40px; height:40px; display:grid; place-items:center; padding:0; cursor:pointer;
+  font-size:22px; line-height:1; color:var(--mute); background:var(--card-2);
+  border:1px solid var(--line-2); border-radius:50%;
+}
+.sheet-close:hover{color:var(--navy); border-color:var(--navy)}
+.partsheet .toc{
+  grid-template-columns:1fr; gap:2px; padding:8px; overflow-y:auto; overscroll-behavior:contain;
+  scrollbar-width:thin;
+}
+.partsheet .toc a{
+  grid-template-columns:28px minmax(0,1fr) auto; align-items:center; gap:12px;
+  min-height:48px; padding:8px 12px 8px 10px; border:0; border-radius:10px; background:transparent;
+  font-size:var(--fs-small);
+}
+.partsheet .toc a:hover{background:var(--card-2)}
+.partsheet .toc .n{width:28px; height:28px; border-radius:8px; font-size:var(--fs-meta)}
+.partsheet .toc .t{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.partsheet .toc .cnt{grid-column:3; font-size:var(--fs-meta); color:var(--mute)}
+.partsheet .toc a.active{background:#fdf1ec; box-shadow:inset 3px 0 0 var(--terra)}
+.partsheet .toc a.active .t{font-weight:600}
+.partsheet .toc a.done .cnt{color:var(--ok); font-weight:600}
+@media (max-height:520px) and (min-width:560px){
+  .partsheet{width:min(calc(100vw - 16px), 640px)}
+  .partsheet .toc{grid-template-columns:1fr 1fr}
+}
+
+.toast{
+  position:fixed; left:50%; transform:translateX(-50%); bottom:calc(var(--nav-h) + 14px); z-index:70;
+  background:var(--navy); color:#fff; font-size:var(--fs-meta); padding:10px 16px; border-radius:999px;
+  box-shadow:var(--shadow); opacity:0; pointer-events:none; transition:opacity .25s;
+}
+.toast.show{opacity:1}
+
+/* ============================ responsive ============================ */
+
+@media (max-width:359px){
+  .pagenav .page-prev,.pagenav .page-next{width:48px; padding:0}
+  .pagenav .page-prev .lbl,.pagenav .page-next .lbl{display:none}
+  .toc{grid-template-columns:1fr}
+  .report-grid{grid-template-columns:1fr}
+}
+
+@media (min-width:600px){
+  .sort-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .page-parts .num{display:inline-block}
+  .vocab{display:table; table-layout:fixed}
+  .vocab tbody{display:table-row-group}
+  .vocab thead{display:table-header-group}
+  .vocab tr{display:table-row; padding:0; border:0}
+  .vocab td{display:table-cell; padding:12px 14px 12px 0; border-bottom:1px solid var(--line-2); vertical-align:top}
+  .vocab th{
+    padding:0 14px 10px 0; border-bottom:1px solid var(--line);
+    text-align:left; font-size:var(--fs-micro); font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--faint);
+  }
+  .vocab td.t, .vocab th:first-child{width:30%}
+  .vocab td.g, .vocab th:nth-child(2){width:26%}
+  .vocab td.t{font-size:var(--fs-small)}
+  .vocab td.g{margin:0}
+  .report-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+/* below 600px: a compact masthead, and the vocabulary table stacks into entries */
+@media (max-width:599px){
+  .masthead{padding:16px 0 18px}
+  .brand img{height:38px}
+  .topline{gap:11px}
+  .masthead h1{font-size:clamp(23px,6.6vw,31px)}
+  .subline{font-size:var(--fs-meta); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
+  .chips{gap:6px; margin-top:12px}
+  .chip{padding:4px 10px}
+  .structure{padding:9px 11px; margin-top:12px}
+  .credit{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .lede{font-size:var(--fs-body)}
+}
+
+@media (min-width:900px){
+  .brand img{height:52px}
+  .wrap{
+    display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:34px; align-items:start;
+    padding-bottom:40px;
+  }
+  .lesson-viewport{scroll-padding-bottom:24px}
+  .rail{margin:22px 0 0; position:sticky; top:calc(16px + var(--host-offset))}
+  .rail .toc{grid-template-columns:1fr}
+  .rail .toc a{grid-template-columns:24px minmax(0,1fr) auto; align-items:center; min-height:46px}
+  .rail .toc .cnt{grid-column:3; grid-row:1}
+  .pagenav{display:none}
+  .stage{padding-top:26px}
+  .toast{bottom:22px}
+}
+
+@media (min-width:1100px){
+  .wrap{grid-template-columns:minmax(0,1fr) 320px}
+  :root{--fs-body:17.5px}
+}
+
+@media print{
+  .pagenav,.rail,.toast,.voicebar{display:none}
+  .veil .vt{filter:none}
+  .stage[hidden]{display:block !important}
+}
+</style>
+</head>
+<body class="lesson-booting">
+<a class="skip" href="#lesson">Vào bài học</a>
+
+<header class="masthead">
+  <div class="shell">
+    <div class="topline">
+      <!-- COURSE_URL — the one link to change per course -->
+      <a class="brand" href="https://english2impact.odoo.com/slides/english-reflex-1-33" target="_blank" rel="noopener"
+         aria-label="Mở khóa English Reflex 1 trên English2impact">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAACACAMAAAD5/uG+AAAAwFBMVEUAAADad1clpCWq3UwAZjZsyxzy+O3NcFCtXU0OcR/xdG3HbE6xbT0fox7Q66Se2TwinSRSrVyo155gqhUhmCMB/gH//wDsgVy5ZUj/AAEBZDah0k0AX18cdkx4c3N1dQr9qFUCYzVpMChvqI1iuB1owxxxw3Kcr1OIt6Cd4FtlpVs1hV+czlFx/AD///98/3z4ez35/HRkvByvuzK00cLB5nyt/woAAG4AqlVmNVYAAP9huyViwhumOzsA//90sk71nQmQAAAAQHRSTlMA+Pz9/f3/oRsOCGQMEf/+nP7/D18BAf5TAaCgAv8DAwNbC/9epv8T/xgJ/2MCAQIEBo0I//8DAgMLA8RGBgFyURPNuwAADOJJREFUeNrFWol24sgOLUKwyxsYGxs7hB1CQvbuTvf0LG/+/6+eVJvLdgFmSUbnDF32AHUtXV1JFQg5024JceY3YHMHVgn5Twy3vrkWdjNnN77ebjUQDIiD3vl6XzjXFZM4EkBIbpP/CAXgSCAut9Int1/gnFsDiusbvrXjzOdzBxAlzqcT48YA4xp4SuY3GmtvP5ue10ZznK9k7S25bmbzz8Sx0xlfi+MPMzPMYfpEnjZ2Bsuer9QMsMdl9CNajmui5nwWNeYGEH1L2mPFHV8J496y+vjveGlZy4o7vg7GEvce95f9MSJamkrNF+Tr2Lq/HkcsJPeI47GUsxfxx2v88+H9/f37Zg9FI+v6GoIxHo/vrR+4vDA5Jt+1iziVqxIr4PnBB0vODaDqEtbji6bsA/73NEJ7evjFr6uF7d4ajwECeoHZD+v6UUC6DIwXQrZP7cKetiR9ZVFRHB0DGwEAvt73HwVbr8c6jHO5ATuO2mV7gsiUOPooQzAW9ETvlGGcmSmv5KFds9GGvJfUPBIhGIN+ckqMH4EfWqqcSU5C2iZ7Iu+pVtuWyIylFNJHRZcLxSTZbNtmG5E0KMjRL2AsrUjcVHQ9W0QfarzQcbw61aCgmkcqdx4v1HBMyKa900bTVxmVR6YYjKLRo4rT/aWy9ftuZzAcgqRjy6poJgDTUJxd5iftfTb6k7tjfD9W8lmutBfpAV/3xYTzw1EcjTQU5Sp/rnI9kKf2IRw3AgVkhaJFVKqtZxe1eD+MHtMPToV7ZMhS8qJ/0Tb0gDe6+PJ+U3Qby6Lea8PS/87uMUxCrlwB1QMXhaILuRrrxLjhI6wTBE4C030SBMHxGkq2u11hddsMx+im1ALy7NVRwNbl44Xt5UTUsro9fIWXJz1Nox+WVkmAF06MXxQMBmF4BRaGA+foE6GNOSoqIG0GpmiNH6ERvdfrWcAgMACFAZAjI/NudEcXQDAAvW45LPUDBqeKgVlwJI7X9MEUEPQF4uh9MKeYJ3sHHXFltsGRODbVnO0xYgIpwBE95CnajWlqJUZHnIZjU2kBexiQHuZJD1gqUBjC4pDB1V47CseGbEe1PEWHdK2PNgPE7d+qKw6AOA5HJVNYQHpACBYP6QpmpUFyHoRXhy1ITlPRIiDiVe9NbzT51kH07+76u9zRTD7SdGsOSK+nB4TbRrlCi0c/EqcMdyYcJDleQ3HnD7l/V6hXqeTXQFwBiOiu379DMH2TejiNGtGHZgHh9j6vxgNAyOWdCUezqJQaURWQtiEg3Mi85IqrcigMOMJGuZJOTAERbjE2pqX8iCqEsKw6jAa1dlo0oh+KEDsCwtqwuCQW/SIiO24088ZGwSgH5MPkivbm704ndkrOqD58zR2DZjCI3lvsD8hq3QH7PtgXgxpNB8d4A+uXdSAgDESnsyYajGoIrvCssnTDaSIcihtQTS0lXCZXfOtIWw2KPdu1BLWiEo6wWTeYEhUTbC4+duVpR7O4gFEXTuvuTg9L0OwcnesGiwlmiTkgmitYWAb7gnKnM2ZA4iMKG4OBZgrIaNWp2GofRfta/oQNUSBJRyJfu922KSDkW6dmA5WwfUPCqqiEzbuN6SursD00U37E6zqKzjrcJ199AWNAkstMbU9/rjpGW+0oIixKHEZ45ITwsAvH09YUEG6hCEpUQdEX/LjClv3Ymd5wwtFZwfyx3oWCuaNf6TCkgjKKDo6fYx+IU+6JR39BYEnc2WMDDgMtqrQ9PH9O+FnDKwiIBDIaPU3Dgyg6KwyL2L3cBIr0OXZoUwf32ziOt79ggSgSgYLrSdSr4Yh1QvT7fa2qHJuteuJ+53+6eCYB8uuVocARMuLzbFfsrvCsg8q+1atTj6HS6esUOlj0p/BFG6bptljBos1dA4rPKn5Y7BwZ+sAzDsMEipjwHImsjiWfnjcCaJHFsH0jenWPxKRStIWnw3AwIsgtoReg7wpGxxKOYUt0SBzouSqTRrnjZBhJ4vCiKLUTiKHBiLQlXnwr96X9SGbNUYNS3bYsR4JnlapWO+oWeytnADZ2ERiGaUBzd0amsJAM8MMBWRc7d/fBWCUk3DPM/3EiPZEYSVDoltxOXkiLoGPkbekeHKf+OCwJ2Kj3s6hnu2Ao5sYAOrysM5AY0C05mogjjF7hAo2hAsaKPDtmHOGJBBW56gRkVX9qftGpMXdNnpPEeOjjnBiThDljq5Srnq86jK5I3hg+Z8qX4EQlZ9+F3fyzDmN/vrKoxMyR5cCEJ/+hySFitHkmf+lPjfJ9CAYKhHYuGQbkVOVSztBhQFa2VSnr6WRVF2vykz1Ewo6rwQbB8d2fwRk6N9roiqjbFQfGcIP18CXmqucont9xTi+sgWyXYl02dpjG3GJSdgIn2AbOOX/rQs0QsqclbDuSdGjLToNNl91eoSHxqTSYUN/3Z25e1QxxEDHd1YMiP1ivAfQsNOQ0GBNfLV0/LxNUJJmesUbjSGpBaW75DF6oh0YpLGdKupCgjpxaVp0D1i5gnOAKFzDYLWm255M0rcYEW9K409hEwh6HYlKAYOYxaOWYNHJHMa1ADI/9YQJtDcswWjZFHKxpKA2TjXEUP4hqOocQt2Uwn0wS7MZLLVtcH6FXO5wRHxuSX7YJRou6LCblo+2fFX+sY2P6fDsahU8yI4qhzbWrUpljoh2vrP+GNDbwdj19PjZbZ8TsDHAHWRiGCnjMmB3HrlewfE5MquakSVO18idyvQNFy8Z0DWsNwrTwdxozVascP60d4FtToRAv5GUnjBaHUS/O0/hnStLn+FlyvESYFWmKAhjhgUYxzX4rgmJ7XilAdYbuaBNT4vBjc4jUtLFgpFObx56WKMqriqfBCBkM353O6KHTKdTc2FHrRiHJxTYu//uNZKQLFfZdw8ETJZC/h9vrkGemV2kcJ0cnB1NKcInLCfnGIFJaUJR10sSzbTvDX0oenLeTk3LUIywOlDnAS9lFTn6rwhKwfLWZ0GeEkgubhGFzGOATrzXM+EVKlDdyhEE8UW4OheV8GICDeuJxfcWNjA07JBPJsyDQnL1xl2CbxtN9Kle577pcinK4JT039WcvrnyvaG1cfzbzqQ4DWj7+/6gGUWk5hyHlbSFlhkxelPa4hsZFJGP5a2lt4SrFsjWMovF7U87w2Z8SQ7IRmFFrkKo5bgUrSlLCV3BvmlPgMdybuPg2j2J0IYywbtnsUj3vAhkPnyFuSpRe0Wqdo6qgxJivOKLYHLInGxHWqA2B4MKr4DiXEXkIgRQqZPuIyNP6KLfIBpWmWhnV7Y34/Da+yeEwHiQM+XHVI/m/7KFq1gSDJuIxhi2f6krYQqhEBwZbFGUk0wM7k76wJ/AJASNmbx56C/l9sOZPTL2hTcUeqc/uDTOJDB+QrznAIfiDFlnI3qC+MtP46yoh95hoChgJf7P3y7aLRlUAsuVHkAnyO30qUwtgDO2FfM8CQyfew/6VMDJGJDWjiOYc29CcKBjiCTIFEtwru0aa0kxs8Z4WlUlqtG8z14sbvvwq+x9+RyL33lTB9ykvrkPWlLt8VNJhQGJ4cm/JrUwF29eyzxVvxIwkfpZRf5Hxa/FmLF72EKK0kN6dce2y9cmAp8yETwehpD4lSvOo/DwolnpymX00l9BcIIPeNygYC6bUnkKekX8QRVaMBzYzlsYuG+YBRxVGLvMJRFgKIRBgITcrPDS19bnDTVOpQLn4jR2/zpATKS01wsWcAj0Uiwp/72+ivC4TCmqyDA/A8As5kNB4OXJdXg9cRRoX7P1dNVy8wu7oiIHikyAMp0pEF4UAUPHxN4mN+VSWHiJ9pSSBfYW3oF5JvGdSEbOWT+iORnTYEgorYUwKPXTVStwEQJkk8EyC5HegkfKVi8VX0IXvFtnOsGat3Tg2gSOpp7yBfUmmYFDlDVvVKUkNIetkofxd7r6zwgXezimF6dxMFdicaN2BV4PxIr9naHtCNOt+HmbesDyv2wrRbhiiaRYbyUi26Iscen1X5pynCKwKjusSlShS4vXdoOq4WiHdB0Mj4YQqjchzXt1sCvFhz2e7siZ6U1uWxjSVsuHxI4OhPdVqG9Rgcckk0x7uwaE1BSgIGWjKguQTFDxej1JsmFHzqKoPvBmZMHUQvcUbwXbEw9Il+g0UhJy3fXiqM4V/qUvd31qlpZTKuel3MU3B9i/iZy5Cfnjzx1qyjYwTiqiaJ1LVaKXleZFPKcWlu6djpTYXo2yo6Io9KP+0KwoPtgc+UshXpyLQa/pTdZpHXTZq0Zk7m6lelFLVrbpvPnv3ZEbdSa6dQub5lM58/MwCVH2aYlyH6jF3zcQyZUh+4f7d5eU/Z3GlJD10bqUaj0tbTlX0D3x9LsUtfyGfZanv+u7BkwqeceTzYDQxmmdcki7OjSNdhhTyMv/Ej/8fdUQXX82b/UIAAAAASUVORK5CYII=" alt="English2impact" width="67" height="64">
+      </a>
+    <p class="eyebrow"><span>English2impact</span><i>·</i><b>English Reflex 1</b><i>·</i><span>Session 03 / 16</span></p>
+    </div>
+    <h1>“I give <em>John</em> the apple.”</h1>
+    <p class="subline">Từ mới, bốn dạng câu, bảy phần luyện và một bản tổng kết. Đoán từ, luyện câu có hai tân ngữ — đưa, gửi, mua, mang <b>cho ai cái gì</b> — ở từng dạng câu cho tới khi bật ra không cần dịch, rồi nghe hiểu đoạn hội thoại — xong mọi phần là xong buổi học.</p>
+    <ul class="chips">
+      <li class="chip">Everyday</li>
+      <li class="chip">Basic</li>
+      <li class="chip">English Reflex</li>
+      <li class="chip now">90 minutes</li>
+    </ul>
+    <p class="structure"><span>Structure</span>S + V (Present) + IO (Noun) + DO (Noun)</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <main class="lesson-viewport" id="lesson"></main>
+  <nav class="rail" id="rail" aria-label="Lesson parts">
+    <div class="rail-card">
+      <div class="ring-row">
+        <svg class="ring" viewBox="0 0 44 44" aria-hidden="true">
+          <circle class="track" cx="22" cy="22" r="18"></circle>
+          <circle class="bar" id="ring-bar" cx="22" cy="22" r="18" stroke-dasharray="0 113" transform="rotate(-90 22 22)"></circle>
+          <text class="ring-num" id="ring-num" x="22" y="26" text-anchor="middle">0%</text>
+        </svg>
+        <div class="ring-lab"><b>Tiến độ buổi học</b><span id="prog-sub">0/7 phần hoàn thành</span></div>
+      </div>
+      <h3>Các phần</h3>
+      <ul class="toc" id="toc"></ul>
+      <button type="button" class="rail-reset" id="reset-all">Reset this session</button>
+    </div>
+    <div class="rail-card rail-note">
+      <b>Cách tính tiến độ.</b> Mỗi bài chờ bạn bấm <b>Check</b> — không có gì bị chấm khi bạn còn đang gõ. Câu trả lời được lưu trong trình duyệt này, nên bạn có thể đóng tab và quay lại sau.
+    </div>
+  </nav>
+</div>
+
+<div class="pagenav" id="pagenav">
+  <button type="button" class="page-prev" id="btn-prev"><span aria-hidden="true">←</span><span class="lbl">Previous</span></button>
+  <button type="button" class="page-parts" id="btn-parts" aria-haspopup="dialog" aria-expanded="false">
+    <span class="num" id="parts-num">1/8</span><span class="lbl" id="parts-label">Warm-up</span><span class="caret" aria-hidden="true">▾</span>
+  </button>
+  <button type="button" class="page-next" id="btn-next"><span class="lbl">Next</span><span aria-hidden="true">→</span></button>
+</div>
+
+<dialog class="partsheet" id="partsheet" aria-label="Chọn một phần">
+  <div class="sheet-in">
+    <div class="sheet-head"><div><h3>Chọn một phần</h3><span class="sheet-sub" id="sheet-sub">0/7 phần hoàn thành</span></div>
+    <button type="button" class="sheet-close" id="sheet-close" aria-label="Đóng danh sách">&times;</button></div>
+    <ul class="toc" id="sheet-toc"></ul>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ================================================================
+   1 · CONTENT — everything a learner reads lives here
+   English Reflex 1 is a Basic course: instructions, guides and feedback
+   are Vietnamese; the target English stays English; controls stay English.
+   ================================================================ */
+
+/* Paste the url= value straight out of SoundCloud's own embed code. It is
+   already query-encoded (soundcloud%253Atracks%253A…), so it must NOT be
+   encoded again — encodeURIComponent here would double-encode it and the
+   player would load nothing. SC_PAGE is the human permalink, used only for
+   the attribution links. */
+var SC_EMBED = "https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2344559048";
+/* Quizlet Match. The src is attached only when part 2 opens, so the page makes
+   no third-party request until a learner actually reaches the speed round. */
+var QUIZLET      = "https://quizlet.com/1191181242/match/embed?i=4y577v&x=1jj1";
+var QUIZLET_PAGE = "https://quizlet.com/1191181242";
+var SC_PAGE  = "https://soundcloud.com/english2impact/dialogue_i-give-john-the-apple";
+var SC_TITLE = "Dialogue · I give John the apple";
+var SC_USER  = "https://soundcloud.com/english2impact";
+/* Part 6 · the scene before listening. SCENE is the context line; SCENE_IMG is the picture
+   Khoa supplies in the session's "embeded link.txt" — paste the Drive file id or the whole
+   Drive URL (…/file/d/<id>/view or /preview). Leave it "" when a session has no picture:
+   the figure is then left out. The picture's src is attached only when part 6 opens. */
+var SCENE     = "giờ nghỉ ở văn phòng. Hai đồng nghiệp ngồi bên cửa sổ và hỏi nhau về những thứ họ đưa, mua, nấu và gửi cho người khác.";
+var SCENE_IMG = "https://drive.google.com/file/d/1aBCp5oFkouBASey9yP8j46dlR0GxpjSB/view";
+
+/* The Odoo page's vocabulary table, verbatim (term, gloss, IPA, example).
+   The Odoo IPA for this session is American (Cambridge US), so the word list marks it en-US. */
+var IPA_LANG = "en-US";
+var VOCAB = [
+  ["daily","give","đưa","/ɡɪv/","[+] I <b>give</b> my friend the book."],
+  ["daily","buy","mua","/baɪ/","[−] I don’t <b>buy</b> my mom a gift."],
+  ["daily","bring","mang","/brɪŋ/","[Y/N ?] Do you <b>bring</b> your teacher a pen?"],
+  ["daily","dinner","bữa tối","/ˈdɪn.ɚ/","[Wh- ?] What <b>dinner</b> do you cook for your family?"],
+  ["daily","book","quyển sách","/bʊk/","[+] She gives me a <b>book</b>."],
+  ["work","send","gửi","/send/","[−] He doesn’t <b>send</b> the team the data."],
+  ["work","email","thư điện tử","/ˈiː.meɪl/","[Y/N ?] Does she send her boss an <b>email</b>?"],
+  ["work","team","nhóm","/tiːm/","[Wh- ?] What do you send the <b>team</b>?"],
+  ["work","feedback","phản hồi","/ˈfiːd.bæk/","[+] I give my student some <b>feedback</b>."],
+  ["work","data","dữ liệu","/ˈdeɪ.t̬ə/","[−] We don’t send the manager the <b>data</b>."]
+];
+
+/* Term lab: the Vietnamese meaning is the prompt, the IPA sits under it,
+   and the line is the term's own example sentence from the vocabulary list.
+   Cards 3 and 6 test the form after do / doesn't (base verb, no -s, no to). */
+var TERMS = [
+  {vi:"đưa", en:"/ɡɪv/", line:"I <u></u> my friend the book.", opts:["give","dinner","team"], a:0},
+  {vi:"mua", en:"/baɪ/", line:"I don’t <u></u> my mom a gift.", opts:["email","buy","data"], a:1},
+  {vi:"mang", en:"/brɪŋ/", line:"Do you <u></u> your teacher a pen?", opts:["brings","to bring","bring"], a:2},
+  {vi:"bữa tối", en:"/ˈdɪn.ɚ/", line:"What <u></u> do you cook for your family?", opts:["dinner","send","give"], a:0},
+  {vi:"quyển sách", en:"/bʊk/", line:"She gives me a <u></u>.", opts:["bring","book","data"], a:1},
+  {vi:"gửi", en:"/send/", line:"He doesn’t <u></u> the team the data.", opts:["send","sends","sending"], a:0},
+  {vi:"thư điện tử", en:"/ˈiː.meɪl/", line:"Does she send her boss an <u></u>?", opts:["book","dinner","email"], a:2},
+  {vi:"nhóm", en:"/tiːm/", line:"What do you send the <u></u>?", opts:["team","buy","feedback"], a:0},
+  {vi:"phản hồi", en:"/ˈfiːd.bæk/", line:"I give my student some <u></u>.", opts:["bring","feedback","book"], a:1},
+  {vi:"dữ liệu", en:"/ˈdeɪ.t̬ə/", line:"We don’t send the manager the <u></u>.", opts:["give","buy","data"], a:2}
+];
+var NT = TERMS.length;
+/* what the lab says once every term is known — session-specific, so it lives with the content */
+var LAB_DONE = "Trước khi sang phần sau, nói to mỗi từ trong một câu có hai tân ngữ — người nhận trước, vật sau: I <b>give my friend the book</b> · She <b>sends her boss an email</b> · We <b>don’t send the manager the data</b>.";
+
+/* Warm-up: the three vowels of do /uː/, does /ʌ/ and don't /oʊ/ (American, like this session's Odoo IPA).
+   `w` is the id, `lab` what the learner sees. Mixed on purpose — grouped by sound,
+   the pool would give the answer away. */
+var SORT_WORDS = [
+  {w:"dont",   lab:"don’t",   ipa:"/doʊnt/",    b:"ou"},
+  {w:"do",     lab:"do",      ipa:"/duː/",      b:"uu"},
+  {w:"does",   lab:"does",    ipa:"/dʌz/",      b:"uh"},
+  {w:"money",  lab:"money",   ipa:"/ˈmʌn.i/",   b:"uh"},
+  {w:"you",    lab:"you",     ipa:"/juː/",      b:"uu"},
+  {w:"show",   lab:"show",    ipa:"/ʃoʊ/",      b:"ou"},
+  {w:"some",   lab:"some",    ipa:"/sʌm/",      b:"uh"},
+  {w:"who",    lab:"who",     ipa:"/huː/",      b:"uu"},
+  {w:"phone",  lab:"phone",   ipa:"/foʊn/",     b:"ou"},
+  {w:"doesnt", lab:"doesn’t", ipa:"/ˈdʌz.ənt/", b:"uh"},
+  {w:"food",   lab:"food",    ipa:"/fuːd/",     b:"uu"},
+  {w:"know",   lab:"know",    ipa:"/noʊ/",      b:"ou"},
+  {w:"lunch",  lab:"lunch",   ipa:"/lʌntʃ/",    b:"uh"}
+];
+var NS = SORT_WORDS.length;
+var SORT_BUCKETS = [
+  {id:"uu", name:"/uː/", sub:"dài, tròn môi — như too, blue"},
+  {id:"uh", name:"/ʌ/",  sub:"ngắn, miệng mở vừa — như cup, bus"},
+  {id:"ou", name:"/oʊ/", sub:"trượt từ o sang u — như go, no"}
+];
+
+/* The Twee script (D. Dialogue), verbatim. Twee names the speakers only Woman and Man. */
+var DIALOGUE = [
+  ["Woman","Do you bring your teacher a pen?"],
+  ["Man","Yes, I do."],
+  ["Woman","What do you cook your family for dinner?"],
+  ["Man","I cook my family chicken and rice."],
+  ["Woman","Nice. I give my friend a gift every year."],
+  ["Man","Really? I don’t buy my friend a gift every year."],
+  ["Woman","Why not?"],
+  ["Man","Because I don’t have much money."],
+  ["Woman","Do you send your team emails?"],
+  ["Man","Yes, I do. Don’t you send the manager the report?"],
+  ["Woman","No, I don’t."],
+  ["Man","That’s nice. We give people information in different ways."]
+];
+
+/* Asked in the order the dialogue answers them (the line numbers are for editors only).
+   Q1, Q2, Q4, Q5, Q6 are Twee's five questions; Q3 and Q7 are drafted for lines 5 and 12. */
+var COMPREHENSION = [
+  ["What does the man bring his teacher?","A pen. He brings his teacher a pen.","lines 1–2"],
+  ["What does the man cook his family for dinner?","Chicken and rice.","lines 3–4"],
+  ["What does the woman give her friend every year?","A gift. She gives her friend a gift every year.","line 5"],
+  ["Why doesn’t the man buy his friend a gift every year?","Because he doesn’t have much money.","lines 6–8"],
+  ["Who does the man send emails to?","His team. He sends his team emails.","lines 9–10"],
+  ["Doesn’t the woman send her manager the report?","No, she doesn’t.","lines 10–11"],
+  ["What does the man say we give people in different ways?","Information.","line 12"]
+];
+var NQ = COMPREHENSION.length;
+
+/* Drill A — Twee's ten [+] sentences; norm() reads don't / doesn't as do not / does not,
+   so the written forms pass too. */
+var T_BASE = "Bẫy: sau doesn’t, động từ về nguyên mẫu — ✗ ";
+var DRILL_A = [
+  {cue:"I give my friend a book.",               acc:["I don’t give my friend a book."], trap:"Bẫy: not không đứng một mình trước động từ — ✗ I not give my friend a book."},
+  {cue:"You buy your mom a gift.",               acc:["You don’t buy your mom a gift."], trap:""},
+  {cue:"He brings his boss money.",              acc:["He doesn’t bring his boss money."], trap:T_BASE+"He doesn’t brings his boss money."},
+  {cue:"She cooks her family dinner.",           acc:["She doesn’t cook her family dinner."], trap:"Bẫy: she đi với doesn’t — ✗ She don’t cook her family dinner."},
+  {cue:"We give our students the book.",         acc:["We don’t give our students the book."], trap:""},
+  {cue:"They send the team the data.",           acc:["They don’t send the team the data."], trap:"Giữ thứ tự người nhận → vật — ✗ They don’t send the data the team."},
+  {cue:"She sends her boss an email.",           acc:["She doesn’t send her boss an email."], trap:T_BASE+"She doesn’t sends her boss an email."},
+  {cue:"I send the team feedback.",              acc:["I don’t send the team feedback."], trap:""},
+  {cue:"You give your students some feedback.",  acc:["You don’t give your students any feedback.","You don’t give your students some feedback."], trap:"Trong câu phủ định, some thường đổi thành any: You don’t give your students any feedback."},
+  {cue:"We send the manager the data.",          acc:["We don’t send the manager the data."], trap:""}
+];
+
+/* Drill B — Twee's ten prompts. The [+]/[−] tag follows Twee's Vietnamese meaning
+   (“KHÔNG … sao?” = a negative question). Twee alternates + − + − …; the items are
+   re-ordered here so the tag can't be guessed from the position. */
+var DRILL_B = [
+  /* pol "+" → a neutral question: Do/Does …?   pol "−" → a negative question: Don't/Doesn't …? */
+  {pol:"+", cue:"I give my friend the book.",            vi:"Tôi có đưa bạn tôi quyển sách không?",                          acc:["Do I give my friend the book?"], trap:"Bẫy: I đi với Do — ✗ Does I give my friend the book?"},
+  {pol:"−", cue:"You buy your mom a gift.",              vi:"Bạn KHÔNG mua quà cho mẹ bạn sao?",                             acc:["Don’t you buy your mom a gift?","Do you not buy your mom a gift?"], trap:"Câu hỏi phủ định: chỉ dạng rút gọn Don’t đứng đầu — ✗ Do not you buy your mom a gift?"},
+  {pol:"−", cue:"She cooks her family dinner.",          vi:"Cô ấy KHÔNG nấu bữa tối cho gia đình sao?",                     acc:["Doesn’t she cook her family dinner?","Does she not cook her family dinner?"], trap:"Bẫy: sau Doesn’t, động từ về nguyên mẫu — ✗ Doesn’t she cooks her family dinner?"},
+  {pol:"+", cue:"He brings his dad money.",              vi:"Anh ấy có mang cho bố của mình tiền không?",                    acc:["Does he bring his dad money?"], trap:"Bẫy: Does đã mang -s rồi — ✗ Does he brings his dad money?"},
+  {pol:"−", cue:"They send the team the data.",          vi:"Họ KHÔNG gửi dữ liệu cho đội ngũ sao?",                         acc:["Don’t they send the team the data?","Do they not send the team the data?"], trap:"Câu hỏi phủ định: ✗ Do not they send the team the data?"},
+  {pol:"−", cue:"I send the team feedback.",             vi:"Tôi KHÔNG gửi phản hồi cho đội ngũ sao?",                       acc:["Don’t I send the team feedback?","Do I not send the team feedback?"], trap:""},
+  {pol:"+", cue:"We give our students the book.",        vi:"Chúng ta có đưa cho học viên của mình quyển sách không?",        acc:["Do we give our students the book?"], trap:"Bẫy: we đi với Do — ✗ Does we give our students the book?"},
+  {pol:"+", cue:"She sends her boss an email.",          vi:"Cô ấy có gửi email cho sếp của mình không?",                    acc:["Does she send her boss an email?"], trap:"Bẫy: she đi với Does, động từ nguyên mẫu — ✗ Do she sends her boss an email?"},
+  {pol:"−", cue:"We send the manager the data.",         vi:"Chúng ta KHÔNG gửi dữ liệu cho quản lý sao?",                   acc:["Don’t we send the manager the data?","Do we not send the manager the data?"], trap:"Câu hỏi phủ định: ✗ Do not we send the manager the data?"},
+  {pol:"+", cue:"You give your students some feedback.", vi:"Bạn có đưa cho học viên của mình một vài phản hồi không?",       acc:["Do you give your students some feedback?","Do you give your students any feedback?"], trap:""}
+];
+
+/* Drill C, block 1 — Twee's unscramble task, verbatim. */
+var DRILL_C = [
+  {cue:"to? / do / the / give / Who / book / I",          acc:["Who do I give the book to?"], trap:"Bẫy: hỏi người nhận thì to ở cuối câu — ✗ Who do I give the book?"},
+  {cue:"What / you / do / your / buy / mom?",             acc:["What do you buy your mom?"], trap:""},
+  {cue:"bring / to? / he / Who / does / money",           acc:["Who does he bring money to?"], trap:"Bẫy: sau does là nguyên mẫu — ✗ Who does he brings money to?"},
+  {cue:"dinner? / her / Why / she / family / cook / does",acc:["Why does she cook her family dinner?"], trap:""},
+  {cue:"to? / give / we / Who / do / book / a",           acc:["Who do we give a book to?"], trap:""},
+  {cue:"team? / the / send / What / do / they",           acc:["What do they send the team?"], trap:"Hỏi vật: What thay cho vật (the data); người nhận the team vẫn đứng sau động từ, không cần to."},
+  {cue:"Who / to? / email / an / she / send / does",      acc:["Who does she send an email to?"], trap:""},
+  {cue:"do / I / the / What / send / team?",              acc:["What do I send the team?"], trap:""},
+  {cue:"Who / you / give / some / feedback / to? / do",   acc:["Who do you give some feedback to?"], trap:""},
+  {cue:"do / manager? / What / we / send / the",          acc:["What do we send the manager?"], trap:""}
+];
+/* Drill C, block 2 — Twee's "make a Wh- question from these words". Twee's key repeats
+   block 1; kept as sourced. */
+var DRILL_D = [
+  {cue:"Who / I / give / book",               acc:["Who do I give the book to?","Who do I give a book to?"], trap:"Hỏi người nhận: Who … to? — nhớ to ở cuối."},
+  {cue:"What / you / buy / mom",              acc:["What do you buy your mom?"], trap:"you → your mom."},
+  {cue:"Who / he / bring / money",            acc:["Who does he bring money to?","Who does he bring the money to?"], trap:"he → does, và bring giữ nguyên mẫu."},
+  {cue:"Why / she / cook / family / dinner",  acc:["Why does she cook her family dinner?","Why does she cook dinner for her family?"], trap:""},
+  {cue:"Who / we / give / book",              acc:["Who do we give a book to?","Who do we give the book to?"], trap:""},
+  {cue:"What / they / send / team",           acc:["What do they send the team?","What do they send to the team?"], trap:"Hỏi vật: What … send the team? — không cần to."},
+  {cue:"Who / she / send / email",            acc:["Who does she send an email to?","Who does she send the email to?"], trap:"she → does; hỏi người nhận: Who … to?"},
+  {cue:"What / I / send / team",              acc:["What do I send the team?","What do I send to the team?"], trap:""},
+  {cue:"Who / you / give / feedback",         acc:["Who do you give some feedback to?","Who do you give feedback to?","Who do you give the feedback to?"], trap:""},
+  {cue:"What / we / send / manager",          acc:["What do we send the manager?","What do we send to the manager?"], trap:""}
+];
+
+/* Drill A spoken: A states it (voice first, text blurred); B disagrees in [−].
+   A's lines are Twee's; B's models follow Twee's two worked examples. */
+var EXCHANGES = [
+  {a:"He brings his friend money.",           b:"I don’t think so. He doesn’t bring his friend money."},
+  {a:"She cooks her family dinner.",          b:"I don’t think so. She doesn’t cook her family dinner."},
+  {a:"We give our students the book.",        b:"I don’t think so. We don’t give our students the book."},
+  {a:"They send the team the data.",          b:"I don’t think so. They don’t send the team the data."},
+  {a:"She sends her boss an email.",          b:"I don’t think so. She doesn’t send her boss an email."},
+  {a:"I send the team feedback.",             b:"I don’t think so. You don’t send the team feedback."},
+  {a:"You give your students some feedback.", b:"I don’t think so. I don’t give my students any feedback."},
+  {a:"We send the manager the data.",         b:"I don’t think so. We don’t send the manager the data."}
+];
+
+/* Drill B spoken: A asks (the voice reads the full question; the cue is blurred);
+   B answers with the short form Twee's tag asks for. `vi` holds Twee's Vietnamese cue words.
+   Twee tags item 10 [-]; it is a question, so it reads [−] here like the others. */
+var CONVOS = [
+  {pol:"+", q:"Does he bring his mom money?",            vi:"anh ấy / mang / mẹ / tiền",               want:"−", b:"No, he doesn’t."},
+  {pol:"−", q:"Doesn’t she cook her family dinner?",     vi:"cô ấy / nấu / cho gia đình / bữa tối",   want:"+", b:"Yes, she does."},
+  {pol:"−", q:"Don’t they send the team the data?",      vi:"họ / gửi / nhóm / dữ liệu",              want:"−", b:"No, they don’t."},
+  {pol:"+", q:"Does she send her boss an email?",        vi:"cô ấy / gửi / sếp cô ấy / thư điện tử",  want:"−", b:"No, she doesn’t."},
+  {pol:"−", q:"Don’t I send the team feedback?",         vi:"tôi / gửi / nhóm / phản hồi",            want:"+", b:"Yes, you do."},
+  {pol:"+", q:"Do you send your students some feedback?",vi:"bạn / gửi / học sinh / một vài phản hồi", want:"−", b:"No, I don’t."},
+  {pol:"−", q:"Don’t we send the manager the data?",     vi:"chúng ta / gửi / quản lý / dữ liệu",     want:"−", b:"No, we don’t."},
+  {pol:"−", q:"Don’t we give our students the book?",    vi:"chúng ta / đưa / học sinh / quyển sách", want:"+", b:"Yes, we do."}
+];
+
+var EXIT = [
+  "Tôi nói một câu <b>[+]</b> của riêng mình với hai tân ngữ — người nhận trước, vật sau — <i>I send my team the data.</i>",
+  "Tôi nói điều mình không làm với <b>don’t / doesn’t</b> và động từ nguyên mẫu — <i>She doesn’t send her boss an email.</i>",
+  "Tôi hỏi <b>[Y/N ?]</b> theo cả hai kiểu — <i>Do you…?</i> và <i>Don’t you…?</i> — và trả lời theo sự thật: <i>Yes, I do / No, I don’t</i>.",
+  "Tôi hỏi <b>[Wh- ?]</b> về vật với <b>What</b> — <i>What do you send the team?</i>",
+  "Tôi hỏi về người nhận với <b>Who … to?</b> — <i>Who do you give the book to?</i>"
+];
+
+var NUMW = ["không","một","hai","ba","bốn","năm","sáu","bảy","tám","chín","mười","mười một","mười hai","mười ba","mười bốn","mười lăm"];
+/* the word list's fold button is a control, so its count is English */
+var NUMW_EN = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen"];
+
+/* ================================================================
+   2 · STATE
+   ================================================================ */
+
+var KEY = "e2i-er1-s03";
+var S = {part:1, done:{}, text:{}, chk:{}};
+try{ var raw=localStorage.getItem(KEY); if(raw) S=Object.assign(S,JSON.parse(raw)); }catch(e){}
+function save(){ try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){} }
+function isDone(k){ return !!S.done[k]; }
+function mark(k,v){ if(v){ S.done[k]=1; } else { delete S.done[k]; } save(); refresh(); }
+function graded(k){ return !!S.chk[k]; }
+
+function norm(s){
+  return (s||"").toLowerCase()
+    .replace(/[‘’ʼ]/g,"'").replace(/[–—]/g,"-")
+    .replace(/\bwon't\b/g,"will not").replace(/'ll\b/g," will")
+    .replace(/n't\b/g," not")
+    .replace(/[.,!?;:"“”]/g,"")
+    .replace(/\s+/g," ").trim();
+}
+function matches(v,acc){ var n=norm(v); for(var i=0;i<acc.length;i++){ if(norm(acc[i])===n) return true; } return false; }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function $(s,r){ return (r||document).querySelector(s); }
+function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+function pad(n){ return n<10 ? "0"+n : ""+n; }
+
+/* ================================================================
+   3 · THE EIGHT PARTS
+   ================================================================ */
+
+var PARTS = [
+  {n:1, id:"warm",   short:"Warm-up",       skill:"Phát âm",   color:"var(--listen)", time:"≈ 8 phút",
+   title:"Warm-up — do, does và don’t", goal:"Xếp "+NS+" từ theo nguyên âm của chúng, rồi Check cả bảng một lần.",
+   keys:SORT_WORDS.map(function(w){return "sort-"+w.w;})},
+  {n:2, id:"lab",    short:"Term lab",      skill:"Từ vựng",   color:"var(--read)",   time:"≈ 14 phút",
+   title:"Term lab — "+NUMW[NT]+" từ trong câu của chúng", goal:"Đoán từ từ nghĩa tiếng Việt và câu ví dụ. Đoán sai thì từ đó quay lại ở vòng luyện.",
+   keys:TERMS.map(function(_,i){return "t-"+i;})},
+  {n:3, id:"drillA", short:"Drill A · [+] → [−]", skill:"Ngữ pháp", color:"var(--write)", time:"≈ 14 phút",
+   title:"Drill A — từ [+] khẳng định sang [−] phủ định", goal:DRILL_A.length+" câu viết, rồi "+EXCHANGES.length+" lượt nói — nghe trước, nhìn chữ sau.",
+   keys:DRILL_A.map(function(_,i){return "a-"+i;}).concat(EXCHANGES.map(function(_,i){return "ax-"+i;}))},
+  {n:4, id:"drillB", short:"Drill B · [Y/N ?]",   skill:"Ngữ pháp", color:"var(--write)", time:"≈ 14 phút",
+   title:"Drill B — câu hỏi [Y/N ?] Yes/No", goal:DRILL_B.length+" câu hỏi viết, rồi "+CONVOS.length+" câu trả lời ngắn bằng lời — nghe câu hỏi trước.",
+   keys:DRILL_B.map(function(_,i){return "b-"+i;}).concat(CONVOS.map(function(_,i){return "bx-"+i;}))},
+  {n:5, id:"drillC", short:"Drill C · [Wh- ?]",   skill:"Ngữ pháp", color:"var(--write)", time:"≈ 16 phút",
+   title:"Drill C — câu hỏi [Wh- ?]: What, Who … to, Why", goal:DRILL_C.length+" câu sắp xếp lại, rồi "+DRILL_D.length+" câu hỏi đặt từ các từ gợi ý. What …? và Who … to? là hai câu hỏi chủ đạo của buổi này.",
+   keys:DRILL_C.map(function(_,i){return "c-"+i;}).concat(DRILL_D.map(function(_,i){return "d-"+i;}))},
+  {n:6, id:"decode", short:"Dialogue decode",     skill:"Nghe",     color:"var(--listen)", time:"≈ 12 phút",
+   title:"Dialogue decode — nghe hiểu hội thoại", goal:"Nghe đoạn hội thoại, trình phát đi theo bạn xuống trang, rồi trả lời "+NQ+" câu hỏi theo đúng thứ tự bạn nghe.",
+   keys:COMPREHENSION.map(function(_,i){return "q-"+i;})},
+  {n:7, id:"exit",   short:"Exit ticket",         skill:"Nói",      color:"var(--speak)",  time:"≈ 10 phút",
+   title:"Exit ticket — nói trước khi rời lớp", goal:"Những câu cần nói thành tiếng trước khi kết thúc buổi học.",
+   keys:EXIT.map(function(_,i){return "x-"+i;})},
+  {n:8, id:"report", short:"Session report",      skill:"Tổng kết", color:"var(--terra)",  time:"≈ 2 phút",
+   title:"Session report — tổng kết buổi học", goal:"Bạn đã hoàn thành những gì, từng phần một.",
+   keys:[]}
+];
+var NP = PARTS.length;
+var TOTAL_ITEMS = PARTS.reduce(function(n,p){ return n+p.keys.length; },0);
+function partDone(p){ return p.keys.filter(isDone).length; }
+function byId(id){ for(var i=0;i<PARTS.length;i++){ if(PARTS[i].id===id) return PARTS[i]; } return null; }
+
+/* ================================================================
+   4 · SHARED BUILDERS
+   ================================================================ */
+
+var ICON_SPK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>';
+
+function stage(p, inner){
+  return '<section class="stage" id="p'+p.n+'" data-part="'+p.n+'" style="--c:'+p.color+'" hidden'+
+    ' aria-labelledby="h'+p.n+'">'+
+    '<div class="stage-head">'+
+      '<p class="kicker"><span class="dot"></span><span>Phần '+pad(p.n)+' / '+pad(NP)+'</span>'+
+      '<span class="skill">'+p.skill+'</span><span>'+p.time+'</span></p>'+
+      '<h2 id="h'+p.n+'">'+p.title+'</h2>'+
+      '<p class="goal">'+p.goal+'</p>'+
+      (p.keys.length ? '<div class="stage-meter" data-meter="'+p.id+'">'+
+        '<span class="track"><span class="fill"></span></span><b>0 / '+p.keys.length+'</b></div>' : '')+
+    '</div>'+
+    '<div class="stage-body">'+inner+'</div>'+
+    footStrip(p)+
+  '</section>';
+}
+function footStrip(p){
+  var prev = p.n>1 ? '<button type="button" class="btn quiet" data-go="'+(p.n-1)+'">← '+PARTS[p.n-2].short+'</button>' : '';
+  var next = p.n<PARTS.length ? '<a class="nextlink" href="#p'+(p.n+1)+'" data-go="'+(p.n+1)+'">Next part <small>'+PARTS[p.n].short+'</small> →</a>' : '';
+  return '<div class="stage-foot">'+prev+'<span class="spacer"></span>'+next+'</div>';
+}
+/* A guide box. Every line gets its own row with the mark in its own column,
+   so a wrapped example hangs under its own text — and an inline <b> stays inline.
+   ok:true/false → ✓/✗ · k:"label" → a labelled note · tag:true → a mono form tag.
+   The form row is .ln.form, never .ln.tag: .tag is the global mono chip, and
+   sharing that class shrank the whole row to 12px monospace inside a border. */
+function rule(title, lines){
+  return '<div class="rule"><b>'+title+'</b><div class="ex">'+lines.map(function(l){
+    if(l.k) return '<p class="ln note'+(l.tag?' form':'')+'"><span class="k">'+l.k+'</span><span>'+l.t+'</span></p>';
+    return '<p class="ln"><span class="'+(l.ok?'yes':'no')+'">'+(l.ok?'✓':'✗')+'</span><span>'+l.t+'</span></p>';
+  }).join('')+'</div></div>';
+}
+function checkbar(group, label){
+  return '<div class="checkbar" data-bar="'+group+'">'+
+    '<button type="button" class="btn accent" data-check="'+group+'" disabled>'+label+'</button>'+
+    '<span class="res" data-res="'+group+'"></span></div>';
+}
+/* The voice: speed + voice picker. Default voice = the clearest English voice
+   on the device (see pickClear()); the learner can change it here. */
+function voicebar(){
+  return '<div class="voicebar" data-voicebar>'+
+    '<span class="lbl">Giọng đọc</span>'+
+    '<span class="seg" role="group" aria-label="Tốc độ đọc"><button type="button" data-rate="n" aria-pressed="true">Normal</button><button type="button" data-rate="s" aria-pressed="false">Slow</button></span>'+
+    '<label class="vb-field"><span class="sr-only">Chọn giọng</span><select data-voice aria-label="Chọn giọng đọc"><option value="">Giọng rõ nhất</option></select></label>'+
+    '<p class="vb-note" data-vbnote hidden></p>'+
+  '</div>';
+}
+/* a speaker button: data-speak holds exactly what the voice reads */
+function spk(text, aria, cls){
+  return '<button type="button" class="spk'+(cls?" "+cls:"")+'" data-speak="'+esc(text)+'" aria-label="'+esc(aria)+'">'+ICON_SPK+'</button>';
+}
+/* the blurred line: tap to show, tap again to blur it back */
+function veil(html){
+  return '<button type="button" class="veil" data-veil aria-expanded="false" aria-label="Hiện chữ của câu này">'+
+    '<span class="vt" aria-hidden="true">'+html+'</span><span class="veil-tip">Show text</span></button>';
+}
+
+/* ---------------- part 1 · sort ---------------- */
+function buildWarm(){
+  var pool = SORT_WORDS.map(function(w){
+    return '<button type="button" class="word" data-word="'+w.w+'" aria-pressed="false">'+w.lab+'</button>';
+  }).join("");
+  var buckets = SORT_BUCKETS.map(function(b){
+    return '<div class="bucket" data-bucket="'+b.id+'"><h4>'+b.name+'</h4><span class="sub">'+b.sub+'</span><div class="slot"></div></div>';
+  }).join("");
+  return stage(PARTS[0],
+    '<p class="lede">Buổi này dùng ba dạng của một động từ nhỏ: <b>do</b>, <b>does</b> và <b>don’t</b>. Mỗi dạng có một nguyên âm khác: <i>do</i> /duː/ dài và tròn môi, <i>does</i> /dʌz/ ngắn như <i>cup</i> — không đọc thành /duːz/ — còn <i>don’t</i> /doʊnt/ trượt từ o sang u như <i>go</i> — không đọc thành “đon”. Sửa âm trước; ngữ pháp sẽ theo sau.</p>'+
+    rule("does đọc như cup, don’t đọc như go.",[
+      {ok:true,  t:"<b>do</b> /duː/ — dài, tròn môi, như <i>too, blue</i>."},
+      {ok:true,  t:"<b>does</b> /dʌz/, <b>doesn’t</b> /ˈdʌz.ənt/ — ngắn, như <i>cup, bus</i>."},
+      {ok:false, t:"<b>does</b> đọc thành /duːz/ — nguyên âm của <i>do</i> không đi theo sang <i>does</i>."},
+      {ok:true,  t:"<b>don’t</b> /doʊnt/ — nguyên âm đôi, như <i>go, no</i>; đọc thành “đon” là mất âm /oʊ/."},
+      {k:"Ghi nhớ", t:"Do you…? /duː/ · Does she…? /dʌz/ · I don’t /doʊnt/ · She doesn’t /ˈdʌz.ənt/"}
+    ])+
+    '<p class="hint">Chạm vào một từ, rồi chạm vào cột có nguyên âm đúng. Chạm vào từ đã xếp để đưa nó về chỗ cũ. <b>Không có gì bị chấm cho tới khi bạn bấm Check.</b></p>'+
+    '<div class="pool" id="sort-pool">'+pool+'</div>'+
+    '<div class="sort-grid" id="sort-grid">'+buckets+'</div>'+
+    checkbar("sort","Check the sort")+
+    '<div class="toolbar"><button type="button" class="btn quiet sm" id="sort-show">Show the answers</button></div>');
+}
+
+/* ---------------- part 2 · term lab (immediate by design) ---------------- */
+/* what the voice reads for a word-list entry: no markup, no form tag, no (sb)/(sth) markers */
+function spoken(t){
+  return String(t).replace(/<[^>]+>/g,"").replace(/^\s*\[[^\]]*\]\s*/,"")
+    .replace(/\ba \/ an\b/g,"a or an").replace(/\((sb|sth|sb\/sth|sth\/sb|somebody|something)\)/gi,"")
+    .replace(/\s+/g," ").trim();
+}
+function vocabRows(){
+  /* every term and every example has its own ▶ (Khoa, 25 Sept 2026): the browser voice, never a recording.
+     Markup follows the word-list template: .tw > .tn + .ipa, then the ▶ */
+  return VOCAB.map(function(v){ var term=spoken(v[1]), ex=spoken(v[4]);
+    return '<tr><td class="t"><span class="term"><span class="tw"><span class="tn" lang="en">'+v[1]+'</span>'+
+      '<span class="ipa" lang="'+IPA_LANG+'">'+v[3]+'</span></span>'+spk(term,"Listen: "+term)+'</span></td>'+
+      '<td class="g">'+v[2]+'</td>'+
+      '<td class="ex"><span class="exrow"><span lang="en">'+v[4]+'</span>'+spk(ex,"Listen: "+ex)+'</span></td></tr>'; }).join("");
+}
+function listLabel(){ return "Show all "+(NUMW_EN[VOCAB.length]||VOCAB.length)+" as a list"; }
+function buildLab(){
+  return stage(PARTS[1],
+    '<p class="lede">Mỗi thẻ cho bạn nghĩa tiếng Việt và câu ví dụ có chỗ trống. Chọn đúng thì từ đó là của bạn; chọn sai thì nó quay lại ở vòng luyện. Đây là phần duy nhất chấm ngay khi bạn chọn — vì đoán chính là cách học ở đây.</p>'+
+    '<div class="lab" id="lab">'+
+      '<div class="lab-top"><span id="lab-count">1 / '+NT+'</span>'+
+      '<span><span class="known">Đã biết <b id="lab-known">0</b></span> · <span class="todrill">Cần luyện <b id="lab-drill">0</b></span></span></div>'+
+      '<div class="ticks" id="lab-ticks"></div><div id="lab-card"></div>'+
+    '</div>'+
+    '<div class="toolbar"><button type="button" class="btn quiet sm" id="lab-list" aria-expanded="false" aria-controls="lab-table">'+listLabel()+'</button>'+
+    '<button type="button" class="btn quiet sm" id="lab-restart">Start the lab again</button></div>'+
+    '<div id="lab-table" hidden>'+
+      voicebar()+
+      '<table class="vocab"><thead><tr><th>Term · IPA</th><th>Nghĩa tiếng Việt</th><th>Trong bốn dạng câu</th></tr></thead><tbody>'+vocabRows()+'</tbody></table>'+
+      '<div class="toolbar"><button type="button" class="btn quiet sm" id="copy-vocab">Copy the table as plain text</button>'+
+      '<span class="hint">Dán thẳng vào Quizlet, Google Docs hoặc tài liệu phát tay.</span></div>'+
+      '<textarea id="vocab-out" class="export" hidden aria-label="Bảng từ vựng dạng chữ thường"></textarea>'+
+    '</div>'+
+    rule("S + V + người nhận + vật — người trước, vật sau.",[
+      {ok:true,  t:"I give <b>John</b> <b>the apple</b>. · She sends <b>her boss</b> <b>an email</b>."},
+      {ok:false, t:"I give <b>the apple John</b>. — vật đứng trước thì phải có <i>to</i>: I give the apple <b>to</b> John (buổi 5)."},
+      {ok:false, t:"I give <b>to John</b> the apple. — người nhận đứng ngay sau động từ thì không có <i>to</i>."},
+      {k:"Động từ", t:"he / she / it → <b>gives, sends, buys, brings</b> · I / you / we / they → <b>give, send, buy, bring</b>"}
+    ])+
+    '<div class="block-head"><h3>Nối từ với nghĩa — đua với đồng hồ</h3>'+
+    '<span class="sub">Quizlet Match — kéo mỗi từ vào đúng nghĩa của nó, càng nhanh càng tốt. '+
+    'Phần này không tính điểm trên trang: đây là vòng tốc độ, và đồng hồ chính là điểm của bạn.</span></div>'+
+    '<div class="embed"><iframe id="quizlet" title="Quizlet Match — từ vựng của buổi học" '+
+    'loading="lazy" allowfullscreen></iframe></div>'+
+    '<p class="hint"><a href="'+QUIZLET_PAGE+'" target="_blank" rel="noopener">Mở bộ thẻ trên Quizlet</a>'+
+    ' nếu bảng không hiện, hoặc để luyện thêm Learn và Test với cùng bộ từ.</p>');
+}
+
+/* ---------------- parts 3–5 · written drills ---------------- */
+function drillList(key, items, mono){
+  return items.map(function(it,i){
+    var start = it.start ? ' <span class="tag">start with '+it.start+'</span>' : "";
+    var cue = mono ? '<span class="cue">'+it.cue+'</span>' : it.cue;
+    if(it.pol) cue = '<span class="polchip'+(it.pol==="−"?" neg":"")+'" title="'+(it.pol==="−"?"Câu hỏi phủ định: Isn’t it …?":"Câu hỏi trung lập: Is it …?")+'">['+it.pol+']</span> '+cue;
+    var vi = it.vi ? '<span class="cue-vi">'+it.vi+'</span>' : "";
+    return '<div class="item" data-item="'+key+'-'+i+'">'+
+      '<div class="prompt"><span class="idx">'+(i+1)+'</span><span>'+cue+start+vi+'</span></div>'+
+      '<div class="answer-row"><label class="sr-only" for="'+key+'-'+i+'">Câu '+(i+1)+'</label>'+
+      '<input type="text" id="'+key+'-'+i+'" data-text="'+key+'-'+i+'" data-answer="'+key+'-'+i+
+      '" data-bank="'+key+'" placeholder="Câu trả lời của bạn…" autocomplete="off" autocapitalize="sentences" spellcheck="false" lang="en"></div>'+
+      '<div class="verdict" data-verdict="'+key+'-'+i+'"><span class="mark"></span><span class="model"></span></div>'+
+      (it.trap ? '<div class="trap" hidden>'+it.trap+'</div>' : '')+
+    '</div>';
+  }).join("");
+}
+/* one written bank: the list, its deferred check bar and its tally — every count read off the array */
+function bank(key, items, mono){
+  return '<div class="drill">'+drillList(key,items,mono)+'</div>'+
+    checkbar(key,"Check my "+items.length+" answers")+
+    '<div class="toolbar"><button type="button" class="btn quiet sm" data-showall="'+key+'">Show the answers</button>'+
+    '<span class="spacer"></span><span class="tally" data-tally="'+key+'">0 / '+items.length+' correct</span></div>';
+}
+var BANK_HINT = '<p class="hint">Làm hết các câu trước — nút Check chỉ mở khi dòng nào cũng đã có câu trả lời. Bấm Enter để xuống dòng tiếp theo.</p>';
+function turn(who,pol,text){
+  return '<div class="turn"><span class="who-badge '+who+'">'+who.toUpperCase()+'</span><span>'+
+    (pol ? '<span class="pol">'+pol+'</span>' : '')+text+'</span></div>';
+}
+/* A's voiced line: the speaker button first, then the tag, then the words under a blur */
+function voicedA(pol, say, html, hint){
+  return '<div class="turn voiced"><span class="who-badge a">A</span>'+
+    spk(say,"Nghe câu của A")+
+    (pol ? '<span class="pol">'+pol+'</span>' : '')+(hint ? veilStack(hint, html) : veil(html))+'</div>';
+}
+/* hint above the question, each under its own blur, revealed one at a time */
+function veilStack(hint, html){
+  return '<button type="button" class="veil stack" data-veil data-stage="0" aria-expanded="false" aria-label="Hiện gợi ý">'+
+    '<span class="vrow vh"><span class="vt" aria-hidden="true">'+hint+'</span></span>'+
+    '<span class="vrow vq"><span class="vt" aria-hidden="true" lang="en">'+html+'</span></span>'+
+    '<span class="veil-tip">Show hint</span></button>';
+}
+/* A spoken item reads like a two-line script: the number sits quietly in a
+   gutter, A and B are the only two speaker marks, and B's line starts as an
+   instruction — never as a blurred answer, which leaks its length and can be
+   read by anyone who leans in. `cue(it)` says what B has to produce. A's line
+   is voiced and blurred (Khoa, Sept 2026): listen first, look only if needed. */
+function sayList(key, items, render, cue){
+  return items.map(function(it,i){
+    var id = key+"-"+i;
+    return '<div class="item say-item" data-item="'+id+'">'+
+      '<span class="idx">'+(i+1)+'</span>'+
+      '<div class="say-a">'+render(it)+'</div>'+
+      '<div class="say-row"><span class="who-badge b">B</span>'+
+        '<button type="button" class="ans" data-say="'+id+'" aria-label="Hiện câu trả lời mẫu">'+
+          '<span class="ph">'+cue(it)+'</span><span class="tx" lang="en">'+it.b+'</span></button>'+
+        '<span class="say-btns">'+
+          '<span data-bspk="'+id+'" hidden>'+spk(it.b,"Nghe câu trả lời mẫu","sm")+'</span>'+
+          '<button type="button" class="btn sm" data-sayreveal="'+id+'">Reveal</button>'+
+          '<button type="button" class="btn quiet sm" data-said="'+id+'" hidden>I said it</button>'+
+          '<button type="button" class="btn quiet sm" data-again="'+id+'" hidden>Again</button>'+
+        '</span></div></div>';
+  }).join("");
+}
+function sayFoot(key,total){
+  return '<div class="toolbar"><button type="button" class="btn quiet sm" data-revealall="'+key+'">Reveal all '+total+'</button>'+
+    '<button type="button" class="btn quiet sm" data-hideall="'+key+'">Hide them again</button>'+
+    '<span class="spacer"></span><span class="tally" data-tally="'+key+'">0 / '+total+' said</span></div>';
+}
+function buildDrill(p, key, items, mono, intro, extra, note){
+  return stage(p, intro + BANK_HINT + bank(key, items, mono) + (extra||"") + (note||""));
+}
+function buildExchangeBlock(){
+  return '<div class="block-head"><h3>Phản xạ nói: phản bác ở dạng [−]</h3>'+
+    '<span class="sub"><b>Bài nói — không cần gõ.</b> Bấm loa để nghe A nói một câu [+]. Bạn là B: không đồng ý, bắt đầu bằng <i>I don’t think so.</i> rồi nói lại ở dạng [−] với <b>don’t / doesn’t</b> — thành tiếng, thật nhanh — rồi mới bấm Reveal để tự kiểm tra. Câu của A đang bị làm mờ; chỉ chạm vào để xem khi bạn thật sự cần.</span></div>'+
+    voicebar()+
+    '<div class="worked"><span class="w">Hai ví dụ mẫu</span>'+
+    turn("a","[+]","I give my friend a book.")+
+    turn("b","[−]","I don’t think so. You <b>don’t give</b> your friend a book.")+
+    turn("a","[+]","You buy your mom a gift.")+
+    turn("b","[−]","I don’t think so. I <b>don’t buy</b> my mom a gift.")+
+    '</div>'+
+    '<div class="drill">'+sayList("ax",EXCHANGES,
+      function(it){ return voicedA("[+]", it.a, it.a); },
+      function(){ return 'Đến lượt bạn — nói lại ở dạng <b>[−]</b>'; })+'</div>'+
+    sayFoot("ax",EXCHANGES.length)+
+    '<p class="hint">Nói trước, rồi mới Reveal. <i>he / she</i> đi với <b>doesn’t</b>; <i>I / you / we / they</i> đi với <b>don’t</b>; động từ về nguyên mẫu. Khi A nói <i>I … my</i>, B đổi thành <i><b>You … your</b></i>; khi A nói <i>You … your</i>, B đổi thành <i><b>I … my</b></i>. Khi nói, dùng <b>don’t / doesn’t</b> — <i>do not</i> đầy đủ nghe nặng nề.</p>';
+}
+function buildConvoBlock(){
+  return '<div class="block-head"><h3>Phản xạ nói: trả lời ngắn Yes / No</h3>'+
+    '<span class="sub"><b>Bài nói — không cần gõ.</b> Bấm loa để nghe trọn câu hỏi của A. Bạn là B: trả lời thành tiếng bằng câu trả lời ngắn — <i>Yes, S + do / does</i> / <i>No, S + don’t / doesn’t</i> — theo gợi ý Yes hay No. Gợi ý của A đang bị làm mờ; chỉ chạm vào để xem khi bạn cần.</span></div>'+
+    voicebar()+
+    '<div class="worked"><span class="w">Hai ví dụ mẫu</span>'+
+    turn("a","[+]","<span class=\"cue-vi top\">tôi / đưa / bạn / quyển sách</span><br>Do I give my friend the book?")+
+    turn("b","[+]","<b>Yes, you do.</b> You give your friend the book.")+
+    turn("a","[−]","<span class=\"cue-vi top\">bạn / mua / mẹ / quà</span><br>Don’t you buy your mom a gift?")+
+    turn("b","[−]","<b>No, I don’t.</b> I don’t buy my mom a gift.")+
+    '</div>'+
+    '<div class="drill">'+sayList("bx",CONVOS,
+      function(it){ return voicedA("["+it.pol+"]", it.q, it.q, it.vi); },
+      function(it){ return 'Đến lượt bạn — trả lời <b>'+(it.want==="+"?"Yes":"No")+'</b>, dạng ngắn'; })+'</div>'+
+    sayFoot("bx",CONVOS.length)+
+    '<p class="hint">Trả lời ngắn giữ <b>do / does</b> và bỏ động từ — ✗ <i>Yes, I give.</i> Với câu hỏi phủ định <i>Don’t you…?</i>, trả lời theo <b>sự thật</b>, không theo hình thức câu hỏi: có → <i>Yes, I do</i>; không → <i>No, I don’t</i>. A hỏi <i>I</i> thì B trả lời <i>you</i>; A hỏi <i>you</i> thì B trả lời <i>I</i>.</p>';
+}
+
+/* ---------------- part 6 · decode ---------------- */
+/* the scene picture: an <img> with no src until the part opens (initScene). If Drive's
+   thumbnail URL fails, it falls back to the Drive preview frame Khoa pasted. */
+function sceneId(){ var m=String(SCENE_IMG).match(/\/d\/([\w-]+)/); return m ? m[1] : String(SCENE_IMG).trim(); }
+function sceneFigure(){
+  if(!SCENE_IMG) return "";
+  return '<figure class="scene">'+
+    '<div class="scene-frame" id="scene-frame"><img id="scene-img" alt="Hình minh họa tình huống của đoạn hội thoại" decoding="async"></div>'+
+    '<figcaption>Hình không hiện? <a href="https://drive.google.com/file/d/'+sceneId()+'/view" target="_blank" rel="noopener">Mở hình trong tab mới ↗</a></figcaption>'+
+  '</figure>';
+}
+function buildDecode(){
+  var qs = COMPREHENSION.map(function(q,i){
+    return '<div class="qa" data-qa="'+i+'"><div class="q" lang="en"><b>'+(i+1)+'.</b> '+q[0]+'</div>'+
+      '<textarea id="q-'+i+'" data-text="q-'+i+'" data-open="q-'+i+'" placeholder="Câu trả lời của bạn…" aria-label="Câu trả lời cho câu hỏi '+(i+1)+'" lang="en"></textarea>'+
+      '<div class="model-ans" data-model="'+i+'" lang="en">'+q[1]+'</div>'+
+      '<div class="toolbar" data-selfrow="'+i+'" hidden>'+
+      '<button type="button" class="btn sm" data-selfmark="'+i+'">I had this</button>'+
+      '<button type="button" class="btn quiet sm" data-review="'+i+'">Review again</button></div>'+
+    '</div>';
+  }).join("");
+  var script = DIALOGUE.map(function(L){
+    return '<div class="line"><div class="who">'+L[0]+'</div><div class="txt" lang="en">'+L[1]+'</div></div>';
+  }).join("");
+  return stage(PARTS[5],
+    '<div class="scn">'+
+      '<div class="audio-sentinel" aria-hidden="true"></div>'+
+      '<div class="audio is-loading" id="audio">'+
+        '<div class="audio-dock" id="audio-dock">'+
+          '<div class="transport" id="transport">'+
+            '<button type="button" class="tbtn play" id="t-play" aria-label="Play the dialogue">'+
+              '<svg viewBox="0 0 24 24" aria-hidden="true"><path id="t-icon" d="M8 5v14l11-7z"></path></svg><span class="spin" aria-hidden="true"></span></button>'+
+            '<span class="time" id="t-now">0:00</span>'+
+            '<div class="seek" id="seek" role="slider" tabindex="0" aria-label="Vị trí phát — kéo để tua, phím mũi tên nhảy 5 giây" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">'+
+              '<span class="rail-bg"></span><span class="rail-fill" id="seek-fill"></span><span class="knob" id="seek-knob"></span>'+
+            '</div>'+
+            '<span class="time" id="t-dur">—:—</span>'+
+            '<span class="qchip" id="qchip" title="Số câu đã trả lời">0/'+NQ+'</span>'+
+          '</div>'+
+          '<iframe class="sc-frame" id="sc-frame" title="Dialogue audio" allow="autoplay" scrolling="no" frameborder="no"></iframe>'+
+          '<p class="sc-tap">Nhấn ▶ trong trình phát SoundCloud ở trên để nghe. Sau lần đầu, thanh phát gọn sẽ quay lại.</p>'+
+          '<p class="credit"><a href="'+SC_USER+'" target="_blank" rel="noopener">English2impact</a> · '+
+          '<a href="'+SC_PAGE+'" target="_blank" rel="noopener">'+SC_TITLE+'</a></p>'+
+        '</div>'+
+      '</div>'+
+      '<p class="lede"><b>Trước khi nghe:</b> '+SCENE+'</p>'+
+      sceneFigure()+
+      '<p class="lede">Nghe một lần, không nhìn chữ, rồi trả lời. '+NUMW[NQ].charAt(0).toUpperCase()+NUMW[NQ].slice(1)+' câu hỏi đi theo đúng thứ tự của đoạn hội thoại — câu 1 được trả lời đầu tiên, câu '+NQ+' sau cùng. Trình phát đi theo bạn khi cuộn trang — kéo thanh phát về sau để nghe lại câu bạn bỏ lỡ.</p>'+
+      '<div class="drill">'+qs+'</div>'+
+      checkbar("decode","Show the "+NQ+" model answers")+
+    '</div>'+
+    '<div class="toolbar"><button type="button" class="btn quiet sm" id="show-script" aria-expanded="false" aria-controls="transcript">Show the transcript</button>'+
+    '<span class="hint">Chỉ đọc sau khi đã trả lời hết '+NQ+' câu.</span></div>'+
+    '<div class="rev-panel" id="transcript"><div class="dlg">'+script+'</div></div>');
+}
+
+/* ---------------- part 7 · exit ---------------- */
+function buildExit(){
+  var items = EXIT.map(function(t,i){
+    return '<label class="checkline" data-check-line="x-'+i+'"><input type="checkbox" data-flag="x-'+i+'"><span>'+t+'</span></label>';
+  }).join("");
+  return stage(PARTS[6],
+    '<p class="lede">Dùng từ của riêng bạn, nói thành tiếng, dùng <b>don’t / doesn’t</b> như khi nói thật, và giữ thứ tự <b>người nhận → vật</b>. Tick từng dòng khi bạn đã nói được nó mà không phải dịch trong đầu.</p>'+
+    '<div class="drill">'+items+'</div>'+
+    rule("Chuỗi bốn dạng — một câu, bốn cách nói.",[
+      {k:"[+]",     tag:true, t:"I send the team the data."},
+      {k:"[−]",     tag:true, t:"I do not send the team the data. <span class=\"say\">viết</span> · I don’t send the team the data. <span class=\"say\">nói</span>"},
+      {k:"[Y/N ?]", tag:true, t:"Do you send the team the data? · Don’t you send the team the data?"},
+      {k:"[Wh- ?]", tag:true, t:"What do you send the team?"}
+    ]));
+}
+
+/* ---------------- part 8 · report ---------------- */
+function buildReport(){
+  var scored = PARTS.filter(function(p){return p.keys.length;});
+  var tiles = scored.map(function(p){
+    return '<div class="rep-tile" data-tile="'+p.id+'"><div class="k">'+p.n+' · '+p.short+'</div>'+
+      '<div class="v" data-tilev="'+p.id+'">0/'+p.keys.length+'</div></div>';
+  }).join("");
+  return stage(PARTS[7],
+    '<div class="report"><p class="hint">'+NUMW[scored.length].charAt(0).toUpperCase()+NUMW[scored.length].slice(1)+' phần, '+TOTAL_ITEMS+' mục được tính. Một ô chuyển xanh khi mọi mục trong phần đó đã xong.</p>'+
+    '<div class="report-grid">'+tiles+'</div></div>'+
+    '<footer class="foot"><span>English2impact · English Reflex 1 · Session 03 — I give John the apple</span>'+
+    '<span>Bạn giỏi nghề. Giờ giỏi cả tiếng Anh.</span></footer>');
+}
+
+/* ================================================================
+   5 · RENDER
+   ================================================================ */
+
+var main = document.getElementById("lesson");
+main.innerHTML =
+  buildWarm()+
+  buildLab()+
+  buildDrill(PARTS[2],"a",DRILL_A,false,
+    '<p class="lede">Muốn phủ định, thêm <b>don’t</b> (I / you / we / they) hoặc <b>doesn’t</b> (he / she / it) trước động từ, và đưa động từ về nguyên mẫu. Chủ ngữ, người nhận và vật giữ nguyên chỗ: <i>I send the team the data</i> → <i>I don’t send the team the data</i>. Viết <i>do not / does not</i> hay <i>don’t / doesn’t</i> đều được; khi nói, dùng dạng rút gọn.</p>'+
+    rule("Thêm don’t / doesn’t — động từ về nguyên mẫu.",[
+      {k:"[+]", tag:true, t:"She <b>gives</b> me a book."},
+      {k:"[−]", tag:true, t:"She <b>does not give</b> me a book. <span class=\"say\">viết</span> · She <b>doesn’t give</b> me a book. <span class=\"say\">nói · doesn’t = does not</span>"},
+      {ok:false, t:"She doesn’t <b>gives</b> me a book. — sau doesn’t, động từ luôn nguyên mẫu."},
+      {ok:false, t:"She <b>don’t</b> give me a book. — he / she / it đi với doesn’t."},
+      {k:"Ghi nhớ", t:"Trong câu phủ định, <b>some</b> thường đổi thành <b>any</b>: You don’t give your students <b>any</b> feedback."}
+    ]),
+    buildExchangeBlock())+
+  buildDrill(PARTS[3],"b",DRILL_B,true,
+    '<p class="lede">Đưa <b>Do / Does</b> lên đầu câu, động từ về nguyên mẫu; người nhận và vật giữ nguyên thứ tự. Nhãn phía trước cho biết kiểu câu hỏi: <b>[+]</b> là câu hỏi trung lập — <i>Does she …?</i>; <b>[−]</b> là câu hỏi phủ định — <i>Doesn’t she …?</i> — dùng khi bạn nghĩ là có và muốn xác nhận lại. Dòng tiếng Việt bên dưới là nghĩa của câu hỏi cần viết.</p>'+
+    rule("Hai kiểu câu hỏi Yes/No.",[
+      {k:"[+]", tag:true, t:"<b>Does</b> she <b>send</b> her boss an email? · <b>Do</b> we send the manager the data?"},
+      {k:"[−]", tag:true, t:"<b>Doesn’t</b> she send her boss an email? <span class=\"say\">nói</span> · <b>Does</b> she <b>not</b> send her boss an email? <span class=\"say\">trang trọng</span>"},
+      {ok:false, t:"<b>Does not she</b> send her boss an email?"},
+      {ok:false, t:"Doesn’t she <b>sends</b> her boss an email? — sau do / does / don’t / doesn’t, động từ luôn nguyên mẫu."},
+      {k:"Trả lời", t:"theo sự thật, không theo dạng câu hỏi: Yes, she does. · No, she doesn’t."}
+    ]),
+    buildConvoBlock())+
+  buildDrill(PARTS[4],"c",DRILL_C,true,
+    '<p class="lede">Từ câu hỏi Yes/No, thay phần thông tin muốn hỏi bằng một từ để hỏi và đưa nó lên đầu câu; giữ <b>do / does</b> + động từ nguyên mẫu. <b>What</b> hỏi vật, <b>Who … to?</b> hỏi người nhận, <b>Why</b> hỏi lý do. Khi hỏi người nhận, <b>to</b> về cuối câu.</p>'+
+    rule("Từ câu hỏi Yes/No sang câu hỏi Wh-.",[
+      {k:"Yes/No", tag:true, t:"Does she send <b>her boss</b> <b>an email</b>?"},
+      {k:"What",   tag:true, t:"<b>What</b> does she send her boss? — hỏi vật; người nhận vẫn đứng sau động từ."},
+      {k:"Who…to", tag:true, t:"<b>Who</b> does she send an email <b>to</b>? — hỏi người nhận; to về cuối câu."},
+      {k:"Why",    tag:true, t:"<b>Why</b> does she cook her family dinner? — hỏi lý do; phần còn lại giữ nguyên."},
+      {ok:false, t:"Who does she send an email? — thiếu <b>to</b> ở cuối."},
+      {ok:false, t:"What does she <b>sends</b> her boss? — sau <i>does</i> là nguyên mẫu."}
+    ])+
+    '<div class="block-head"><h3>Sắp xếp lại thành câu hỏi</h3><span class="sub">Gõ lại cả câu theo đúng thứ tự, có dấu hỏi ở cuối.</span></div>',
+    '<div class="block-head"><h3>Đặt câu hỏi Wh- từ các từ gợi ý</h3>'+
+    '<span class="sub">Mỗi dòng cho bạn từ để hỏi, chủ ngữ và vài từ khóa. Thêm do / does, the, a, to và từ sở hữu cho đủ câu.</span></div>'+
+    bank("d",DRILL_D,true))+
+  buildDecode()+buildExit()+buildReport();
+
+/* ================================================================
+   6 · PROGRESS
+   ================================================================ */
+
+var toc = document.getElementById("toc");
+var sheetToc = document.getElementById("sheet-toc");
+function tocHTML(){
+  return PARTS.map(function(p){
+    return '<li><a href="#p'+p.n+'" data-toc="'+p.id+'" data-go="'+p.n+'">'+
+      '<span class="n">'+(p.n===NP?"★":p.n)+'</span><span class="t">'+p.short+'</span>'+
+      '<span class="cnt" data-cnt="'+p.id+'">'+(p.keys.length? "0/"+p.keys.length : p.time)+'</span></a></li>';
+  }).join("");
+}
+toc.innerHTML = tocHTML();
+sheetToc.innerHTML = tocHTML();
+
+function refresh(){
+  var sum=0, full=0;
+  PARTS.forEach(function(p){
+    if(!p.keys.length) return;
+    var d=partDone(p), t=p.keys.length;
+    sum += d/t; if(d===t) full++;
+    $$('[data-cnt="'+p.id+'"]').forEach(function(el){ el.textContent=d+"/"+t; });
+    $$('[data-toc="'+p.id+'"]').forEach(function(el){ el.classList.toggle("done", d===t); });
+    var m=$('[data-meter="'+p.id+'"]');
+    if(m){ m.querySelector(".fill").style.width=(d/t*100)+"%"; m.querySelector("b").textContent=d+" / "+t; m.classList.toggle("done",d===t); }
+    var tv=$('[data-tilev="'+p.id+'"]');
+    if(tv){ tv.textContent=d+"/"+t; tv.parentElement.classList.toggle("done", d===t); }
+  });
+  var scored = PARTS.filter(function(p){return p.keys.length;}).length;
+  var pct=Math.round(sum/scored*100), C=2*Math.PI*18;
+  document.getElementById("ring-bar").setAttribute("stroke-dasharray",(C*pct/100).toFixed(1)+" "+C.toFixed(1));
+  document.getElementById("ring-num").textContent=pct+"%";
+  document.getElementById("prog-sub").textContent=full+"/"+scored+" phần hoàn thành";
+  var ss=document.getElementById("sheet-sub"); if(ss) ss.textContent=full+"/"+scored+" phần hoàn thành";
+  var qc=document.getElementById("qchip");
+  if(qc){
+    var qn=COMPREHENSION.filter(function(_,i){return isDone("q-"+i);}).length;
+    qc.textContent=qn+"/"+NQ; qc.title="Đã trả lời "+qn+"/"+NQ+" câu";
+  }
+}
+
+/* ================================================================
+   7 · NAVIGATION — one roadmap, two shapes
+   ================================================================ */
+
+var stages = $$(".stage");
+var btnPrev=document.getElementById("btn-prev"), btnNext=document.getElementById("btn-next");
+var btnParts=document.getElementById("btn-parts"), sheet=document.getElementById("partsheet");
+var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function updateNav(){
+  var n=S.part, p=PARTS[n-1];
+  btnPrev.disabled = n<=1;
+  btnNext.disabled = n>=PARTS.length;
+  btnPrev.setAttribute("aria-label", n>1 ? "Phần trước: "+PARTS[n-2].short : "Không có phần trước");
+  btnNext.setAttribute("aria-label", n<PARTS.length ? "Phần sau: "+PARTS[n].short : "Đây là phần cuối");
+  document.getElementById("parts-num").textContent = n+"/"+PARTS.length;
+  document.getElementById("parts-label").textContent = p.short;
+  $$("[data-toc]").forEach(function(a){ a.classList.toggle("active", a.getAttribute("data-toc")===p.id); });
+}
+function goTo(n, opts){
+  opts = opts || {};
+  n = Math.min(Math.max(1,n|0), PARTS.length);
+  stages.forEach(function(s){ s.hidden = (+s.getAttribute("data-part")!==n); });
+  S.part=n; save(); updateNav();
+  if(typeof stopAll==="function" && synth) stopAll();
+  if(opts.push!==false){ try{ history.pushState({p:n},"","#p"+n); }catch(e){} }
+  if(opts.scroll!==false){
+    var y = n===1 ? 0 : Math.max(0, main.getBoundingClientRect().top + window.pageYOffset - 12);
+    window.scrollTo({top:y, behavior: reduced ? "auto" : "smooth"});
+  }
+  if(n===2) initQuizlet();
+  if(n===5) warmAudio();
+  if(n===6){ initScene(); initAudio(); }
+  if(measureDock) measureDock();
+  var h=$('.stage:not([hidden]) h2'); if(h && opts.focus!==false){ h.setAttribute("tabindex","-1"); h.focus({preventScroll:true}); }
+}
+btnPrev.onclick=function(){ goTo(S.part-1); };
+btnNext.onclick=function(){ goTo(S.part+1); };
+
+/* the Parts dropdown — a <dialog>, placed against its button */
+function placeSheet(){
+  var r=btnParts.getBoundingClientRect();
+  if(!r.width){ sheet.style.left="50%"; sheet.style.top="50%"; sheet.style.transform="translate(-50%,-50%)"; return; }
+  sheet.style.transform="none";
+  var w=sheet.offsetWidth, h=sheet.offsetHeight, gap=8;
+  var left=Math.min(Math.max(8, r.left+r.width/2-w/2), window.innerWidth-w-8);
+  var top = r.top-h-gap;
+  if(top < 8) top = Math.min(r.bottom+gap, window.innerHeight-h-8);
+  sheet.style.left=left+"px"; sheet.style.top=Math.max(8,top)+"px";
+}
+btnParts.onclick=function(){
+  if(sheet.open){ sheet.close(); return; }
+  sheet.showModal(); btnParts.setAttribute("aria-expanded","true"); placeSheet();
+};
+sheet.addEventListener("close",function(){ btnParts.setAttribute("aria-expanded","false"); });
+sheet.addEventListener("click",function(e){ if(e.target===sheet) sheet.close(); });
+document.getElementById("sheet-close").onclick=function(){ sheet.close(); btnParts.focus(); };
+window.addEventListener("resize",function(){ if(sheet.open) placeSheet(); });
+window.addEventListener("scroll",function(){ if(sheet.open) placeSheet(); },{passive:true});
+
+document.addEventListener("click",function(e){
+  var g=e.target.closest("[data-go]"); if(!g) return;
+  e.preventDefault();
+  if(sheet.open) sheet.close();
+  goTo(+g.getAttribute("data-go"));
+});
+window.addEventListener("popstate",function(){
+  var m=/^#p(\d+)$/.exec(location.hash||"");
+  if(m) goTo(+m[1],{push:false});
+});
+document.addEventListener("keydown",function(e){
+  if(!e.altKey) return;
+  if(e.key==="ArrowRight"){ goTo(S.part+1); }
+  else if(e.key==="ArrowLeft"){ goTo(S.part-1); }
+});
+
+var toastEl=document.getElementById("toast"), toastT=null;
+function toast(msg){
+  toastEl.textContent=msg; toastEl.classList.add("show");
+  clearTimeout(toastT); toastT=setTimeout(function(){ toastEl.classList.remove("show"); },2200);
+}
+
+/* ================================================================
+   8 · DEFERRED CHECKING — nothing is marked until Check is pressed
+   ================================================================ */
+
+var BANKS={a:DRILL_A,b:DRILL_B,c:DRILL_C,d:DRILL_D};
+
+function paintItem(k,i){
+  var it=BANKS[k][i], key=k+"-"+i;
+  var inp=$('[data-answer="'+key+'"]'), box=$('[data-item="'+key+'"]'), v=$('[data-verdict="'+key+'"]');
+  if(!inp||!box||!v) return;
+  var shown=!!S.chk["show-"+k], isG=graded(key), good=isDone(key);
+  box.classList.toggle("ok", isG&&good);
+  box.classList.toggle("no", isG&&!good);
+  inp.readOnly = isG&&good;
+  if(isG||shown){
+    v.classList.add("show");
+    v.querySelector(".mark").textContent = isG ? (good ? "✓ đúng" : "✗ chưa đúng — so với câu mẫu") : "";
+    v.classList.toggle("is-ok", isG&&good);
+    v.classList.toggle("is-no", isG&&!good);
+    v.querySelector(".model").innerHTML = (shown || (isG&&!good)) ? it.acc[0] : "";
+  } else {
+    v.classList.remove("show","is-ok","is-no");
+    v.querySelector(".mark").textContent=""; v.querySelector(".model").innerHTML="";
+  }
+  var trap=box.querySelector(".trap"); if(trap) trap.hidden = !(isG&&!good) && !shown;
+}
+function bankState(k){
+  var bank=BANKS[k], pending=[], filled=0, correct=0, typed=0;
+  bank.forEach(function(_,i){
+    var key=k+"-"+i, inp=$('[data-answer="'+key+'"]');
+    var has = inp && inp.value.trim()!=="";
+    if(has) typed++;
+    if(graded(key)){ if(isDone(key)) correct++; }
+    else { pending.push(i); if(has) filled++; }
+  });
+  return {pending:pending, filled:filled, typed:typed, correct:correct, total:bank.length};
+}
+function updateBank(k){
+  var st=bankState(k);
+  var btn=$('[data-check="'+k+'"]'), res=$('[data-res="'+k+'"]'), tal=$('[data-tally="'+k+'"]');
+  if(btn){
+    var everGraded = st.pending.length < st.total;
+    btn.disabled = st.pending.length===0 || st.filled < st.pending.length;
+    btn.textContent = st.pending.length===0 ? "All "+st.total+" checked"
+      : (st.filled < st.pending.length ? st.typed+" of "+st.total+" answered"
+      : (everGraded ? "Check the "+st.pending.length+" you fixed" : "Check my "+st.total+" answers"));
+  }
+  if(res){
+    var done = st.total - st.pending.length;
+    res.textContent = done ? st.correct+" / "+st.total+" correct" : "";
+    res.className = "res"+(done ? (st.correct===st.total ? " good" : " part") : "");
+  }
+  if(tal){ tal.textContent = st.correct+" / "+st.total+" correct"; tal.classList.toggle("good", st.correct===st.total); }
+}
+function paintBank(k){ BANKS[k].forEach(function(_,i){ paintItem(k,i); }); updateBank(k); }
+function checkBank(k){
+  var st=bankState(k), first=null;
+  st.pending.forEach(function(i){
+    var key=k+"-"+i, inp=$('[data-answer="'+key+'"]');
+    if(!inp || inp.value.trim()==="") return;
+    var good=matches(inp.value, BANKS[k][i].acc);
+    /* a negative question fronts the contraction only — "Is not it…?" is wrong even though norm() reads isn't as is not */
+    if(good && BANKS[k][i].pol==="−" && /^\s*(did|is|are|do|does|will)\s+not\b/i.test(inp.value)) good=false;
+    S.chk[key]=1; if(!good && first===null) first=i;
+    mark(key, good);
+  });
+  save(); paintBank(k);
+  var now=bankState(k);
+  toast(now.correct===now.total ? "Đúng cả "+now.total+" câu — sang phần tiếp." : "Đúng "+now.correct+"/"+now.total+". Sửa các câu đỏ rồi Check lại.");
+  var target = first!==null ? $('[data-item="'+k+"-"+first+'"]') : $('[data-bar="'+k+'"]');
+  if(target) target.scrollIntoView({behavior: reduced?"auto":"smooth", block:"center"});
+}
+
+/* sort — same deferred rule */
+function sortState(){
+  var placed=0, pending=[], correct=0;
+  SORT_WORDS.forEach(function(x,i){
+    var key="sort-"+x.w;
+    if(S.text[key]) placed++;
+    if(graded(key)){ if(isDone(key)) correct++; } else pending.push(i);
+  });
+  return {placed:placed, pending:pending, correct:correct, total:SORT_WORDS.length};
+}
+function updateSort(){
+  var st=sortState(), btn=$('[data-check="sort"]'), res=$('[data-res="sort"]');
+  var pendingPlaced = st.pending.filter(function(i){ return !!S.text["sort-"+SORT_WORDS[i].w]; }).length;
+  if(btn){
+    btn.disabled = st.pending.length===0 || pendingPlaced < st.pending.length;
+    btn.textContent = st.pending.length===0 ? "All "+NS+" checked"
+      : (pendingPlaced < st.pending.length ? st.placed+" of "+NS+" placed" : "Check the sort");
+  }
+  if(res){
+    var done = st.total - st.pending.length;
+    res.textContent = done ? st.correct+" / "+NS+" xếp đúng" : "";
+    res.className = "res"+(done ? (st.correct===st.total?" good":" part") : "");
+  }
+}
+function paintSort(){
+  SORT_WORDS.forEach(function(x){
+    var key="sort-"+x.w, btn=$('.word[data-word="'+x.w+'"]'); if(!btn) return;
+    var isG=graded(key), good=isDone(key);
+    btn.classList.toggle("ok", isG&&good);
+    btn.classList.toggle("no", isG&&!good);
+    btn.textContent = isG ? x.lab+" "+x.ipa : x.lab;
+  });
+  updateSort();
+}
+function checkSort(reveal){
+  SORT_WORDS.forEach(function(x){
+    var key="sort-"+x.w;
+    if(reveal && S.text[key]!==x.b) place(x.w, x.b);
+    if(!S.text[key]) return;
+    if(!reveal && graded(key)) return;
+    S.chk[key]=1; mark(key, S.text[key]===x.b);
+  });
+  save(); paintSort();
+  var st=sortState();
+  toast(st.correct===NS ? "Đúng cả "+NS+" từ — đuôi ’s là của bạn rồi." : "Đúng "+st.correct+"/"+NS+". Chuyển các từ đỏ rồi Check lại.");
+}
+function place(w,bucket){
+  var btn=$('.word[data-word="'+w+'"]'), slot=$('.bucket[data-bucket="'+bucket+'"] .slot');
+  if(!btn||!slot) return;
+  slot.appendChild(btn); btn.setAttribute("aria-pressed","false");
+  S.text["sort-"+w]=bucket; save();
+}
+function labOf(w){ for(var i=0;i<NS;i++){ if(SORT_WORDS[i].w===w) return SORT_WORDS[i].lab; } return w; }
+var picked=null;
+function armBuckets(on){ $$(".bucket").forEach(function(b){ b.classList.toggle("armed",on); }); }
+document.addEventListener("click",function(e){
+  var w=e.target.closest(".word");
+  if(w){
+    var name=w.getAttribute("data-word");
+    if(w.closest(".bucket")){                       /* send it back to the pool */
+      document.getElementById("sort-pool").appendChild(w);
+      delete S.text["sort-"+name]; delete S.chk["sort-"+name];
+      w.classList.remove("ok","no"); w.textContent=labOf(name);
+      mark("sort-"+name,false); paintSort(); picked=null; armBuckets(false);
+      return;
+    }
+    $$(".word").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+    picked=name; w.setAttribute("aria-pressed","true"); armBuckets(true);
+    return;
+  }
+  var b=e.target.closest(".bucket");
+  if(b && picked){
+    var key="sort-"+picked;
+    delete S.chk[key]; mark(key,false);
+    place(picked, b.getAttribute("data-bucket"));
+    picked=null; armBuckets(false); paintSort();
+  }
+});
+
+/* generic check / show-answer buttons */
+document.addEventListener("click",function(e){
+  var c=e.target.closest("[data-check]");
+  if(c){
+    var g=c.getAttribute("data-check");
+    if(g==="sort") checkSort(false);
+    else if(g==="decode") checkDecode();
+    else checkBank(g);
+    return;
+  }
+  var sa=e.target.closest("[data-showall]");
+  if(sa){
+    var k=sa.getAttribute("data-showall");
+    if(S.chk["show-"+k]) delete S.chk["show-"+k]; else S.chk["show-"+k]=1;
+    save(); paintBank(k);
+    sa.textContent = S.chk["show-"+k] ? "Hide the answers" : "Show the answers";
+    return;
+  }
+  if(e.target.id==="sort-show"){ checkSort(true); }
+});
+
+/* typing */
+document.addEventListener("input",function(e){
+  var el=e.target;
+  if(!el.hasAttribute || !el.hasAttribute("data-text")) return;
+  var k=el.getAttribute("data-text");
+  S.text[k]=el.value; save();
+  var bank=el.getAttribute("data-bank");
+  if(bank){
+    if(graded(k) && !isDone(k)){ delete S.chk[k]; mark(k,false); paintItem(bank, +k.split("-")[1]); }
+    updateBank(bank);
+  }
+  if(el.hasAttribute("data-open")) updateDecode();
+});
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter") return;
+  var el=e.target;
+  if(!el.hasAttribute || !el.hasAttribute("data-answer")) return;
+  e.preventDefault();
+  var k=el.getAttribute("data-bank");
+  var fields=$$('[data-bank="'+k+'"]').filter(function(f){ return !f.readOnly; });
+  var next=fields[fields.indexOf(el)+1];
+  if(next){ next.focus(); }
+  else { var btn=$('[data-check="'+k+'"]'); if(btn && !btn.disabled) btn.click(); }
+});
+
+/* ================================================================
+   9 · TERM LAB — the one deliberate exception: it answers at once
+   ================================================================ */
+
+var queue=[], qi=0, round=1, answered=false;
+function labInit(){
+  queue = TERMS.map(function(_,i){return i;}).filter(function(i){ return !isDone("t-"+i); });
+  qi=0; round=1; renderLab();
+}
+function renderTicks(){
+  document.getElementById("lab-ticks").innerHTML = TERMS.map(function(_,i){
+    return '<i class="'+(isDone("t-"+i)?"on":"")+(queue[qi]===i?" cur":"")+'"></i>';
+  }).join("");
+  document.getElementById("lab-known").textContent = TERMS.filter(function(_,i){return isDone("t-"+i);}).length;
+  document.getElementById("lab-drill").textContent = Math.max(0, queue.length-qi);
+  document.getElementById("lab-count").textContent = queue.length
+    ? (Math.min(qi+1,queue.length)+" / "+queue.length+(round>1?" · vòng luyện":"")) : NT+" / "+NT;
+}
+function renderLab(){
+  var card=document.getElementById("lab-card");
+  if(qi>=queue.length){
+    var missed=TERMS.map(function(_,i){return i;}).filter(function(i){ return !isDone("t-"+i); });
+    if(missed.length){
+      queue=missed; qi=0; round++;
+      card.innerHTML='<div class="lab-banner">Vòng luyện — còn '+missed.length+' từ cần sửa.</div>';
+      setTimeout(renderLab,0); return;
+    }
+    card.innerHTML='<div class="lab-done"><div class="big">Đã biết cả '+NT+' từ.</div>'+
+      '<p class="hint">'+LAB_DONE+'</p></div>';
+    renderTicks(); return;
+  }
+  var t=TERMS[queue[qi]];
+  card.innerHTML =
+    (round>1?'<div class="lab-banner">Vòng luyện — những từ bạn chọn sai.</div>':'')+
+    '<h3>'+t.vi+'</h3><div class="gloss">'+t.en+'</div>'+
+    '<div class="src" lang="en"><span class="k" lang="vi">Câu ví dụ</span>'+t.line+'</div>'+
+    '<div class="opts">'+t.opts.map(function(o,n){
+      return '<button type="button" class="opt" data-opt="'+n+'"><span class="num">'+(n+1)+'</span><span>'+o+'</span></button>';
+    }).join("")+'</div>'+
+    '<div class="lab-foot"><button type="button" class="btn quiet sm" id="lab-back"'+(qi===0?" disabled":"")+'>Back</button>'+
+    '<button type="button" class="btn sm" id="lab-next" disabled>Next</button>'+
+    '<span class="keys">Phím 1 2 3 để chọn · Enter để sang thẻ tiếp</span></div>';
+  answered=false; renderTicks();
+}
+function answerLab(n){
+  if(answered || qi>=queue.length) return;
+  var i=queue[qi], t=TERMS[i]; answered=true;
+  $$("#lab-card .opt").forEach(function(b){
+    var k=+b.getAttribute("data-opt"); b.disabled=true;
+    if(k===t.a) b.classList.add("ok"); else if(k===n) b.classList.add("no");
+  });
+  var slot=$("#lab-card .src u"); if(slot) slot.innerHTML="<b>"+t.opts[t.a]+"</b>";
+  mark("t-"+i, n===t.a);
+  document.getElementById("lab-next").disabled=false;
+  renderTicks();
+}
+document.getElementById("lab-card").addEventListener("click",function(e){
+  var o=e.target.closest(".opt"); if(o){ answerLab(+o.getAttribute("data-opt")); return; }
+  if(e.target.closest("#lab-next")){ qi++; renderLab(); return; }
+  if(e.target.closest("#lab-back")){ qi=Math.max(0,qi-1); renderLab(); }
+});
+document.addEventListener("keydown",function(e){
+  if(S.part!==2) return;
+  if(document.activeElement && /input|textarea/i.test(document.activeElement.tagName)) return;
+  if(e.key==="1"||e.key==="2"||e.key==="3"){ answerLab(+e.key-1); }
+  else if(e.key==="Enter"){ var nx=document.getElementById("lab-next"); if(nx&&!nx.disabled){ qi++; renderLab(); } }
+});
+document.getElementById("lab-list").onclick=function(){
+  var box=document.getElementById("lab-table");
+  box.hidden=!box.hidden;
+  this.setAttribute("aria-expanded", box.hidden ? "false" : "true");
+  this.textContent = box.hidden ? listLabel() : "Hide the list ▴";
+};
+document.getElementById("lab-restart").onclick=function(){
+  TERMS.forEach(function(_,i){ delete S.done["t-"+i]; });
+  save(); labInit(); refresh();
+};
+document.getElementById("copy-vocab").onclick=function(){
+  var txt="Term\tNghĩa\tIPA\tExample\n"+VOCAB.map(function(v){
+    return v[1]+"\t"+v[2]+"\t"+v[3]+"\t"+v[4].replace(/<[^>]+>/g,"");
+  }).join("\n");
+  var box=document.getElementById("vocab-out");
+  box.hidden=false; box.value=txt; box.select();
+  try{ var w=navigator.clipboard.writeText(txt); if(w&&w.catch) w.catch(function(){}); }catch(e){}
+  this.textContent="Copied — paste anywhere";
+};
+
+/* ================================================================
+   10 · SPOKEN BLOCKS + EXIT
+   ================================================================ */
+
+var SAY={ax:EXCHANGES,bx:CONVOS};
+function reveal(id,on){
+  var b=$('[data-say="'+id+'"]'); if(!b) return;
+  b.classList.toggle("show",on);
+  var item=$('[data-item="'+id+'"]'), said=item.classList.contains("said");
+  $('[data-sayreveal="'+id+'"]').hidden=on;
+  $('[data-said="'+id+'"]').hidden=!on || said;   /* once said, only "Again" is left */
+  $('[data-again="'+id+'"]').hidden=!on;
+  var bs=$('[data-bspk="'+id+'"]'); if(bs) bs.hidden=!on;   /* B's model can be heard once it is showing */
+  item.querySelectorAll("[data-veil]").forEach(function(v){ setVeil(v,on); });   /* the answer is out, so A's words are too */
+}
+function setStage(v,st){
+  v.setAttribute("data-stage",st);
+  v.classList.toggle("open",st===2);
+  v.setAttribute("aria-expanded",st===2?"true":"false");
+  v.setAttribute("aria-label",["Hiện gợi ý","Hiện câu hỏi","Làm mờ lại"][st]);
+  var tip=v.querySelector(".veil-tip"); if(tip) tip.textContent = st===0 ? "Show hint" : "Show text";
+  var r=v.querySelectorAll(".vt");
+  if(r[0]){ if(st>=1) r[0].removeAttribute("aria-hidden"); else r[0].setAttribute("aria-hidden","true"); }
+  if(r[1]){ if(st===2) r[1].removeAttribute("aria-hidden"); else r[1].setAttribute("aria-hidden","true"); }
+}
+function setVeil(v,open){
+  if(v.classList.contains("stack")){ setStage(v, open?2:0); return; }
+  v.classList.toggle("open",open);
+  v.setAttribute("aria-expanded",open?"true":"false");
+  v.setAttribute("aria-label",open?"Làm mờ lại câu này":"Hiện chữ của câu này");
+  var t=v.querySelector(".vt"); if(t){ if(open) t.removeAttribute("aria-hidden"); else t.setAttribute("aria-hidden","true"); }
+}
+document.addEventListener("click",function(e){
+  var v=e.target.closest("[data-veil]"); if(!v) return;
+  if(v.classList.contains("stack")){ setStage(v, ((+v.getAttribute("data-stage")||0)+1)%3); return; }
+  setVeil(v, !v.classList.contains("open"));
+});
+function sayTally(k){
+  var n=SAY[k].filter(function(_,i){ return isDone(k+"-"+i); }).length;
+  var el=$('[data-tally="'+k+'"]');
+  if(el){ el.textContent=n+" / "+SAY[k].length+" said"; el.classList.toggle("good", n===SAY[k].length); }
+}
+document.addEventListener("click",function(e){
+  var s=e.target.closest("[data-say]");        if(s){ reveal(s.getAttribute("data-say"),true); return; }
+  var rv=e.target.closest("[data-sayreveal]"); if(rv){ reveal(rv.getAttribute("data-sayreveal"),true); return; }
+  var sd=e.target.closest("[data-said]");
+  if(sd){ var id=sd.getAttribute("data-said"); $('[data-item="'+id+'"]').classList.add("said"); mark(id,true); reveal(id,true); sayTally(id.split("-")[0]); return; }
+  var ag=e.target.closest("[data-again]");
+  if(ag){ var id2=ag.getAttribute("data-again"); $('[data-item="'+id2+'"]').classList.remove("said"); mark(id2,false); reveal(id2,false); sayTally(id2.split("-")[0]); return; }
+  var ra=e.target.closest("[data-revealall]");
+  if(ra){ var ka=ra.getAttribute("data-revealall"); SAY[ka].forEach(function(_,i){ reveal(ka+"-"+i,true); }); return; }
+  var ha=e.target.closest("[data-hideall]");
+  if(ha){ var kh=ha.getAttribute("data-hideall"); SAY[kh].forEach(function(_,i){ reveal(kh+"-"+i,false); }); }
+});
+document.addEventListener("change",function(e){
+  var cb=e.target.closest("[data-flag]"); if(!cb) return;
+  mark(cb.getAttribute("data-flag"), cb.checked);
+  var line=cb.closest(".checkline"); if(line) line.classList.toggle("done",cb.checked);
+});
+
+
+/* ================================================================
+   10b · THE VOICE — the browser's English voice reads A's lines (and B's
+   model once revealed). Default: the clearest English voice on the device.
+   ================================================================ */
+
+var synth = window.speechSynthesis || null;
+var VOICES = [];
+var playingBtn = null, runId = 0;
+/* higher = clearer: neural/online voices first, then the well-known clean
+   system voices; novelty and compact voices sink to the bottom */
+function clarity(v){
+  var n=v.name||"", sc=0;
+  if(/natural|neural/i.test(n)) sc+=60;
+  if(/online/i.test(n)) sc+=15;
+  if(/^Google US English$/i.test(n)) sc+=45; else if(/^Google UK English Female$/i.test(n)) sc+=40; else if(/Google/i.test(n)) sc+=30;
+  if(/premium|enhanced/i.test(n)) sc+=25;
+  if(/\b(Samantha|Ava|Allison|Susan|Zoe|Serena|Karen|Moira|Tessa|Daniel|Aria|Jenny|Guy|Libby|Sonia|Ryan|Emma|Brian|Andrew)\b/i.test(n)) sc+=20;
+  if(/compact|espeak|novelty|Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Deranged|Good News|Hysterical|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Fred|Junior|Ralph|Kathy|Grandma|Grandpa|Rocko|Shelley|Sandy|Flo|Eddy|Reed/i.test(n)) sc-=70;
+  if(/en[-_]US/i.test(v.lang)) sc+=8; else if(/en[-_]GB/i.test(v.lang)) sc+=6; else if(/en[-_](AU|CA|IE|NZ)/i.test(v.lang)) sc+=3;
+  return sc;
+}
+function shortName(v){ return v.name.replace(/^(Microsoft|Google)\s+/,"").replace(/\s*-\s*English.*$/,"").replace(/\s*\(.*?\)\s*/g," ").trim(); }
+function loadVoices(){
+  if(!synth) return;
+  var all = synth.getVoices() || [];
+  VOICES = all.filter(function(v){ return /^en[-_]/i.test(v.lang); });
+  VOICES.sort(function(a,b){ return clarity(b)-clarity(a); });
+  $$("[data-voice]").forEach(function(sel){
+    var cur = S.text.voice || "";
+    sel.innerHTML = '<option value="">Giọng rõ nhất'+(VOICES.length ? ' — '+esc(shortName(VOICES[0])) : '')+'</option>'+
+      VOICES.map(function(v){
+        return '<option value="'+esc(v.name)+'"'+(v.name===cur?" selected":"")+'>'+esc(shortName(v))+' · '+v.lang+'</option>';
+      }).join("");
+  });
+  $$("[data-vbnote]").forEach(function(n){
+    if(!VOICES.length){ n.hidden=false; n.textContent = synth ? "Đang tìm giọng đọc tiếng Anh…" : "Trình duyệt này không có giọng đọc. Hãy thử Chrome, Edge hoặc Safari."; }
+    else n.hidden=true;
+  });
+}
+function voiceA(){
+  if(!VOICES.length) return null;
+  if(S.text.voice){ for(var i=0;i<VOICES.length;i++) if(VOICES[i].name===S.text.voice) return VOICES[i]; }
+  return VOICES[0];
+}
+function rate(){ return S.text.rate==="s" ? 0.7 : 0.92; }
+function setPlaying(btn){
+  if(playingBtn && playingBtn!==btn) playingBtn.classList.remove("is-playing");
+  playingBtn = btn || null;
+  if(btn) btn.classList.add("is-playing");
+}
+function stopAll(){
+  runId++;
+  if(synth && (synth.speaking || synth.pending)){ try{ synth.cancel(); }catch(e){} }
+  setPlaying(null);
+}
+var liveUtter = null;   /* held so Chrome cannot garbage-collect a speaking utterance */
+function speak(text, btn){
+  var busy = !!(synth && (synth.speaking || synth.pending));
+  stopAll();
+  var my = runId;
+  if(widget && playing){ try{ widget.pause(); }catch(e){} }
+  if(!synth){ toast("Trình duyệt này chưa có giọng đọc tiếng Anh. Hãy thử Chrome, Edge hoặc Safari."); return; }
+  setPlaying(btn);
+  function go(){
+    if(my!==runId) return;
+    var u = new SpeechSynthesisUtterance(String(text).replace(/[‘’]/g,"'"));
+    var v = voiceA();
+    if(v){ u.voice=v; u.lang=String(v.lang).replace("_","-"); } else { u.lang="en-US"; }
+    u.rate = rate(); u.volume = 1;
+    var done=false;
+    function end(){ if(done) return; done=true; clearTimeout(guard); if(liveUtter===u) liveUtter=null; if(my===runId) setPlaying(null); }
+    u.onend = end; u.onerror = end;
+    /* some engines never fire onend: let go after a generous estimate */
+    var guard = setTimeout(end, 1500 + text.length*140/u.rate);
+    liveUtter = u;
+    try{ synth.resume(); }catch(e){}   /* Chrome can sit "paused" after cancel() and stay silent */
+    synth.speak(u);
+  }
+  /* Safari (iPhone, iPad, Mac) only speaks when speak() runs inside the tap itself, so a
+     line is spoken at once. The short wait is kept only when a line is being cut off:
+     Chrome drops an utterance queued in the same tick as cancel(). */
+  if(busy) setTimeout(go, 60); else go();
+}
+if(synth){
+  loadVoices();
+  if(synth.addEventListener) synth.addEventListener("voiceschanged", loadVoices);
+  else synth.onvoiceschanged = loadVoices;
+  setTimeout(loadVoices, 600); setTimeout(loadVoices, 2000);
+}
+function paintVoicebars(){
+  $$("[data-rate]").forEach(function(b){ b.setAttribute("aria-pressed", String((S.text.rate||"n")===b.getAttribute("data-rate"))); });
+  $$("[data-voice]").forEach(function(s){ s.value = S.text.voice || ""; });
+}
+document.addEventListener("click",function(e){
+  var r=e.target.closest("[data-rate]");
+  if(r){ S.text.rate=r.getAttribute("data-rate"); save(); paintVoicebars(); return; }
+  var sp=e.target.closest("[data-speak]");
+  if(sp){
+    if(sp.classList.contains("is-playing")){ stopAll(); return; }
+    speak(sp.getAttribute("data-speak"), sp);
+  }
+});
+document.addEventListener("change",function(e){
+  if(e.target.hasAttribute && e.target.hasAttribute("data-voice")){
+    S.text.voice=e.target.value; save(); paintVoicebars();
+    speak("I give John the apple.", null);
+  }
+});
+
+/* ================================================================
+   11 · DECODE — models stay hidden until every question is answered
+   ================================================================ */
+
+function decodeFilled(){
+  return COMPREHENSION.filter(function(_,i){
+    var t=$('[data-open="q-'+i+'"]'); return t && t.value.trim()!=="";
+  }).length;
+}
+function updateDecode(){
+  var f=decodeFilled(), btn=$('[data-check="decode"]'), res=$('[data-res="decode"]');
+  if(btn){
+    btn.disabled = f<NQ || !!S.chk.decode;
+    btn.textContent = S.chk.decode ? "Model answers are showing" : (f<NQ ? f+" of "+NQ+" answered" : "Show the "+NQ+" model answers");
+  }
+  if(res){
+    var n=COMPREHENSION.filter(function(_,i){return isDone("q-"+i);}).length;
+    res.textContent = S.chk.decode ? n+" / "+NQ+" tự chấm đúng" : "";
+    res.className="res"+(n===NQ?" good":" part");
+  }
+  refresh();
+}
+function paintDecode(){
+  COMPREHENSION.forEach(function(_,i){
+    var card=$('[data-qa="'+i+'"]'); if(!card) return;
+    if(S.chk.decode){ card.querySelector('[data-model="'+i+'"]').classList.add("show"); card.querySelector('[data-selfrow="'+i+'"]').hidden=false; }
+    card.classList.toggle("ok", isDone("q-"+i));
+  });
+  updateDecode();
+}
+function checkDecode(){
+  S.chk.decode=1; save(); paintDecode();
+  toast("So từng câu với câu mẫu, rồi đánh dấu những câu bạn đã làm đúng.");
+  var f=$('[data-qa="0"]'); if(f) f.scrollIntoView({behavior:reduced?"auto":"smooth", block:"center"});
+}
+document.addEventListener("click",function(e){
+  var sm=e.target.closest("[data-selfmark]");
+  if(sm){ var i=+sm.getAttribute("data-selfmark"); $('[data-qa="'+i+'"]').classList.add("ok"); mark("q-"+i,true); updateDecode(); return; }
+  var rv=e.target.closest("[data-review]");
+  if(rv){ var j=+rv.getAttribute("data-review"); $('[data-qa="'+j+'"]').classList.remove("ok"); mark("q-"+j,false); updateDecode(); }
+});
+var scriptBtn=document.getElementById("show-script");
+scriptBtn.onclick=function(){
+  var t=document.getElementById("transcript"), open=!t.classList.contains("show");
+  t.classList.toggle("show",open);
+  this.setAttribute("aria-expanded", open?"true":"false");
+  this.textContent = open ? "Hide the transcript" : "Show the transcript";
+};
+
+/* ================================================================
+   12 · THE STICKY AUDIO DOCK
+   ================================================================ */
+
+function initScene(){
+  var img=document.getElementById("scene-img"), box=document.getElementById("scene-frame");
+  if(!img || img.getAttribute("src")) return;
+  img.onload=function(){ box.classList.add("loaded"); };
+  img.onerror=function(){
+    box.classList.add("as-frame");
+    box.innerHTML='<iframe title="Hình minh họa tình huống của đoạn hội thoại" allow="autoplay" src="https://drive.google.com/file/d/'+sceneId()+'/preview"></iframe>';
+  };
+  img.src="https://drive.google.com/thumbnail?id="+sceneId()+"&sz=w1600";
+}
+var quizletStarted=false;
+function initQuizlet(){
+  if(quizletStarted) return; quizletStarted=true;
+  var f=document.getElementById("quizlet");
+  if(f && !f.src) f.src=QUIZLET;
+}
+
+var audioEl=document.getElementById("audio"), dockEl=document.getElementById("audio-dock");
+var widget=null, transportLive=false, duration=0, playing=false, audioStarted=false, measureDock=null;
+
+function fmt(ms){
+  if(!ms||ms<0) ms=0;
+  var s=Math.floor(ms/1000), m=Math.floor(s/60);
+  s=s%60; return m+":"+(s<10?"0":"")+s;
+}
+var settling=0;
+function reserve(){
+  if(!audioEl||!dockEl||audioEl.classList.contains("stuck")||settling) return;
+  var h=dockEl.offsetHeight;
+  if(h>20) audioEl.style.setProperty("--audio-h", h+"px");
+}
+function follows(sentinel, cb){
+  var last=null, ticking=false;
+  function measure(){
+    ticking=false;
+    if(!sentinel.offsetParent && sentinel.offsetHeight===0 && !sentinel.getClientRects().length){ return; }
+    var r=sentinel.getBoundingClientRect();
+    var now = r.top < 9;
+    if(now!==last){ last=now; cb(now); }
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(measure); } }
+  window.addEventListener("scroll",onScroll,{passive:true});
+  window.addEventListener("resize",onScroll,{passive:true});
+  return measure;
+}
+(function(){
+  var sentinel=$(".audio-sentinel");
+  if(!sentinel) return;
+  measureDock = follows(sentinel, function(on){
+    if(on) reserve();
+    audioEl.classList.toggle("stuck", on);
+    if(!on){ clearTimeout(settling); settling=setTimeout(function(){ settling=0; reserve(); }, 260); }
+  });
+  if(window.ResizeObserver){ new ResizeObserver(reserve).observe(dockEl); }
+})();
+
+var seekEl=null;
+var lastSec=-1;
+function paintSeek(ms){
+  if(!seekEl) seekEl=document.getElementById("seek");
+  var r = duration ? Math.max(0, Math.min(1, ms/duration)) : 0;
+  seekEl.style.setProperty("--p", r.toFixed(5));
+  var sec=Math.floor(ms/1000);
+  if(sec!==lastSec){          /* text and ARIA once a second, not sixty times */
+    lastSec=sec;
+    document.getElementById("t-now").textContent=fmt(ms);
+    seekEl.setAttribute("aria-valuenow", Math.round(r*100));
+    seekEl.setAttribute("aria-valuetext", fmt(ms)+" of "+fmt(duration));
+  }
+}
+/* PLAY_PROGRESS arrives a few times a second; between reports the bar runs on the clock,
+   so it glides instead of stepping. Each report re-anchors it. */
+var anchorPos=0, anchorAt=0, rafId=0, dragging=false;
+function anchor(ms){ anchorPos=ms; anchorAt=performance.now(); }
+function tick(){
+  rafId=0;
+  if(!playing || dragging) return;
+  var ms=anchorPos + (performance.now()-anchorAt);
+  if(duration) ms=Math.min(ms, duration);
+  paintSeek(ms);
+  rafId=requestAnimationFrame(tick);
+}
+function run(){ if(!rafId && !reduced) rafId=requestAnimationFrame(tick); }
+function setIcon(on){
+  document.getElementById("t-icon").setAttribute("d", on ? "M7 5h4v14H7zM13 5h4v14h-4z" : "M8 5v14l11-7z");
+  document.getElementById("t-play").setAttribute("aria-label", on ? "Pause the dialogue" : "Play the dialogue");
+}
+var bufTimer=0;
+function buffering(on){
+  clearTimeout(bufTimer);
+  audioEl.classList.toggle("is-buffering", on);
+  if(on) bufTimer=setTimeout(function(){ audioEl.classList.remove("is-buffering"); }, 6000);
+}
+/* a hint that part 6 is next: open the connection early, fetch nothing */
+var warmed=false;
+function warmAudio(){
+  if(warmed) return; warmed=true;
+  ["https://w.soundcloud.com","https://api-widget.soundcloud.com"].forEach(function(h){
+    var l=document.createElement("link"); l.rel="preconnect"; l.href=h; l.crossOrigin="anonymous"; document.head.appendChild(l);
+  });
+}
+function initAudio(){
+  if(audioStarted) return; audioStarted=true;
+  warmAudio(); reserve();
+  var f=document.getElementById("sc-frame");
+  f.src="https://w.soundcloud.com/player/?url="+SC_EMBED+
+    "&color=%23dd7958&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false";
+  var s=document.createElement("script");
+  s.src="https://w.soundcloud.com/player/api.js"; s.async=true;
+  s.onload=function(){
+    try{
+      widget=window.SC.Widget(f);
+      widget.bind(window.SC.Widget.Events.READY,function(){
+        widget.getDuration(function(d){
+          duration=d||0;
+          document.getElementById("t-dur").textContent=fmt(duration);
+          transportLive=true;
+          audioEl.classList.add("has-transport");
+          audioEl.classList.remove("is-loading","sc-fallback");
+          lastSec=-1; paintSeek(0);
+          setTimeout(reserve,60);
+        });
+      });
+      widget.bind(window.SC.Widget.Events.PLAY_PROGRESS,function(e){
+        anchor(e.currentPosition);
+        if(!playing || reduced) paintSeek(e.currentPosition);
+      });
+      widget.bind(window.SC.Widget.Events.PLAY,function(){
+        playing=true; buffering(false); setIcon(true); clearTimeout(tapTimer);
+        /* the learner started it inside SoundCloud's player: the one-row bar can take over again */
+        if(audioEl.classList.contains("sc-tapmode")){
+          audioEl.classList.remove("sc-tapmode","sc-fallback");
+          settling=0; audioEl.style.removeProperty("--audio-h"); setTimeout(reserve,60);
+        }
+        widget.getPosition(function(p){ anchor(p); run(); });
+      });
+      widget.bind(window.SC.Widget.Events.PAUSE,function(e){
+        playing=false; buffering(false); setIcon(false);
+        if(e && typeof e.currentPosition==="number"){ anchor(e.currentPosition); paintSeek(e.currentPosition); }
+      });
+      widget.bind(window.SC.Widget.Events.FINISH,function(){ playing=false; buffering(false); setIcon(false); paintSeek(duration); });
+    }catch(err){}
+  };
+  document.head.appendChild(s);
+  /* no answer in 8s: SoundCloud's own player (it has a scrubber) takes the bar's place */
+  setTimeout(function(){
+    if(transportLive) return;
+    audioEl.classList.remove("is-loading");
+    audioEl.classList.add("sc-fallback");
+    setTimeout(reserve,0);
+  }, 8000);
+}
+/* Safari (every iPhone/iPad browser, and Safari on Mac) will not start sound in the hidden
+   SoundCloud frame from a tap on OUR button — the tap has to land inside SoundCloud's own
+   player. So if Play has not started within 2.5 s, the SoundCloud player is shown with a
+   one-line note; the learner taps its ▶ once, and the bar comes back as soon as it plays. */
+var tapTimer=0;
+function showTapPlayer(){
+  if(playing) return;
+  buffering(false); setIcon(false);
+  audioEl.classList.add("sc-fallback","sc-tapmode");
+  settling=0; audioEl.style.removeProperty("--audio-h"); setTimeout(reserve,60);
+  toast("Nhấn ▶ trong trình phát SoundCloud để nghe.");
+}
+document.getElementById("t-play").onclick=function(){
+  if(!widget || !transportLive) return;
+  if(!playing){
+    buffering(true); setIcon(true);   /* answer the tap at once; PLAY confirms it */
+    widget.play();
+    clearTimeout(tapTimer); tapTimer=setTimeout(showTapPlayer, 2500);
+  } else {
+    widget.pause();
+  }
+};
+/* no ±5s buttons — the bar is the scrubber, and the arrow keys jump 5s */
+function jump(delta){
+  if(!widget) return;
+  widget.getPosition(function(p){ var t=Math.max(0,Math.min(duration||p, p+delta)); anchor(t); paintSeek(t); widget.seekTo(t); });
+}
+(function(){
+  var seek=document.getElementById("seek");
+  function ratio(e){
+    var r=seek.getBoundingClientRect();
+    return Math.max(0, Math.min(1, (e.clientX-r.left)/r.width));
+  }
+  function apply(e){
+    if(!duration) return;
+    var ms=ratio(e)*duration;
+    anchor(ms); paintSeek(ms); if(widget) widget.seekTo(Math.round(ms));
+  }
+  seek.addEventListener("pointerdown",function(e){
+    if(!duration) return;
+    dragging=true; seek.setPointerCapture(e.pointerId); apply(e); e.preventDefault();
+  });
+  seek.addEventListener("pointermove",function(e){ if(dragging) apply(e); });
+  function release(e){ if(!dragging) return; dragging=false; try{ seek.releasePointerCapture(e.pointerId); }catch(err){} anchor(anchorPos); run(); }
+  seek.addEventListener("pointerup",release);
+  seek.addEventListener("pointercancel",release);
+  seek.addEventListener("keydown",function(e){
+    if(e.key==="ArrowRight"){ jump(5000); e.preventDefault(); }
+    else if(e.key==="ArrowLeft"){ jump(-5000); e.preventDefault(); }
+    else if(e.key==="Home" && widget){ anchor(0); paintSeek(0); widget.seekTo(0); e.preventDefault(); }
+  });
+})();
+
+/* ================================================================
+   13 · REPORT + RESET + BOOT
+   ================================================================ */
+
+document.getElementById("reset-all").onclick=function(){
+  if(!confirm("Xóa mọi câu trả lời và làm lại buổi học này từ đầu?")) return;
+  S={part:1,done:{},text:{},chk:{}}; save(); location.hash=""; location.reload();
+};
+
+$$("[data-text]").forEach(function(el){
+  var k=el.getAttribute("data-text"); if(S.text[k]!==undefined) el.value=S.text[k];
+});
+$$("[data-flag]").forEach(function(el){
+  var k=el.getAttribute("data-flag"); el.checked=isDone(k);
+  var line=el.closest(".checkline"); if(line) line.classList.toggle("done",el.checked);
+});
+SORT_WORDS.forEach(function(x){ var b=S.text["sort-"+x.w]; if(b) place(x.w,b); });
+paintSort();
+Object.keys(BANKS).forEach(paintBank);
+["ax","bx"].forEach(function(k){
+  SAY[k].forEach(function(_,i){
+    var id=k+"-"+i;
+    if(isDone(id)){ $('[data-item="'+id+'"]').classList.add("said"); reveal(id,true); }
+  });
+  sayTally(k);
+});
+paintDecode();
+paintVoicebars();
+labInit();
+refresh();
+
+var m=/^#p(\d+)$/.exec(location.hash||"");
+goTo(m ? +m[1] : (S.part||1), {push:false, scroll:false, focus:false});
+document.body.classList.remove("lesson-booting");
+setTimeout(function(){ document.body.classList.remove("lesson-booting"); },2500);
+})();
+</script>
+</body>
+</html>
