@@ -33,6 +33,11 @@ e2i-lessons-html/
 │   ├── lesson-template.html       copy this to begin a new lesson
 │   └── odoo-launch-button.html    the older (v2) Odoo card — see the note inside
 │
+├── _tools/                     ← the automatic uploading (Part 2)
+│   ├── publish.ps1                sends changed files to GitHub
+│   └── install-watcher.ps1        makes that happen by itself
+│                                  (this folder is never uploaded)
+│
 ├── english-reflex-2/           ← one folder per course, named in full
 │   ├── s01.html                   the lesson learners open
 │   └── s01-cover.html             its Odoo cover, ready to paste
@@ -144,20 +149,77 @@ The button opens the real lesson full screen in a new tab.
 
 ## PART 2 — Publishing a new lesson
 
-Once set up, every new lesson is the same four steps. Two minutes.
+**You don't.** Save the lesson into its course folder on your computer, and it
+uploads itself.
 
-1. On the repository page, click into the course folder — for example `english-reflex-2`.
-2. Click **Add file** → **Upload files**.
-3. Drag the new lesson **and its cover** in together: `s05.html` and `s05-cover.html`.
-4. Type a short note in the box (`Add English Reflex 2 session 5`) and click **Commit changes**.
+```
+L:\My Drive\My Courses\e2i-lessons-html\english-reflex-2\s05.html
+                                                         s05-cover.html
+```
 
-The lesson is live within about a minute at:
+Within about five minutes both files are on GitHub, in one commit
+(`Add english-reflex-2 s05`), and the lesson is live at:
 
 ```
 https://english2impact.github.io/e2i-lessons-html/english-reflex-2/s05.html
 ```
 
 Then paste `s05-cover.html` into the matching Odoo article (Step 5 above).
+**That is the only part still done by hand.**
+
+A watcher checks the whole folder every few minutes. It uploads anything that
+differs from GitHub — a new lesson, a fix to an old one, a change to a
+stylesheet — and ignores everything that already matches. It never deletes
+anything from GitHub.
+
+A file is left alone until it has been sitting still for two minutes, so a page
+you are still writing, or one Google Drive is halfway through syncing, never
+goes up half-finished.
+
+### Turning the watcher on — once
+
+Open PowerShell in this folder and run these two, in order:
+
+```
+_tools\publish -Setup          paste a GitHub token — it tells you where to get one
+_tools\install-watcher         switch the automatic uploading on
+```
+
+The token is stored encrypted, tied to your Windows account, in your user folder
+— **outside Google Drive**, so it never syncs anywhere.
+
+### Checking on it
+
+```
+_tools\install-watcher -Status      running? last run? what did it upload?
+_tools\install-watcher -RunNow      don't wait for the clock, go now
+_tools\install-watcher -Uninstall   turn it off, back to doing it by hand
+```
+
+Everything it uploads is written to `%USERPROFILE%\.e2i\publish.log`.
+
+The watcher only runs while you are logged in — which is also the only time the
+`L:` drive exists, so that works out exactly right.
+
+### Publishing something immediately
+
+Don't want to wait the few minutes:
+
+```
+_tools\publish english-reflex-2 5        this session, now
+_tools\publish er2 5 -Wait               ...and wait until the page is really live
+_tools\publish -Path assets\e2i-brand.css
+_tools\publish -All                      everything that differs, now
+```
+
+Short names work: `er2`, `ef3`, `ielts`. Add `-DryRun` to any of these to see
+what *would* go up without sending anything.
+
+### Still prefer dragging files into GitHub?
+
+That works too, and always will — Part 2 of the old way: open the course folder
+on github.com, **Add file** → **Upload files**, drag `s05.html` and
+`s05-cover.html` in, commit. Just read the warning at the end of Part 3 first.
 
 ### File naming — keep it boring
 
@@ -177,9 +239,8 @@ Lowercase letters, numbers and hyphens only. Nothing else.
 
 This is the payoff of the shared setup.
 
-1. Open `assets/e2i-brand.css` on GitHub.
-2. Click the **pencil icon** (top right of the file).
-3. Change what you want. The colours are all together at the top:
+1. Open `assets\e2i-brand.css` **on your computer**, in this folder.
+2. Change what you want. The colours are all together at the top:
 
    ```css
    --navy:#001b45;        /* headings */
@@ -187,10 +248,31 @@ This is the payoff of the shared setup.
    --ink:#1a1a19;         /* body text */
    ```
 
-4. Scroll down, type a note (`New accent colour`), click **Commit changes**.
+3. Save. The watcher takes it from there.
 
 Every lesson in every course now uses the new colour. You did not touch a single
 lesson file.
+
+> ### One thing to watch
+>
+> **Edit files here, not on github.com.** Your computer is now the master copy.
+>
+> If you edit a file with the pencil icon on GitHub, the copy in this folder is
+> instantly the *older* one — and left to itself, an automatic upload would put
+> the old version straight back over your edit.
+>
+> It won't. The watcher remembers what GitHub looked like last time it ran, so it
+> spots that the file moved on GitHub and **refuses to touch it**, writing this to
+> the log instead:
+>
+> ```
+> SKIPPED assets/e2i-brand.css - it was changed on GitHub after the copy in Drive.
+> ```
+>
+> To clear it, download the file from GitHub and save it over the copy here. Both
+> sides match again and uploading carries on as normal. If you are certain the copy
+> here is the one you want, run `_tools\publish -Path assets\e2i-brand.css -Force`
+> to push it over the top.
 
 **Rule of thumb for which file to edit:**
 
@@ -286,9 +368,13 @@ a clock icon and a number). Every version is listed with the note you typed.
 
 1. Click **History**.
 2. Click the version you want.
-3. Click the **⋯** menu → **View file**.
-4. Click the pencil to edit, select all, copy.
-5. Go back to the current file, edit, select all, paste over it, commit.
+3. Click the **⋯** menu → **View file**, then the **Raw** button.
+4. Save that page over the file **in this folder on your computer**
+   (Ctrl+S, or select all and paste into the file).
+5. That's it — the watcher uploads it like any other change.
+
+Restoring the file here rather than on github.com keeps your computer as the
+master copy, which is what everything else assumes. See the warning in Part 3.
 
 **If a lesson looks completely unstyled** — plain black text on white, no colours —
 the lesson file cannot find the shared stylesheets. Open the lesson file and check
