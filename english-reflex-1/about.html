@@ -1,0 +1,563 @@
+<!-- =================================================================
+     ENGLISH2IMPACT — LANDING PAGE KHÓA ENGLISH REFLEX 1
+     Thay cho bài "About this course" (slide 3575)
+     Cập nhật 13/09/2026
+     =================================================================
+     CÁCH DÙNG
+     1. Vào trang bài "About this course" của khóa English Reflex 1 → Edit.
+     2. Xóa nội dung cũ → kéo khối "Embed Code" vào phần nội dung.
+     3. Bấm Edit (</>) → xóa hết nội dung mẫu → dán TOÀN BỘ file này → Save.
+
+     AN TOÀN
+     - Mọi CSS nằm trong .e2i-lp, không đụng header/footer hay trang khác.
+     - Class đều có tiền tố e2i-lp- nên không đụng Bootstrap của Odoo.
+     - Không có JavaScript.
+
+     GIAO DIỆN
+     - Mặc định nền sáng. Muốn nền tối: <div class="e2i-lp e2i-lp-dark">
+
+     LINK THAM GIA LỚP (xuất hiện ở 2 nút — đổi cả 2 nếu thay mã lớp)
+     - https://english2impact.com/?join=D2888J&c=er1
+     - Trong HTML dấu & phải viết là &amp; — giữ nguyên như trong code.
+     ================================================================= -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<style>
+.e2i-lp{
+  --c-paper:#FFFDFB;
+  --c-paper2:#FBF2EC;
+  --c-surface:#FFFFFF;
+  --c-ink:#1A1A19;
+  --c-ink2:#3D3D3A;
+  --c-muted:#6F6D65;
+  --c-rule:#E7E1D8;
+  --c-rule2:#D8D1C6;
+  --c-accent:#A9522C;
+  --c-fill:#B0542F;
+  --c-onfill:#FFFFFF;
+  --c-soft:#FBEEE7;
+  --c-leaf:#006838;
+  --c-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --c-sans:"Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --c-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-family:var(--c-sans);
+  color:var(--c-ink);
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  margin:0 0 30px;
+}
+.e2i-lp.e2i-lp-dark{
+  --c-paper:#1F1F1D;
+  --c-paper2:#2A211C;
+  --c-surface:#232321;
+  --c-ink:#FFFFFF;
+  --c-ink2:#C3C2B7;
+  --c-muted:#8D8B85;
+  --c-rule:#3D3D3A;
+  --c-rule2:#4A4A46;
+  --c-accent:#E89070;
+  --c-fill:#D97757;
+  --c-onfill:#1A1A19;
+  --c-soft:#28201B;
+  --c-leaf:#26A426;
+}
+.e2i-lp *{box-sizing:border-box}
+/* Odoo hay bọc snippet trong khối căn giữa — ép căn trái ở mọi cấp */
+.e2i-lp,.e2i-lp div,.e2i-lp p,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp li,.e2i-lp span{text-align:left}
+.e2i-lp p,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp ul,.e2i-lp ol{margin:0}
+.e2i-lp ul{list-style:none;padding:0}
+.e2i-lp a{text-decoration:none}
+.e2i-lp a:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+
+/* ---------- khối chung ---------- */
+.e2i-lp-sec{margin-top:34px}
+.e2i-lp-eyebrow{
+  display:inline-flex;align-items:center;font-family:var(--c-mono);
+  font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--c-accent);margin-bottom:10px;
+}
+.e2i-lp-eyebrow::after{
+  content:"";width:30px;height:1px;background:var(--c-rule2);margin-left:11px;
+}
+.e2i-lp h2{
+  font-family:var(--c-serif);font-weight:800;
+  font-size:clamp(20px,2.4vw,25px);line-height:1.2;letter-spacing:-.015em;
+  color:var(--c-ink);text-wrap:balance;
+}
+.e2i-lp-sub{margin-top:8px!important;color:var(--c-muted);font-size:14.5px;max-width:64ch}
+.e2i-lp-mark{color:var(--c-accent)}
+
+/* ---------- hero ---------- */
+.e2i-lp-hero{
+  position:relative;
+  background:linear-gradient(135deg,var(--c-paper) 0%,var(--c-paper2) 100%);
+  border:1px solid var(--c-rule);border-radius:14px;
+  padding:34px 34px 30px 36px;overflow:hidden;
+}
+.e2i-lp-hero::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c-fill);
+}
+.e2i-lp-hero h1{
+  font-family:var(--c-serif);font-weight:800;
+  font-size:clamp(26px,4vw,40px);line-height:1.12;letter-spacing:-.02em;
+  color:var(--c-ink);margin:0;text-wrap:balance;
+}
+.e2i-lp-lede{
+  margin-top:14px!important;font-size:16px;color:var(--c-ink2);max-width:58ch;
+}
+.e2i-lp-actions{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;align-items:center}
+.e2i-lp-btn{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--c-sans);
+  font-weight:600;font-size:15.5px;padding:12px 24px;border-radius:8px;
+  border:1px solid transparent;white-space:nowrap;
+  transition:opacity .15s ease,border-color .15s ease,color .15s ease;
+}
+.e2i-lp .e2i-lp-fill{background:var(--c-fill);color:var(--c-onfill)}
+.e2i-lp .e2i-lp-fill:hover{opacity:.88;color:var(--c-onfill)}
+.e2i-lp-note{font-size:12.5px;color:var(--c-muted);line-height:1.4;max-width:34ch}
+
+.e2i-lp-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--c-rule);border:1px solid var(--c-rule);
+  border-radius:10px;overflow:hidden;margin-top:26px;
+}
+.e2i-lp-stat{background:var(--c-surface);padding:13px 15px}
+.e2i-lp-stat b{
+  display:block;font-family:var(--c-serif);font-weight:800;font-size:22px;
+  line-height:1.1;color:var(--c-ink);
+}
+.e2i-lp-stat span{
+  display:block;font-family:var(--c-mono);font-size:9.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted);margin-top:5px;
+}
+
+/* ---------- thẻ vấn đề ---------- */
+.e2i-lp-pairs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.e2i-lp-pair{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:10px;padding:15px 17px;
+}
+.e2i-lp-pair-top{
+  font-family:var(--c-mono);font-size:13px;font-weight:600;color:var(--c-accent);
+  margin-bottom:7px!important;letter-spacing:.02em;
+}
+.e2i-lp-pair p{font-size:13.5px;line-height:1.5;color:var(--c-ink2)}
+
+.e2i-lp-quote{
+  margin-top:18px;padding:16px 20px;border-left:3px solid var(--c-fill);
+  background:var(--c-soft);border-radius:0 10px 10px 0;
+}
+.e2i-lp-quote p{font-size:15px;color:var(--c-ink);font-weight:500}
+
+/* ---------- bốn dạng câu ---------- */
+.e2i-lp-forms{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--c-rule);border:1px solid var(--c-rule);
+  border-radius:12px;overflow:hidden;margin-top:18px;
+}
+.e2i-lp-form{background:var(--c-surface);padding:15px 17px}
+.e2i-lp-form span{
+  display:inline-block;font-family:var(--c-mono);font-size:11px;font-weight:600;
+  color:var(--c-accent);background:var(--c-soft);border-radius:5px;
+  padding:2px 8px;margin-bottom:9px;
+}
+.e2i-lp-form b{
+  display:block;font-family:var(--c-mono);font-size:13.5px;font-weight:600;
+  color:var(--c-ink);line-height:1.45;
+}
+.e2i-lp-form i{
+  display:block;font-style:normal;font-size:12.5px;color:var(--c-muted);margin-top:5px;
+}
+
+/* ---------- 4 hoạt động ---------- */
+.e2i-lp-steps{margin-top:18px;border:1px solid var(--c-rule);border-radius:12px;overflow:hidden}
+.e2i-lp-step{
+  display:grid;grid-template-columns:34px 1fr 74px;gap:16px;align-items:baseline;
+  padding:15px 20px;background:var(--c-surface);border-top:1px solid var(--c-rule);
+}
+.e2i-lp-step:first-child{border-top:0}
+.e2i-lp-step-n{
+  font-family:var(--c-mono);font-size:11px;font-weight:600;color:var(--c-accent);
+  letter-spacing:.08em;
+}
+.e2i-lp-step h4{font-family:var(--c-sans);font-weight:600;font-size:15px;color:var(--c-ink)}
+.e2i-lp-step p{font-size:13.5px;color:var(--c-muted);margin-top:3px!important;line-height:1.5}
+.e2i-lp-time{
+  justify-self:end;font-family:var(--c-mono);font-size:11px;font-weight:600;
+  color:var(--c-ink2);background:var(--c-paper2);border:1px solid var(--c-rule);
+  border-radius:20px;padding:3px 10px;white-space:nowrap;
+}
+
+/* ---------- lộ trình ---------- */
+.e2i-lp-stages{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+.e2i-lp-stage{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:12px;padding:17px 19px;
+}
+.e2i-lp-stage-h{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding-bottom:11px;border-bottom:1px solid var(--c-rule);margin-bottom:12px;
+}
+.e2i-lp-stage h3{font-family:var(--c-serif);font-weight:700;font-size:18px;color:var(--c-ink)}
+.e2i-lp-stage-h span{
+  font-family:var(--c-mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--c-muted);white-space:nowrap;
+}
+.e2i-lp-stage li{
+  display:grid;grid-template-columns:30px 1fr;column-gap:8px;
+  padding:7px 0;border-top:1px dashed var(--c-rule);
+}
+.e2i-lp-stage li:first-child{border-top:0}
+.e2i-lp-stage li i{
+  font-style:normal;font-family:var(--c-mono);font-size:10px;font-weight:600;
+  color:var(--c-muted);padding-top:2px;
+}
+.e2i-lp-stage li b{
+  font-family:var(--c-mono);font-weight:600;font-size:13px;color:var(--c-ink);line-height:1.45;
+}
+.e2i-lp-stage li em{
+  grid-column:2;font-style:normal;font-size:12.5px;color:var(--c-muted);margin-top:2px;
+}
+
+/* ---------- hai chế độ học / hai nơi ---------- */
+.e2i-lp-two{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+.e2i-lp-place{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:12px;padding:18px 20px;
+}
+.e2i-lp-place.e2i-lp-place-hi{background:var(--c-soft);border-color:var(--c-rule2)}
+.e2i-lp-place h4{
+  font-family:var(--c-mono);font-size:10px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--c-accent);margin-bottom:9px!important;
+}
+.e2i-lp-place h3{
+  font-family:var(--c-serif);font-weight:700;font-size:18px;color:var(--c-ink);
+  margin-bottom:4px!important;
+}
+.e2i-lp-place .e2i-lp-placesub{font-size:13px;color:var(--c-muted);margin-bottom:9px!important}
+.e2i-lp-place li{
+  font-size:13.5px;color:var(--c-ink2);padding:4px 0 4px 17px;position:relative;line-height:1.5;
+}
+.e2i-lp-place li::before{
+  content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;
+  background:var(--c-fill);
+}
+
+/* ---------- FAQ ---------- */
+.e2i-lp-faq{margin-top:18px;border:1px solid var(--c-rule);border-radius:12px;overflow:hidden}
+.e2i-lp-q{padding:16px 20px;background:var(--c-surface);border-top:1px solid var(--c-rule)}
+.e2i-lp-q:first-child{border-top:0}
+.e2i-lp-q h4{font-family:var(--c-sans);font-weight:600;font-size:14.5px;color:var(--c-ink)}
+.e2i-lp-q p{font-size:13.5px;color:var(--c-muted);margin-top:5px!important;line-height:1.55}
+
+/* ---------- CTA cuối ---------- */
+.e2i-lp-end{
+  margin-top:34px;background:var(--c-fill);border-radius:14px;
+  padding:30px 34px;display:grid;grid-template-columns:1.3fr .7fr;
+  gap:24px;align-items:center;
+}
+.e2i-lp-end h2{color:var(--c-onfill);font-size:clamp(21px,2.8vw,28px)}
+.e2i-lp-end p{color:var(--c-onfill);opacity:.9;margin-top:9px!important;font-size:14.5px;max-width:48ch}
+.e2i-lp-end .e2i-lp-btn{background:var(--c-onfill);color:var(--c-fill);justify-self:end}
+.e2i-lp-end .e2i-lp-btn:hover{opacity:.9;color:var(--c-fill)}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .e2i-lp-pairs,.e2i-lp-stages,.e2i-lp-two{grid-template-columns:1fr}
+  .e2i-lp-stats,.e2i-lp-forms{grid-template-columns:repeat(2,1fr)}
+  .e2i-lp-end{grid-template-columns:1fr}
+  .e2i-lp-end .e2i-lp-btn{justify-self:start}
+}
+@media(max-width:560px){
+  .e2i-lp-hero{padding:24px 20px 22px 22px;border-radius:12px}
+  .e2i-lp-end{padding:24px 20px}
+  .e2i-lp-step{grid-template-columns:26px 1fr;gap:12px;padding:14px 16px}
+  .e2i-lp-time{grid-column:2;justify-self:start;margin-top:7px}
+  .e2i-lp-forms{grid-template-columns:1fr}
+  .e2i-lp-stage-h{flex-direction:column;gap:5px}
+  .e2i-lp-stage-h span{white-space:normal}
+  .e2i-lp-btn{width:100%;justify-content:center}
+  .e2i-lp-note{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){.e2i-lp *{transition:none!important}}
+</style>
+
+<div class="e2i-lp">
+
+  <!-- ============ HERO ============ -->
+  <div class="e2i-lp-hero">
+    <span class="e2i-lp-eyebrow">English2impact · English Reflex 1</span>
+    <h1>Bạn biết ngữ pháp.<br>Chỉ là nói ra <span class="e2i-lp-mark">vẫn phải dịch trong đầu.</span></h1>
+    <p class="e2i-lp-lede">16 buổi, mỗi buổi một câu nền. Không học lý thuyết thì — học một câu rồi bẻ nó ra <b>bốn dạng</b>: khẳng định, phủ định, hỏi có/không, hỏi wh-, lặp tới khi câu bật ra trước khi kịp nghĩ.</p>
+
+    <div class="e2i-lp-actions">
+      <a class="e2i-lp-btn e2i-lp-fill" href="https://english2impact.com/?join=D2888J&amp;c=er1" target="_blank" rel="noopener noreferrer">Vào lớp English Reflex 1 →</a>
+      <p class="e2i-lp-note">Mở app, bấm <b>Add</b> để lưu khóa vào <b>My learning</b>, rồi học buổi 1 ngay.</p>
+    </div>
+
+    <div class="e2i-lp-stats">
+      <div class="e2i-lp-stat"><b>16</b><span>buổi học</span></div>
+      <div class="e2i-lp-stat"><b>4</b><span>chặng</span></div>
+      <div class="e2i-lp-stat"><b>90′</b><span>mỗi buổi</span></div>
+      <div class="e2i-lp-stat"><b>A1</b><span>trình độ đầu vào</span></div>
+    </div>
+  </div>
+
+  <!-- ============ VẤN ĐỀ ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Vì sao học ngữ pháp mãi vẫn không nói được</span>
+    <h2>Bạn không thiếu kiến thức. Bạn <span class="e2i-lp-mark">thiếu phản xạ.</span></h2>
+    <p class="e2i-lp-sub">Ngữ pháp bạn đã học rồi — vấn đề là nó nằm ở dạng lý thuyết, phải lấy ra rồi lắp lại mỗi lần nói. Khóa này không dạy thêm kiến thức mới; nó biến cái bạn đã biết thành thứ bật ra được.</p>
+
+    <div class="e2i-lp-pairs">
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">Dịch trong đầu</p>
+        <p>Nghĩ bằng tiếng Việt, rồi lắp từng từ sang tiếng Anh. Lắp xong thì người ta đã hỏi câu khác.</p>
+      </div>
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">Chỉ nói được câu khẳng định</p>
+        <p>Câu kể thì trôi, nhưng phủ định và câu hỏi phải nghĩ lâu gấp đôi — nên bạn tránh, và hội thoại đứng lại.</p>
+      </div>
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">Thuộc công thức, không dùng được</p>
+        <p>Nhớ rõ S + V + O, nhưng khi phải đổi chủ ngữ, đổi đại từ, thêm động từ thứ hai thì khựng.</p>
+      </div>
+    </div>
+
+    <div class="e2i-lp-quote">
+      <p>Nguyên tắc của khóa: <b>một câu — bốn dạng</b>. Mỗi câu nền đều được kéo qua đủ bốn dạng, buổi nào cũng vậy, cho tới khi đổi dạng trở thành phản xạ chứ không còn là phép tính.</p>
+    </div>
+
+    <div class="e2i-lp-forms">
+      <div class="e2i-lp-form">
+        <span>[ + ]</span>
+        <b>The apple is red.</b>
+        <i>Khẳng định</i>
+      </div>
+      <div class="e2i-lp-form">
+        <span>[ − ]</span>
+        <b>The apple isn't red.</b>
+        <i>Phủ định</i>
+      </div>
+      <div class="e2i-lp-form">
+        <span>[ Y/N ? ]</span>
+        <b>Is the apple red?</b>
+        <i>Hỏi có / không</i>
+      </div>
+      <div class="e2i-lp-form">
+        <span>[ Wh- ? ]</span>
+        <b>What colour is the apple?</b>
+        <i>Hỏi lấy thông tin</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MỘT BUỔI HỌC ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Một buổi học diễn ra thế nào</span>
+    <h2>Bốn bước, lặp lại y hệt suốt 16 buổi.</h2>
+    <p class="e2i-lp-sub">Cấu trúc không đổi, chỉ đổi câu nền. Từ buổi thứ hai trở đi bạn không phải học lại cách học — mở lên là vào việc. Bốn bước dưới đây là 60 phút lõi; 30 phút còn lại dành cho khởi động và ôn lại câu của buổi trước.</p>
+
+    <div class="e2i-lp-steps">
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">01</span>
+        <div>
+          <h4>Reflex Mimicry — nhại theo mẫu</h4>
+          <p>Nghe câu mẫu và nói lại ngay, không nhìn chữ. Đây là bước cài âm thanh của câu vào tai trước khi hiểu bằng lý thuyết.</p>
+        </div>
+        <span class="e2i-lp-time">15 phút</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">02</span>
+        <div>
+          <h4>Ping-Pong QA — hỏi đáp qua lại</h4>
+          <p>Hỏi và trả lời liên tục trên đúng câu nền đó, bốn dạng xen nhau. Mục tiêu là trả lời trong hai giây, không phải trả lời hay.</p>
+        </div>
+        <span class="e2i-lp-time">15 phút</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">03</span>
+        <div>
+          <h4>Information-Gap — hỏi để lấy thông tin</h4>
+          <p>Mỗi bên giữ một nửa thông tin, muốn biết phần còn lại thì phải hỏi. Câu hỏi lúc này có lý do thật, không còn là bài tập.</p>
+        </div>
+        <span class="e2i-lp-time">15 phút</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">04</span>
+        <div>
+          <h4>Reflex Simulation — đặt vào tình huống</h4>
+          <p>Một tình huống đời thường hoặc công việc, dùng lại toàn bộ câu nền vừa học cùng các câu của những buổi trước.</p>
+        </div>
+        <span class="e2i-lp-time">15 phút</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LỘ TRÌNH ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Lộ trình 4 chặng · 16 câu nền</span>
+    <h2>Một câu duy nhất, lớn dần ra suốt 16 buổi.</h2>
+    <p class="e2i-lp-sub">Khóa học đi theo ma trận cấu trúc: buổi sau chỉ thêm đúng một yếu tố vào câu của buổi trước. Không buổi nào bắt đầu lại từ đầu, nên cái đã học luôn được dùng tiếp.</p>
+
+    <div class="e2i-lp-stages">
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Chặng 1 · Câu nền: mô tả &amp; trao – nhận</h3>
+          <span>Bài 1–4</span>
+        </div>
+        <ul>
+          <li><i>B1</i><b>The apple is red.</b><em>Câu mô tả — is / isn't</em></li>
+          <li><i>B2</i><b>It is John's apple.</b><em>Sở hữu</em></li>
+          <li><i>B3</i><b>I give John the apple.</b><em>Động từ có hai tân ngữ</em></li>
+          <li><i>B4</i><b>We give him the apple.</b><em>Đổi chủ ngữ, đổi tân ngữ</em></li>
+        </ul>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Chặng 2 · Đại từ &amp; động từ thứ hai</h3>
+          <span>Bài 5–8</span>
+        </div>
+        <ul>
+          <li><i>B5</i><b>He gives it to John.</b><em>Ngôi thứ ba số ít — thêm -s</em></li>
+          <li><i>B6</i><b>She gives it to him.</b><em>Thay cả hai tân ngữ bằng đại từ</em></li>
+          <li><i>B7</i><b>I must give it to him.</b><em>Động từ khuyết thiếu</em></li>
+          <li><i>B8</i><b>I want to give it to him.</b><em>Động từ + to + động từ</em></li>
+        </ul>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Chặng 3 · Kế hoạch – khả năng – kết quả</h3>
+          <span>Bài 9–12</span>
+        </div>
+        <ul>
+          <li><i>B9</i><b>I am going to give it to him tomorrow.</b><em>Dự định</em></li>
+          <li><i>B10</i><b>I can give it to him.</b><em>Khả năng</em></li>
+          <li><i>B11</i><b>I should give it to him.</b><em>Lời khuyên</em></li>
+          <li><i>B12</i><b>I have given it to him.</b><em>Việc đã xong, còn liên quan tới hiện tại</em></li>
+        </ul>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Chặng 4 · Câu tự nhiên, đầy đủ</h3>
+          <span>Bài 13–16</span>
+        </div>
+        <ul>
+          <li><i>B13</i><b>I will give it to him.</b><em>Quyết định tại chỗ</em></li>
+          <li><i>B14</i><b>He speaks English clearly and very professionally.</b><em>Trạng từ chỉ cách thức và mức độ</em></li>
+          <li><i>B15</i><b>She meets the clients at the head office every morning.</b><em>Nơi chốn và thời gian — at / in / on</em></li>
+          <li><i>B16</i><b>She always meets them on Monday.</b><em>Tần suất — câu nói hằng ngày</em></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ HAI CHẾ ĐỘ HỌC ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Hai chế độ học</span>
+    <h2>Có giáo viên kèm, hoặc tự học. <span class="e2i-lp-mark">Cùng một lộ trình.</span></h2>
+    <p class="e2i-lp-sub">Hai chế độ dùng chung một bộ tài liệu và một hệ thống bài luyện — khác nhau ở chỗ có người dẫn buổi học hay không. Bạn có thể bắt đầu bằng tự học rồi chuyển sang lớp kèm, tiến độ vẫn giữ nguyên.</p>
+
+    <div class="e2i-lp-two">
+      <div class="e2i-lp-place e2i-lp-place-hi">
+        <h4>Chế độ 1</h4>
+        <h3>Lớp kèm — có giáo viên</h3>
+        <p class="e2i-lp-placesub">2 buổi/tuần · 90 phút · online hoặc tại lớp</p>
+        <ul>
+          <li>Giáo viên dẫn đủ bốn bước drill, giữ nhịp để bạn không kịp dịch trong đầu</li>
+          <li>Ping-Pong và Information-Gap với người thật — phần khó tự làm một mình nhất</li>
+          <li>Sửa ngay tại chỗ: sai đại từ, rớt -s, sai trật tự câu hỏi</li>
+          <li>App dùng làm bài về nhà giữa hai buổi</li>
+        </ul>
+      </div>
+      <div class="e2i-lp-place">
+        <h4>Chế độ 2</h4>
+        <h3>Tự học — theo tốc độ của bạn</h3>
+        <p class="e2i-lp-placesub">Học bất cứ lúc nào · mỗi buổi có thể chia làm hai lần</p>
+        <ul>
+          <li>Audio mẫu cho từng câu nền, nghe và nhại lại bao nhiêu lần cũng được</li>
+          <li>Bài luyện bốn dạng câu trong app, chấm ngay từng câu</li>
+          <li>Tiến độ 16 buổi được lưu lại, biết còn nợ buổi nào</li>
+          <li>Hợp với người bận hoặc muốn học trước rồi mới vào lớp</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HAI NƠI, MỘT LỘ TRÌNH ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Học ở đâu</span>
+    <h2>Trang này giải thích. <span class="e2i-lp-mark">App mới là chỗ luyện.</span></h2>
+    <p class="e2i-lp-sub">Dù học kèm hay tự học, bạn cũng dùng đúng hai nơi này. Thời gian đọc bài trên trang này không tính vào 90 phút của buổi học.</p>
+
+    <div class="e2i-lp-two">
+      <div class="e2i-lp-place e2i-lp-place-hi">
+        <h4>Trong app · nơi luyện</h4>
+        <ul>
+          <li>Audio câu nền và bài nhại theo mẫu</li>
+          <li>Bài luyện chuyển câu sang bốn dạng, chấm ngay</li>
+          <li>Nói vào mic và nghe lại chính mình</li>
+          <li>Tiến độ 16 buổi và phần còn nợ</li>
+        </ul>
+      </div>
+      <div class="e2i-lp-place">
+        <h4>Trên trang này · nơi hiểu</h4>
+        <ul>
+          <li>Bảng cấu trúc của từng câu nền, giải thích bằng tiếng Việt</li>
+          <li>Lỗi người Việt hay mắc ở đúng câu đó</li>
+          <li>Hội thoại mẫu và từ vựng của buổi học</li>
+          <li>Đọc lại khi quên, không giới hạn số lần</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FAQ ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Hỏi nhanh</span>
+    <h2>Trước khi bắt đầu</h2>
+
+    <div class="e2i-lp-faq">
+      <div class="e2i-lp-q">
+        <h4>Tôi mất gốc, học được không?</h4>
+        <p>Được — khóa này thiết kế cho trình độ A1, tức là bắt đầu từ câu đơn giản nhất. Toàn bộ phần hướng dẫn và giải thích bằng tiếng Việt, chỉ phần tiếng Anh cần luyện mới để nguyên tiếng Anh.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Tôi học ngữ pháp rồi, có thừa không?</h4>
+        <p>Không, vì khóa này không dạy lại lý thuyết. Nếu bạn hiểu hết các câu trong lộ trình nhưng vẫn phải nghĩ vài giây trước khi nói, thì phần bạn thiếu đúng là phần khóa này luyện.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Lớp kèm và tự học khác nhau nhiều không?</h4>
+        <p>Nội dung y hệt nhau. Khác ở nhịp: lớp kèm có người ép tốc độ và sửa lỗi ngay trong lúc bạn nói; tự học thì bạn tự giữ nhịp, bù lại được lặp bao nhiêu lần tùy ý và học vào giờ nào cũng được.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Vào lớp rồi thì mở được những gì?</h4>
+        <p>Bấm nút bên trên là vào thẳng lớp English Reflex 1 trong app. Nhớ bấm <b>Add</b> để khóa nằm trong <b>My learning</b> — khóa chỉ mở tiếp từ buổi 2 khi đã được thêm vào kệ của bạn. Buổi 1 thì ai cũng học được.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Tôi là giáo viên, giao khóa này cho lớp được không?</h4>
+        <p>Được. Bấm <b>Add</b> để khóa vào <b>My teaching</b>, rồi giao cả 16 buổi cho học viên luyện ở nhà: audio, bài luyện bốn dạng câu và hội thoại đã soạn sẵn, tiến độ từng em theo dõi được.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Học xong 16 buổi thì được gì?</h4>
+        <p>Bạn nói được câu đầy đủ — có chủ ngữ, động từ, tân ngữ, nơi chốn, thời gian — mà không phải dựng câu trong đầu trước, và đổi sang phủ định hay câu hỏi mà không khựng lại. Đây là khóa nền; nói dài và nói sâu là việc của các khóa tiếp theo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CTA CUỐI ============ -->
+  <div class="e2i-lp-end">
+    <div>
+      <h2>Buổi 1 là "The apple is red."<br>Bắt đầu ngay hôm nay.</h2>
+      <p>Vào lớp, bấm Add, học buổi đầu tiên. Ngày mai là câu thứ hai — và câu hôm nay vẫn nằm trong đó.</p>
+    </div>
+    <a class="e2i-lp-btn" href="https://english2impact.com/?join=D2888J&amp;c=er1" target="_blank" rel="noopener noreferrer">Vào lớp English Reflex 1 →</a>
+  </div>
+
+</div>
