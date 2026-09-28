@@ -968,12 +968,11 @@ var QUIZLET_PAGE = "https://quizlet.com/1214528405/";
 
 /* term · Vietnamese · IPA (UK, as in the course's Odoo tables) · example · definition.
    Example = the Quizlet sentence (drafted 28 Sept 2026) with the term put back.
-   The list must match the Quizlet set exactly: if Khoa trimmed the set, trim
-   VOCAB and LAB to match, and turn the dropped terms' gaps into plain text. */
+   The list matches Quizlet set 1214528405 exactly (12 terms, Khoa 28 Sept 2026:
+   constipation, chronic, fluid intake and toilet routine were dropped from the
+   16 drafted; their dialogue gaps are plain text). */
 var VOCAB = [
-  ["constipation","táo bón","/ˌkɒnstɪˈpeɪʃn/","Hard, dry stools that are painful to pass and come fewer than three times a week are typical signs of constipation in children.","having hard, dry stools that are difficult or painful to pass, and passing them less often than usual"],
   ["bowel movement","lần đi ngoài","/ˈbaʊəl ˌmuːvmənt/","A healthy toddler usually has a soft bowel movement every day or two.","one act of passing stool; going to the toilet for a poo"],
-  ["chronic","mạn tính","/ˈkrɒnɪk/","Constipation that has lasted for more than two months is considered chronic.","lasting a long time or coming back again and again, rather than sudden and short"],
   ["straining","rặn","/ˈstreɪnɪŋ/","If your child goes red in the face from straining on the toilet, the stool is probably too hard.","pushing hard with the tummy muscles to pass a stool"],
   ["anal fissure","nứt kẽ hậu môn","/ˌeɪnl ˈfɪʃə/","A streak of bright red blood on the toilet paper is often caused by a small anal fissure.","a small tear in the skin at the anus, usually caused by passing a hard stool"],
   ["withholding behaviour","hành vi nhịn đi ngoài","/wɪðˈhəʊldɪŋ bɪˌheɪvjə/","Crossing the legs or hiding in a corner when the urge comes is typical withholding behaviour.","what a child does to hold stool in: crossing the legs, standing on tiptoe, hiding or going quiet"],
@@ -981,9 +980,7 @@ var VOCAB = [
   ["abdominal distension","chướng bụng","/æbˌdɒmɪnl dɪˈstenʃn/","The doctor checked for abdominal distension, but the child's tummy was soft and flat.","a swollen, stretched tummy"],
   ["functional constipation","táo bón chức năng","/ˌfʌŋkʃənl ˌkɒnstɪˈpeɪʃn/","Most children with a healthy bowel who hold in their stool have functional constipation.","constipation with no disease or structural problem behind it, usually kept going by withholding"],
   ["Bristol stool chart","thang phân loại phân Bristol","/ˌbrɪstl ˈstuːl tʃɑːt/","The doctor used the Bristol stool chart to show that type four is the ideal stool.","a chart of seven stool types, from hard separate lumps to watery"],
-  ["fluid intake","lượng nước uống vào","/ˈfluːɪd ˌɪnteɪk/","Increasing your child's daily fluid intake helps keep the stool soft.","the amount of water and other drinks a person takes in"],
   ["dietary fibre","chất xơ trong khẩu phần ăn","/ˌdaɪətəri ˈfaɪbə/","Papaya, prunes, vegetables and brown rice are good sources of dietary fibre.","the part of plant foods the body does not digest, which keeps stool soft and bulky"],
-  ["toilet routine","thói quen đi vệ sinh đúng giờ","/ˈtɔɪlət ruːˌtiːn/","A toilet routine of five minutes on the toilet after each meal helps children go regularly.","sitting on the toilet at the same times every day, usually after meals"],
   ["laxative","thuốc nhuận tràng","/ˈlæksətɪv/","A laxative helps the bowel move, and some types are safe for young children.","a medicine that helps the bowels empty"],
   ["stool softener","thuốc làm mềm phân","/ˈstuːl ˌsɒfnə/","A gentle stool softener draws water into the stool so it is painless to pass.","a medicine that keeps water in the stool so it is soft and easy to pass"],
   ["habit-forming","gây lệ thuộc","/ˈhæbɪt ˌfɔːmɪŋ/","The doctor explained that this medicine is not habit-forming, so it can be stopped slowly later.","making the body depend on it, so that it is hard to stop"]
@@ -993,22 +990,18 @@ var NV = VOCAB.length;
    the same sentence the learner meets in Quizlet), with two other taught terms
    as distractors that cannot also fit. Order follows VOCAB. */
 var LAB = [
-  ["A four-year-old who passes hard, painful stools only twice a week has ___.",                          ["toilet routine","habit-forming"]],
   ["Keep a diary: write down each ___, the day, and what the stool looked like.",                         ["anal fissure","abdominal distension"]],
-  ["Her symptoms have gone on for four months, so her constipation is now ___.",                         ["dietary fibre","stool softener"]],
-  ["He grips the seat and holds his breath, ___ for minutes on the toilet.",                               ["fluid intake","chronic"]],
-  ["The bright red streak on the paper came from a small ___ caused by a hard stool.",                    ["toilet routine","Bristol stool chart"]],
-  ["Standing on tiptoe in a corner and going quiet when the urge comes is classic ___.",                   ["dietary fibre","fluid intake"]],
+  ["He grips the seat and holds his breath, ___ for minutes on the toilet.",                               ["dietary fibre","Bristol stool chart"]],
+  ["The bright red streak on the paper came from a small ___ caused by a hard stool.",                    ["dietary fibre","Bristol stool chart"]],
+  ["Standing on tiptoe in a corner and going quiet when the urge comes is classic ___.",                   ["dietary fibre","laxative"]],
   ["His teacher found brown marks in his underwear again: ___ from soft stool leaking around the hard stool.", ["straining","laxative"]],
-  ["A tummy that looks swollen and feels tight is ___, and with vomiting it needs urgent review.",          ["toilet routine","stool softener"]],
-  ["No blockage, a healthy bowel and a child who holds it in: the diagnosis is ___.",                       ["fluid intake","toilet routine"]],
-  ["On the ___, type one is hard lumps and type four is soft and smooth.",                                 ["fluid intake","soiling"]],
-  ["He drinks only one small cup of water a day, so his ___ is far too low.",                               ["laxative","anal fissure"]],
+  ["A tummy that looks swollen and feels tight is ___, and with vomiting it needs urgent review.",          ["Bristol stool chart","stool softener"]],
+  ["No blockage, a healthy bowel and a child who holds it in: the diagnosis is ___.",                       ["Bristol stool chart","dietary fibre"]],
+  ["On the ___, type one is hard lumps and type four is soft and smooth.",                                 ["dietary fibre","soiling"]],
   ["White rice and milk contain very little ___, so add vegetables and fruit.",                             ["Bristol stool chart","anal fissure"]],
-  ["Sitting her on the potty for five minutes after breakfast and dinner builds a ___.",                    ["laxative","constipation"]],
-  ["Senna is a stimulant ___ that makes the bowel muscles push the stool along.",                           ["soiling","fluid intake"]],
+  ["Senna is a stimulant ___ that makes the bowel muscles push the stool along.",                           ["soiling","abdominal distension"]],
   ["Macrogol is a ___: it holds water in the stool, so going to the toilet is painless.",                   ["Bristol stool chart","withholding behaviour"]],
-  ["Parents often ask whether the medicine is ___, but the bowel won't forget how to work on its own.",     ["dietary fibre","toilet routine"]]
+  ["Parents often ask whether the medicine is ___, but the bowel won't forget how to work on its own.",     ["dietary fibre","Bristol stool chart"]]
 ];
 
 /* The chunks — type c1: one frame per step of the consultation, in the order
@@ -1070,24 +1063,23 @@ var SPEAKERS = {W:"Dr. Laura", M:"Liam"};
 var DIALOGUE = [
   ["W",["Good afternoon, Liam. Come in and have a seat. What's been going on with Leo?"]],
   ["M",["Afternoon, Doctor. I think he's constipated. He only has a ",{g:0}," about twice a week, and when he does go, he cries. It's been like this for nearly three months."]],
-  ["W",["Three months means it's ",{g:1},", so I'm glad you came in. What is the stool like? Is it hard, and does he have to do a lot of ",{g:2},"?"]],
+  ["W",["Three months means it's chronic, so I'm glad you came in. What is the stool like? Is it hard, and does he have to do a lot of ",{g:1},"?"]],
   ["M",["Very hard, like little pebbles. He goes bright red from straining. Last week there was a streak of blood on the toilet paper."]],
-  ["W",["That streak of blood most likely comes from an ",{g:3},", a small tear caused by passing a hard stool. It's painful, but it heals once the stool is soft. Have you noticed him crossing his legs or hiding behind the sofa when he feels the urge to go?"]],
+  ["W",["That streak of blood most likely comes from an ",{g:2},", a small tear caused by passing a hard stool. It's painful, but it heals once the stool is soft. Have you noticed him crossing his legs or hiding behind the sofa when he feels the urge to go?"]],
   ["M",["Yes! He stands on tiptoe in a corner and goes very quiet. We thought he was just playing. And lately there have been little brown marks in his underwear."]],
-  ["W",["That's ",{g:4},", and the marks are ",{g:5},": soft stool leaking around the hard stool that's stuck. What's happening is that one painful bowel movement has made him afraid, so he holds it in and the stool gets even harder."]],
+  ["W",["That's ",{g:3},", and the marks are ",{g:4},": soft stool leaking around the hard stool that's stuck. What's happening is that one painful bowel movement has made him afraid, so he holds it in and the stool gets even harder."]],
   ["M",["That makes sense. It all started when he began preschool. He refuses to use the toilets there."]],
-  ["W",["That's a very common trigger. I've examined his tummy. There's no ",{g:6},", and I can only feel some stool on the left side. There's nothing to suggest a blockage or a problem with his bowel; this looks like ",{g:7},"."]],
+  ["W",["That's a very common trigger. I've examined his tummy. There's no ",{g:5},", and I can only feel some stool on the left side. There's nothing to suggest a blockage or a problem with his bowel; this looks like ",{g:6},"."]],
   ["M",["Functional? So there's nothing actually wrong with his bowel?"]],
-  ["W",["His bowel is healthy; the problem is the cycle of pain and holding on. Look at this ",{g:8},". His stools are type one, the hardest. We're aiming for type four: soft and smooth, like a sausage."]],
+  ["W",["His bowel is healthy; the problem is the cycle of pain and holding on. Look at this ",{g:7},". His stools are type one, the hardest. We're aiming for type four: soft and smooth, like a sausage."]],
   ["M",["So what should we change at home? He mostly eats white rice, and he drinks far more milk than water."]],
-  ["W",["Increasing his daily fluid intake and introducing fibre-rich fruits like papaya or prunes will help soften his stool. More ",{g:9}," from vegetables and brown rice will help as well. And start a ",{g:10},": sit him on the toilet for five minutes after each meal, with a small stool under his feet."]],
+  ["W",["Increasing his daily fluid intake and introducing fibre-rich fruits like papaya or prunes will help soften his stool. More ",{g:8}," from vegetables and brown rice will help as well. And start a toilet routine: sit him on the toilet for five minutes after each meal, with a small stool under his feet."]],
   ["M",["Does he need medicine too? I'm a bit worried about giving a four-year-old a laxative every day."]],
-  ["W",["I'll prescribe a gentle ",{g:11},". It's safe for children his age and isn't habit-forming, and once going to the toilet stops hurting, he'll stop being afraid. We'll keep it going for a few months, then reduce it slowly. If you notice a swollen tummy, any vomiting or more than a streak of blood, bring him back straight away."]],
+  ["W",["I'll prescribe a gentle ",{g:9},". It's safe for children his age and isn't habit-forming, and once going to the toilet stops hurting, he'll stop being afraid. We'll keep it going for a few months, then reduce it slowly. If you notice a swollen tummy, any vomiting or more than a streak of blood, bring him back straight away."]],
   ["M",["Got it. More water and fruit, toilet time after meals, the softener every day, and straight back here if his tummy swells, he vomits or there's more blood."]]
 ];
 var GAPS = [
   {a:["bowel movement"]},
-  {a:["chronic"]},
   {a:["straining"]},
   {a:["anal fissure"]},
   {a:["withholding behaviour","withholding behavior"]},
@@ -1096,7 +1088,6 @@ var GAPS = [
   {a:["functional constipation"]},
   {a:["Bristol stool chart","bristol chart"]},
   {a:["dietary fibre","dietary fiber"]},
-  {a:["toilet routine"]},
   {a:["stool softener","stool-softener"]}
 ];
 /* The scene — shown in Dialogue decode step 1 right after the context line,
@@ -1175,7 +1166,7 @@ var RECALL = [
 var OUTCOMES = [
   "Take a constipation history and spot the signs: <b>withholding behaviour</b>, <b>soiling</b>, <b>straining</b> and the blood of an <b>anal fissure</b>.",
   "Take a parent through a whole consultation with the chunks: probe, explain the cycle, reassure, home plan and safety net.",
-  "Give a clear home plan (<b>fluid intake</b>, <b>dietary fibre</b>, a <b>toilet routine</b>, a <b>stool softener</b>) and the red flags that mean the child comes back straight away."
+  "Give a clear home plan (more fluids, <b>dietary fibre</b>, a regular toilet time, a <b>stool softener</b>) and the red flags that mean the child comes back straight away."
 ];
 /* Next session — from syllabus-me2.pdf */
 var NEXT = {n:"17", title:"Neonatal Sepsis & NICU Protocols", line:"Due to maternal intra-amniotic infection and elevated CRP, the neonate requires immediate admission to the NICU.", stage:"Stage 3"};
