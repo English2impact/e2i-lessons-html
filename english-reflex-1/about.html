@@ -1,7 +1,8 @@
 <!-- =================================================================
      ENGLISH2IMPACT — LANDING PAGE KHÓA ENGLISH REFLEX 1
      Thay cho bài "About this course" (slide 3575)
-     Cập nhật 13/09/2026
+     Cập nhật 29/09/2026 — thêm masthead theo mẫu trang bài mới (High-rise Fluency 1),
+     nút dẫn thẳng vào cột Learn của khóa ở chế độ khách (bỏ link mời lớp)
      =================================================================
      CÁCH DÙNG
      1. Vào trang bài "About this course" của khóa English Reflex 1 → Edit.
@@ -16,9 +17,14 @@
      GIAO DIỆN
      - Mặc định nền sáng. Muốn nền tối: <div class="e2i-lp e2i-lp-dark">
 
-     LINK THAM GIA LỚP (xuất hiện ở 2 nút — đổi cả 2 nếu thay mã lớp)
-     - https://english2impact.com/?join=D2888J&c=er1
+     LINK VÀO APP (xuất hiện ở 2 nút — đổi cả 2 nếu cần)
+     - https://english2impact.com/?try=er1
+       Link học thử chung: mở khóa English Reflex 1 ở chế độ khách — không cần
+       đăng nhập, không kèm mã lớp của giáo viên nào — dùng chung cho mọi giáo viên.
      - Trong HTML dấu & phải viết là &amp; — giữ nguyên như trong code.
+
+     LOGO Ở MASTHEAD
+     - Bấm logo → trang khóa English Reflex 1 trên Odoo (/slides/english-reflex-1-33).
      ================================================================= -->
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
@@ -64,8 +70,8 @@
 }
 .e2i-lp *{box-sizing:border-box}
 /* Odoo hay bọc snippet trong khối căn giữa — ép căn trái ở mọi cấp */
-.e2i-lp,.e2i-lp div,.e2i-lp p,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp li,.e2i-lp span{text-align:left}
-.e2i-lp p,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp ul,.e2i-lp ol{margin:0}
+.e2i-lp,.e2i-lp div,.e2i-lp p,.e2i-lp h1,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp li,.e2i-lp span{text-align:left}
+.e2i-lp p,.e2i-lp h1,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp ul,.e2i-lp ol{margin:0}
 .e2i-lp ul{list-style:none;padding:0}
 .e2i-lp a{text-decoration:none}
 .e2i-lp a:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
@@ -88,39 +94,61 @@
 .e2i-lp-sub{margin-top:8px!important;color:var(--c-muted);font-size:14.5px;max-width:64ch}
 .e2i-lp-mark{color:var(--c-accent)}
 
-/* ---------- hero ---------- */
-.e2i-lp-hero{
-  position:relative;
-  background:linear-gradient(135deg,var(--c-paper) 0%,var(--c-paper2) 100%);
-  border:1px solid var(--c-rule);border-radius:14px;
-  padding:34px 34px 30px 36px;overflow:hidden;
+/* ---------- masthead (theo mẫu trang bài mới) ---------- */
+.e2i-lp{--c-navy:#061c37;--c-terra:#dd7958}
+.e2i-lp-mast{
+  background:var(--c-navy);color:#eef2f7;border-radius:14px;
+  border-bottom:3px solid var(--c-terra);padding:24px 30px 26px;
 }
-.e2i-lp-hero::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c-fill);
+.e2i-lp-topline{display:flex;gap:13px;align-items:center;margin:0 0 14px}
+.e2i-lp .e2i-lp-brand{flex:none;display:block;line-height:0;border-radius:8px}
+.e2i-lp .e2i-lp-brand:hover{opacity:.82}
+.e2i-lp-brand img{display:block;width:auto;height:52px;max-width:none;margin:0}
+.e2i-lp-kicker{
+  font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#9fb2c8;
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;line-height:1.4;
 }
-.e2i-lp-hero h1{
-  font-family:var(--c-serif);font-weight:800;
-  font-size:clamp(26px,4vw,40px);line-height:1.12;letter-spacing:-.02em;
-  color:var(--c-ink);margin:0;text-wrap:balance;
+.e2i-lp-kicker b{color:var(--c-terra);font-weight:600}
+.e2i-lp-kicker i{color:#7d93ab;font-style:normal}
+.e2i-lp .e2i-lp-mast h1{
+  font-family:var(--c-serif);font-weight:800;color:#fff;
+  font-size:clamp(25px,4vw,40px);line-height:1.14;letter-spacing:-.02em;
+  max-width:24ch;text-wrap:balance;
 }
-.e2i-lp-lede{
-  margin-top:14px!important;font-size:16px;color:var(--c-ink2);max-width:58ch;
+.e2i-lp .e2i-lp-mast h1 em{color:var(--c-terra);font-style:italic}
+.e2i-lp-subline{margin-top:12px!important;color:#c9d5e3;font-size:15.5px;max-width:60ch}
+.e2i-lp-subline b{color:#fff;font-weight:600}
+.e2i-lp .e2i-lp-chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 0;padding:0;list-style:none}
+.e2i-lp-chips li{
+  font-size:12px;color:#d7e1ed;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:5px 11px;white-space:nowrap;line-height:1.3;
 }
-.e2i-lp-actions{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;align-items:center}
+.e2i-lp-chips li.e2i-lp-now{border-color:var(--c-terra);color:#fff;background:rgba(221,121,88,.18);font-weight:600}
+.e2i-lp-structure{
+  margin-top:14px!important;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+  border-radius:10px;padding:11px 13px;font-family:var(--c-mono);font-size:13.5px;
+  color:#e7eef6;overflow-wrap:anywhere;max-width:60ch;
+}
+.e2i-lp-structure span{
+  display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--c-terra);margin-bottom:3px;
+}
+.e2i-lp-actions{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap;align-items:center}
 .e2i-lp-btn{
   display:inline-flex;align-items:center;gap:8px;font-family:var(--c-sans);
   font-weight:600;font-size:15.5px;padding:12px 24px;border-radius:8px;
   border:1px solid transparent;white-space:nowrap;
   transition:opacity .15s ease,border-color .15s ease,color .15s ease;
 }
-.e2i-lp .e2i-lp-fill{background:var(--c-fill);color:var(--c-onfill)}
-.e2i-lp .e2i-lp-fill:hover{opacity:.88;color:var(--c-onfill)}
-.e2i-lp-note{font-size:12.5px;color:var(--c-muted);line-height:1.4;max-width:34ch}
+.e2i-lp .e2i-lp-go{background:var(--c-terra);color:var(--c-navy)}
+.e2i-lp .e2i-lp-go:hover{opacity:.88;color:var(--c-navy)}
+.e2i-lp-note{font-size:12.5px;color:#c9d5e3;line-height:1.45;max-width:38ch}
+.e2i-lp-note b{color:#fff;font-weight:600}
 
 .e2i-lp-stats{
   display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
   background:var(--c-rule);border:1px solid var(--c-rule);
-  border-radius:10px;overflow:hidden;margin-top:26px;
+  border-radius:10px;overflow:hidden;margin-top:14px;
 }
 .e2i-lp-stat{background:var(--c-surface);padding:13px 15px}
 .e2i-lp-stat b{
@@ -270,14 +298,19 @@
   .e2i-lp-end .e2i-lp-btn{justify-self:start}
 }
 @media(max-width:560px){
-  .e2i-lp-hero{padding:24px 20px 22px 22px;border-radius:12px}
+  .e2i-lp-mast{padding:18px 16px 20px;border-radius:12px}
+  .e2i-lp-brand img{height:40px}
+  .e2i-lp-topline{gap:11px}
+  .e2i-lp-kicker{font-size:11px;gap:6px}
+  .e2i-lp-subline{font-size:14.5px}
+  .e2i-lp-chips li{padding:4px 10px}
   .e2i-lp-end{padding:24px 20px}
   .e2i-lp-step{grid-template-columns:26px 1fr;gap:12px;padding:14px 16px}
   .e2i-lp-time{grid-column:2;justify-self:start;margin-top:7px}
   .e2i-lp-forms{grid-template-columns:1fr}
   .e2i-lp-stage-h{flex-direction:column;gap:5px}
   .e2i-lp-stage-h span{white-space:normal}
-  .e2i-lp-btn{width:100%;justify-content:center}
+  .e2i-lp-btn{width:100%;justify-content:center;white-space:normal}
   .e2i-lp-note{max-width:none}
 }
 @media (prefers-reduced-motion:reduce){.e2i-lp *{transition:none!important}}
@@ -285,23 +318,33 @@
 
 <div class="e2i-lp">
 
-  <!-- ============ HERO ============ -->
-  <div class="e2i-lp-hero">
-    <span class="e2i-lp-eyebrow">English2impact · English Reflex 1</span>
-    <h1>Bạn biết ngữ pháp.<br>Chỉ là nói ra <span class="e2i-lp-mark">vẫn phải dịch trong đầu.</span></h1>
-    <p class="e2i-lp-lede">16 buổi, mỗi buổi một câu nền. Không học lý thuyết thì — học một câu rồi bẻ nó ra <b>bốn dạng</b>: khẳng định, phủ định, hỏi có/không, hỏi wh-, lặp tới khi câu bật ra trước khi kịp nghĩ.</p>
+  <!-- ============ MASTHEAD ============ -->
+  <div class="e2i-lp-mast">
+    <div class="e2i-lp-topline">
+      <a class="e2i-lp-brand" href="https://english2impact.odoo.com/slides/english-reflex-1-33" target="_blank" rel="noopener" aria-label="Mở khóa English Reflex 1 trên English2impact"><img src="data:image/png;base64,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" alt="English2impact" width="67" height="64"></a>
+      <p class="e2i-lp-kicker"><span>English2impact</span><i>·</i><b>English Reflex 1</b><i>·</i><span>Giới thiệu khóa học</span></p>
+    </div>
+    <h1>Bạn biết ngữ pháp.<br>Chỉ là nói ra <em>vẫn phải dịch trong đầu.</em></h1>
+    <p class="e2i-lp-subline">16 buổi, mỗi buổi một câu nền. Không học lý thuyết thêm — học một câu rồi bẻ nó ra <b>bốn dạng</b>: khẳng định, phủ định, hỏi có/không, hỏi wh-, lặp tới khi câu bật ra trước khi kịp nghĩ.</p>
+    <ul class="e2i-lp-chips">
+      <li>4 chặng · 16 câu nền</li>
+      <li>Basic · A1</li>
+      <li>Một câu — bốn dạng</li>
+      <li class="e2i-lp-now">90 phút / buổi</li>
+    </ul>
+    <p class="e2i-lp-structure"><span>Câu nền buổi 1</span>The apple is red.</p>
 
     <div class="e2i-lp-actions">
-      <a class="e2i-lp-btn e2i-lp-fill" href="https://english2impact.com/?join=D2888J&amp;c=er1" target="_blank" rel="noopener noreferrer">Vào lớp English Reflex 1 →</a>
-      <p class="e2i-lp-note">Mở app, bấm <b>Add</b> để lưu khóa vào <b>My learning</b>, rồi học buổi 1 ngay.</p>
+      <a class="e2i-lp-btn e2i-lp-go" href="https://english2impact.com/?try=er1" target="_blank" rel="noopener noreferrer">Học thử English Reflex 1 →</a>
+      <p class="e2i-lp-note">Mở thẳng khóa trong app — <b>không cần đăng ký</b>. Buổi 1 học được ngay.</p>
     </div>
+  </div>
 
-    <div class="e2i-lp-stats">
-      <div class="e2i-lp-stat"><b>16</b><span>buổi học</span></div>
-      <div class="e2i-lp-stat"><b>4</b><span>chặng</span></div>
-      <div class="e2i-lp-stat"><b>90′</b><span>mỗi buổi</span></div>
-      <div class="e2i-lp-stat"><b>A1</b><span>trình độ đầu vào</span></div>
-    </div>
+  <div class="e2i-lp-stats">
+    <div class="e2i-lp-stat"><b>16</b><span>buổi học</span></div>
+    <div class="e2i-lp-stat"><b>4</b><span>chặng</span></div>
+    <div class="e2i-lp-stat"><b>90′</b><span>mỗi buổi</span></div>
+    <div class="e2i-lp-stat"><b>A1</b><span>trình độ đầu vào</span></div>
   </div>
 
   <!-- ============ VẤN ĐỀ ============ -->
@@ -537,8 +580,8 @@
         <p>Nội dung y hệt nhau. Khác ở nhịp: lớp kèm có người ép tốc độ và sửa lỗi ngay trong lúc bạn nói; tự học thì bạn tự giữ nhịp, bù lại được lặp bao nhiêu lần tùy ý và học vào giờ nào cũng được.</p>
       </div>
       <div class="e2i-lp-q">
-        <h4>Vào lớp rồi thì mở được những gì?</h4>
-        <p>Bấm nút bên trên là vào thẳng lớp English Reflex 1 trong app. Nhớ bấm <b>Add</b> để khóa nằm trong <b>My learning</b> — khóa chỉ mở tiếp từ buổi 2 khi đã được thêm vào kệ của bạn. Buổi 1 thì ai cũng học được.</p>
+        <h4>Bấm nút thì mở được những gì?</h4>
+        <p>Nút bên trên mở thẳng khóa English Reflex 1 trong app, ở cột <b>Learn</b> — không cần tài khoản. Buổi 1 thì ai cũng học trọn vẹn. Muốn lưu tiến độ, hãy đăng nhập và bấm <b>Add</b> để khóa nằm trong <b>My learning</b>; từ buổi 2 trở đi mở với gói <b>Pro</b>.</p>
       </div>
       <div class="e2i-lp-q">
         <h4>Tôi là giáo viên, giao khóa này cho lớp được không?</h4>
@@ -555,9 +598,9 @@
   <div class="e2i-lp-end">
     <div>
       <h2>Buổi 1 là "The apple is red."<br>Bắt đầu ngay hôm nay.</h2>
-      <p>Vào lớp, bấm Add, học buổi đầu tiên. Ngày mai là câu thứ hai — và câu hôm nay vẫn nằm trong đó.</p>
+      <p>Mở app, học buổi đầu tiên — không cần đăng ký. Ngày mai là câu thứ hai, và câu hôm nay vẫn nằm trong đó.</p>
     </div>
-    <a class="e2i-lp-btn" href="https://english2impact.com/?join=D2888J&amp;c=er1" target="_blank" rel="noopener noreferrer">Vào lớp English Reflex 1 →</a>
+    <a class="e2i-lp-btn" href="https://english2impact.com/?try=er1" target="_blank" rel="noopener noreferrer">Học thử English Reflex 1 →</a>
   </div>
 
 </div>
