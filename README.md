@@ -359,11 +359,13 @@ or never.
 
 ## PART 4½ — Submitting answers in the app (from app build 149)
 
-When a learner opens a lesson **inside the English2impact app**, every written
-question gets a **Nộp** (Submit) button under it. Pressing it locks the answer,
-saves it to the learner's account and shows the teacher's feedback under it
-within seconds. The teacher watches the answers arrive from their class card
-(⋯ → *Bài nộp trực tiếp*).
+When a learner opens a lesson **inside the English2impact app**, every activity
+(a quiz, a drill, a dialogue to complete, a writing box) gets one **Nộp bài**
+button where its Check button was. It opens once every question is answered.
+Pressing it locks the answers, saves them to the learner's account, and runs
+the page's own Check, so the answers and the score appear straight away. The
+teacher's feedback appears under the activity within seconds. The teacher
+watches the answers arrive from their class card (⋯ → *Bài nộp trực tiếp*).
 
 **You do not add the button.** The app adds it as it opens the page, so the
 lessons already published have it too. A page opened on its own (GitHub, Odoo)
@@ -373,12 +375,12 @@ What the app looks for, which the lessons already use:
 
 | On the page | What it does in the app |
 |---|---|
-| a question wrapper with somewhere to answer (a box, a list, a radio, or an option button) | gets a Submit button |
-| `data-check` (an exercise's Check button) | waits until every question of that exercise is submitted, because Check shows the answers |
+| question wrappers with somewhere to answer (a box, a list, a radio, or an option button), side by side in one list | one activity, one Submit |
+| `data-check` (the activity's Check button) | hidden; Submit presses it |
 | `data-showall` ("Show the answers") | hidden |
-| `data-e2i-key` (the answer key inside a question — new pages) | hidden until that question is submitted |
+| `data-e2i-key` (the answer key inside a question — new pages) | hidden until its activity is submitted |
 
-The question wrappers it knows, one family at a time (app build 149.1):
+The question wrappers it knows, one family at a time (app build 149.2):
 
 | Family | Wrappers |
 |---|---|
