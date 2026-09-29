@@ -373,14 +373,26 @@ What the app looks for, which the lessons already use:
 
 | On the page | What it does in the app |
 |---|---|
-| `data-item="…"` on a question that has a box to write in | gets a Submit button |
-| `data-check="a"` (an exercise's Check button, for items `a-0`, `a-1`…) | waits until every one of them is submitted, because Check shows the answers |
+| a question wrapper with somewhere to answer (a box, a list, a radio, or an option button) | gets a Submit button |
+| `data-check` (an exercise's Check button) | waits until every question of that exercise is submitted, because Check shows the answers |
 | `data-showall` ("Show the answers") | hidden |
 | `data-e2i-key` (the answer key inside a question — new pages) | hidden until that question is submitted |
 
-Speaking items (nothing to type) get no button. Pages with no `data-item` at
-all (E-com Fluency 3, IELTS 7→8, VSTEP B1 so far) show no Submit until they are
-rebuilt with it. See the example item in `_template/lesson-template.html`.
+The question wrappers it knows, one family at a time (app build 149.1):
+
+| Family | Wrappers |
+|---|---|
+| English Reflex; the template | `data-item` |
+| High-rise, Silo Speak, Medical English, American Dream | `data-mcq`, `data-csent`, `data-qa`, dialogue gap lines `.tline` |
+| VSTEP | `data-qi`, `.ynrow`, the writing box `textarea[data-ta]` |
+| Pronunciation | `data-eitem` |
+| E-com Fluency | `ul.gap > li`, `.lines > .ln` |
+| IELTS | the question-table rows, `…-qitem`, `…-wbox`, `…-onefix` |
+
+Voice controls, "I did it" ticks, checklists, the term lab and word pools
+never get a button. **A new kind of lesson page** with its own wrappers gets
+no Submit until the app learns them — or put `data-item` on its questions.
+See the example item in `_template/lesson-template.html`.
 
 ---
 
