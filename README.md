@@ -357,6 +357,33 @@ or never.
 
 ---
 
+## PART 4½ — Submitting answers in the app (from app build 149)
+
+When a learner opens a lesson **inside the English2impact app**, every written
+question gets a **Nộp** (Submit) button under it. Pressing it locks the answer,
+saves it to the learner's account and shows the teacher's feedback under it
+within seconds. The teacher watches the answers arrive from their class card
+(⋯ → *Bài nộp trực tiếp*).
+
+**You do not add the button.** The app adds it as it opens the page, so the
+lessons already published have it too. A page opened on its own (GitHub, Odoo)
+is untouched.
+
+What the app looks for, which the lessons already use:
+
+| On the page | What it does in the app |
+|---|---|
+| `data-item="…"` on a question that has a box to write in | gets a Submit button |
+| `data-check="a"` (an exercise's Check button, for items `a-0`, `a-1`…) | waits until every one of them is submitted, because Check shows the answers |
+| `data-showall` ("Show the answers") | hidden |
+| `data-e2i-key` (the answer key inside a question — new pages) | hidden until that question is submitted |
+
+Speaking items (nothing to type) get no button. Pages with no `data-item` at
+all (E-com Fluency 3, IELTS 7→8, VSTEP B1 so far) show no Submit until they are
+rebuilt with it. See the example item in `_template/lesson-template.html`.
+
+---
+
 ## PART 5 — Undoing a mistake
 
 Nothing you do here is permanent. Every save is kept forever.

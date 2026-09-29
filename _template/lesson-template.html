@@ -144,6 +144,30 @@
           <div class="line"><span class="who">Mark</span><span class="txt">Second line of the dialogue.</span></div>
         </div>
 
+        <!-- A written item learners SUBMIT in the app (from app build 149).
+             Copy the whole <div data-item> for each question. What makes it work:
+               data-item="step1-1"   a name for this question, different for every
+                                     question on the page (step number - question number)
+               a box to write in     <input> or <textarea> (or a <select>, or
+                                     radio buttons); an item with nothing to write in
+                                     gets no Submit button
+               data-e2i-key          the answer key. In the app it stays hidden until
+                                     the learner presses Submit. Opened on its own
+                                     (GitHub, Odoo) the page shows it as a
+                                     "Đáp án" the learner can click open.
+               data-e2i-label="…"    optional: what the teacher's live view calls
+                                     this question (otherwise its own text is used)
+             You write NOTHING else: the app adds the Submit button, saves the answer
+             to the learner's account, and shows the teacher's feedback under it. -->
+        <div class="item" data-item="step1-1">
+          <p class="prompt">Make it negative: <b>I will call him later.</b></p>
+          <input type="text" aria-label="Your answer" placeholder="Câu trả lời của bạn…" style="width:100%">
+          <details class="key" data-e2i-key>
+            <summary>Đáp án</summary>
+            <p>I won't call him later.</p>
+          </details>
+        </div>
+
         <!-- A speaking task -->
         <div class="task-card">
           <span class="kind">Speaking</span>
