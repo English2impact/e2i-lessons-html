@@ -1,0 +1,549 @@
+<!-- =================================================================
+     ENGLISH2IMPACT — LANDING PAGE KHÓA PRONUNCIATION
+     Thay cho bài "About this course" (slide 2431)
+     Cập nhật 29/09/2026 — bài học đã tích hợp vào app (học và luyện cùng một chỗ),
+     nút dùng link học thử chung thay cho link mời lớp
+     =================================================================
+     CÁCH DÙNG
+     1. Vào trang bài "About this course" → Edit.
+     2. Xóa nội dung cũ → kéo khối "Embed Code" vào phần nội dung.
+     3. Bấm Edit (</>) → xóa hết nội dung mẫu → dán TOÀN BỘ file này → Save.
+
+     AN TOÀN
+     - Mọi CSS nằm trong .e2i-lp, không đụng header/footer hay trang khác.
+     - Class đều có tiền tố e2i-lp- nên không đụng Bootstrap của Odoo.
+     - Không có JavaScript.
+
+     GIAO DIỆN
+     - Mặc định nền sáng. Muốn nền tối: <div class="e2i-lp e2i-lp-dark">
+
+     LINK HỌC THỬ (xuất hiện ở 2 nút — đổi cả 2 nếu cần)
+     - https://english2impact.com/?try=pro
+       Link chung: mở khóa ở chế độ khách, không cần đăng nhập, không kèm mã lớp
+       của giáo viên nào — giáo viên nào cũng gửi trang này được.
+     ================================================================= -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<style>
+.e2i-lp{
+  --c-paper:#FFFDFB;
+  --c-paper2:#FBF2EC;
+  --c-surface:#FFFFFF;
+  --c-ink:#1A1A19;
+  --c-ink2:#3D3D3A;
+  --c-muted:#6F6D65;
+  --c-rule:#E7E1D8;
+  --c-rule2:#D8D1C6;
+  --c-accent:#A9522C;
+  --c-fill:#B0542F;
+  --c-onfill:#FFFFFF;
+  --c-soft:#FBEEE7;
+  --c-leaf:#006838;
+  --c-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --c-sans:"Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --c-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-family:var(--c-sans);
+  color:var(--c-ink);
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  margin:0 0 30px;
+}
+.e2i-lp.e2i-lp-dark{
+  --c-paper:#1F1F1D;
+  --c-paper2:#2A211C;
+  --c-surface:#232321;
+  --c-ink:#FFFFFF;
+  --c-ink2:#C3C2B7;
+  --c-muted:#8D8B85;
+  --c-rule:#3D3D3A;
+  --c-rule2:#4A4A46;
+  --c-accent:#E89070;
+  --c-fill:#D97757;
+  --c-onfill:#1A1A19;
+  --c-soft:#28201B;
+  --c-leaf:#26A426;
+}
+.e2i-lp *{box-sizing:border-box}
+/* Odoo hay bọc snippet trong khối căn giữa — ép căn trái ở mọi cấp */
+.e2i-lp,.e2i-lp div,.e2i-lp p,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp li,.e2i-lp span{text-align:left}
+.e2i-lp p,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp ul,.e2i-lp ol{margin:0}
+.e2i-lp ul{list-style:none;padding:0}
+.e2i-lp a{text-decoration:none}
+.e2i-lp a:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+
+/* ---------- khối chung ---------- */
+.e2i-lp-sec{margin-top:34px}
+.e2i-lp-eyebrow{
+  display:inline-flex;align-items:center;font-family:var(--c-mono);
+  font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--c-accent);margin-bottom:10px;
+}
+.e2i-lp-eyebrow::after{
+  content:"";width:30px;height:1px;background:var(--c-rule2);margin-left:11px;
+}
+.e2i-lp h2{
+  font-family:var(--c-serif);font-weight:800;
+  font-size:clamp(20px,2.4vw,25px);line-height:1.2;letter-spacing:-.015em;
+  color:var(--c-ink);text-wrap:balance;
+}
+.e2i-lp-sub{margin-top:8px!important;color:var(--c-muted);font-size:14.5px;max-width:64ch}
+.e2i-lp-mark{color:var(--c-accent)}
+.e2i-lp-ipa{font-family:var(--c-mono);font-weight:600;color:var(--c-ink)}
+
+/* ---------- hero ---------- */
+.e2i-lp-hero{
+  position:relative;
+  background:linear-gradient(135deg,var(--c-paper) 0%,var(--c-paper2) 100%);
+  border:1px solid var(--c-rule);border-radius:14px;
+  padding:34px 34px 30px 36px;overflow:hidden;
+}
+.e2i-lp-hero::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c-fill);
+}
+.e2i-lp-hero h1{
+  font-family:var(--c-serif);font-weight:800;
+  font-size:clamp(26px,4vw,40px);line-height:1.12;letter-spacing:-.02em;
+  color:var(--c-ink);margin:0;text-wrap:balance;
+}
+.e2i-lp-lede{
+  margin-top:14px!important;font-size:16px;color:var(--c-ink2);max-width:58ch;
+}
+.e2i-lp-actions{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;align-items:center}
+.e2i-lp-btn{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--c-sans);
+  font-weight:600;font-size:15.5px;padding:12px 24px;border-radius:8px;
+  border:1px solid transparent;white-space:nowrap;
+  transition:opacity .15s ease,border-color .15s ease,color .15s ease;
+}
+.e2i-lp .e2i-lp-fill{background:var(--c-fill);color:var(--c-onfill)}
+.e2i-lp .e2i-lp-fill:hover{opacity:.88;color:var(--c-onfill)}
+.e2i-lp-note{font-size:12.5px;color:var(--c-muted);line-height:1.4;max-width:34ch}
+
+.e2i-lp-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--c-rule);border:1px solid var(--c-rule);
+  border-radius:10px;overflow:hidden;margin-top:26px;
+}
+.e2i-lp-stat{background:var(--c-surface);padding:13px 15px}
+.e2i-lp-stat b{
+  display:block;font-family:var(--c-serif);font-weight:800;font-size:22px;
+  line-height:1.1;color:var(--c-ink);
+}
+.e2i-lp-stat span{
+  display:block;font-family:var(--c-mono);font-size:9.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted);margin-top:5px;
+}
+
+/* ---------- thẻ vấn đề ---------- */
+.e2i-lp-pairs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.e2i-lp-pair{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:10px;padding:15px 17px;
+}
+.e2i-lp-pair-top{
+  font-family:var(--c-mono);font-size:15px;font-weight:600;color:var(--c-accent);
+  margin-bottom:7px!important;
+}
+.e2i-lp-pair p{font-size:13.5px;line-height:1.5;color:var(--c-ink2)}
+
+.e2i-lp-quote{
+  margin-top:18px;padding:16px 20px;border-left:3px solid var(--c-fill);
+  background:var(--c-soft);border-radius:0 10px 10px 0;
+}
+.e2i-lp-quote p{font-size:15px;color:var(--c-ink);font-weight:500}
+
+/* ---------- 5 hoạt động ---------- */
+.e2i-lp-steps{margin-top:18px;border:1px solid var(--c-rule);border-radius:12px;overflow:hidden}
+.e2i-lp-step{
+  display:grid;grid-template-columns:34px 1fr 74px;gap:16px;align-items:baseline;
+  padding:15px 20px;background:var(--c-surface);border-top:1px solid var(--c-rule);
+}
+.e2i-lp-step:first-child{border-top:0}
+.e2i-lp-step-n{
+  font-family:var(--c-mono);font-size:11px;font-weight:600;color:var(--c-accent);
+  letter-spacing:.08em;
+}
+.e2i-lp-step h4{font-family:var(--c-sans);font-weight:600;font-size:15px;color:var(--c-ink)}
+.e2i-lp-step p{font-size:13.5px;color:var(--c-muted);margin-top:3px!important;line-height:1.5}
+.e2i-lp-time{
+  justify-self:end;font-family:var(--c-mono);font-size:11px;font-weight:600;
+  color:var(--c-ink2);background:var(--c-paper2);border:1px solid var(--c-rule);
+  border-radius:20px;padding:3px 10px;white-space:nowrap;
+}
+
+/* ---------- lộ trình ---------- */
+.e2i-lp-stages{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+.e2i-lp-stage{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:12px;padding:17px 19px;
+}
+.e2i-lp-stage-h{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding-bottom:11px;border-bottom:1px solid var(--c-rule);margin-bottom:12px;
+}
+.e2i-lp-stage h3{font-family:var(--c-serif);font-weight:700;font-size:18px;color:var(--c-ink)}
+.e2i-lp-stage-h span{
+  font-family:var(--c-mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--c-muted);white-space:nowrap;
+}
+.e2i-lp-stage li{
+  display:flex;gap:10px;align-items:baseline;font-size:13.5px;color:var(--c-ink2);
+  padding:5px 0;border-top:1px dashed var(--c-rule);
+}
+.e2i-lp-stage li:first-child{border-top:0}
+.e2i-lp-stage li i{
+  font-style:normal;font-family:var(--c-mono);font-size:10px;font-weight:600;
+  color:var(--c-muted);min-width:24px;
+}
+.e2i-lp-stage li b{font-family:var(--c-mono);font-weight:600;color:var(--c-ink);min-width:92px}
+
+/* ---------- hai nơi ---------- */
+.e2i-lp-two{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+.e2i-lp-place{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:12px;padding:18px 20px;
+}
+.e2i-lp-place.e2i-lp-place-hi{background:var(--c-soft);border-color:var(--c-rule2)}
+.e2i-lp-place h4{
+  font-family:var(--c-mono);font-size:10px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--c-accent);margin-bottom:9px!important;
+}
+.e2i-lp-place li{
+  font-size:13.5px;color:var(--c-ink2);padding:4px 0 4px 17px;position:relative;line-height:1.5;
+}
+.e2i-lp-place li::before{
+  content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;
+  background:var(--c-fill);
+}
+
+/* ---------- nhịp học ---------- */
+.e2i-lp-pace{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.e2i-lp-pacecard{
+  border:1px solid var(--c-rule);border-radius:12px;padding:17px 19px;background:var(--c-surface);
+}
+.e2i-lp-pacecard .e2i-lp-min{
+  display:flex;align-items:baseline;gap:6px;
+  padding-bottom:11px;border-bottom:1px solid var(--c-rule);margin-bottom:11px;
+}
+.e2i-lp-pacecard .e2i-lp-min b{
+  font-family:var(--c-serif);font-weight:800;font-size:30px;line-height:1;color:var(--c-ink);
+}
+.e2i-lp-pacecard .e2i-lp-min span{
+  font-family:var(--c-mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--c-muted);
+}
+.e2i-lp-pacecard h4{
+  font-family:var(--c-sans);font-weight:600;font-size:14.5px;color:var(--c-accent);
+}
+.e2i-lp-pacecard p{font-size:13.5px;color:var(--c-ink2);margin-top:6px!important;line-height:1.55}
+.e2i-lp-pacecard p b{font-weight:600;color:var(--c-ink)}
+.e2i-lp-paceend{
+  margin-top:14px;padding:14px 18px;background:var(--c-soft);
+  border:1px solid var(--c-rule2);border-radius:10px;
+}
+.e2i-lp-paceend p{font-size:13.5px;color:var(--c-ink2);line-height:1.55}
+.e2i-lp-paceend p b{font-weight:600;color:var(--c-ink)}
+
+/* ---------- FAQ ---------- */
+.e2i-lp-faq{margin-top:18px;border:1px solid var(--c-rule);border-radius:12px;overflow:hidden}
+.e2i-lp-q{padding:16px 20px;background:var(--c-surface);border-top:1px solid var(--c-rule)}
+.e2i-lp-q:first-child{border-top:0}
+.e2i-lp-q h4{font-family:var(--c-sans);font-weight:600;font-size:14.5px;color:var(--c-ink)}
+.e2i-lp-q p{font-size:13.5px;color:var(--c-muted);margin-top:5px!important;line-height:1.55}
+
+/* ---------- CTA cuối ---------- */
+.e2i-lp-end{
+  margin-top:34px;background:var(--c-fill);border-radius:14px;
+  padding:30px 34px;display:grid;grid-template-columns:1.3fr .7fr;
+  gap:24px;align-items:center;
+}
+.e2i-lp-end h2{color:var(--c-onfill);font-size:clamp(21px,2.8vw,28px)}
+.e2i-lp-end p{color:var(--c-onfill);opacity:.9;margin-top:9px!important;font-size:14.5px;max-width:48ch}
+.e2i-lp-end .e2i-lp-btn{background:var(--c-onfill);color:var(--c-fill);justify-self:end}
+.e2i-lp-end .e2i-lp-btn:hover{opacity:.9;color:var(--c-fill)}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .e2i-lp-pairs,.e2i-lp-stages,.e2i-lp-two,.e2i-lp-pace{grid-template-columns:1fr}
+  .e2i-lp-stats{grid-template-columns:repeat(2,1fr)}
+  .e2i-lp-end{grid-template-columns:1fr}
+  .e2i-lp-end .e2i-lp-btn{justify-self:start}
+}
+@media(max-width:560px){
+  .e2i-lp-hero{padding:24px 20px 22px 22px;border-radius:12px}
+  .e2i-lp-end{padding:24px 20px}
+  .e2i-lp-step{grid-template-columns:26px 1fr;gap:12px;padding:14px 16px}
+  .e2i-lp-time{grid-column:2;justify-self:start;margin-top:7px}
+  .e2i-lp-stage li{flex-wrap:wrap}
+  .e2i-lp-stage-h{flex-direction:column;gap:5px}
+  .e2i-lp-stage-h span{white-space:normal}
+  .e2i-lp-btn{width:100%;justify-content:center}
+  .e2i-lp-note{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){.e2i-lp *{transition:none!important}}
+</style>
+
+<div class="e2i-lp">
+
+  <!-- ============ HERO ============ -->
+  <div class="e2i-lp-hero">
+    <span class="e2i-lp-eyebrow">English2impact · Khóa Pronunciation</span>
+    <h1>Người ta hiểu bạn.<br>Chỉ là <span class="e2i-lp-mark">phải nghe hai lần.</span></h1>
+    <p class="e2i-lp-lede">23 buổi, mỗi buổi một cặp âm bạn hay nhầm. Không học bảng phiên âm thuộc lòng — học <b>ship</b> đối chiếu với <b>sheep</b>, cho tới khi tai bạn tách được hai âm đó ra.</p>
+
+    <div class="e2i-lp-actions">
+      <a class="e2i-lp-btn e2i-lp-fill" href="https://english2impact.com/?try=pro" target="_blank" rel="noopener noreferrer">Học thử Pronunciation →</a>
+      <p class="e2i-lp-note">Mở thẳng khóa trong app — <b>không cần đăng ký</b>. Buổi 1 học được ngay.</p>
+    </div>
+
+    <div class="e2i-lp-stats">
+      <div class="e2i-lp-stat"><b>23</b><span>buổi học</span></div>
+      <div class="e2i-lp-stat"><b>4</b><span>chặng</span></div>
+      <div class="e2i-lp-stat"><b>65′</b><span>mỗi buổi</span></div>
+      <div class="e2i-lp-stat"><b>25</b><span>ngày</span></div>
+    </div>
+  </div>
+
+  <!-- ============ VẤN ĐỀ ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Vì sao phát âm mãi không sửa được</span>
+    <h2>Bạn không nói sai. Bạn <span class="e2i-lp-mark">chưa nghe ra khác biệt.</span></h2>
+    <p class="e2i-lp-sub">Tiếng Việt không phân biệt những cặp âm dưới đây, nên tai bạn xếp cả hai vào cùng một ô. Miệng chỉ nói lại được cái tai đã tách ra. Đó là lý do đọc mẹo phát âm cả năm vẫn không đổi.</p>
+
+    <div class="e2i-lp-pairs">
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">/ɪ/ · /iː/</p>
+        <p><b>ship</b> hay <b>sheep</b>, <b>live</b> hay <b>leave</b> — người nghe phải đoán theo ngữ cảnh.</p>
+      </div>
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">/e/ · /æ/</p>
+        <p><b>bed</b> hay <b>bad</b>, <b>men</b> hay <b>man</b> — sai một âm, đổi luôn nghĩa câu.</p>
+      </div>
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">/s/ · /ʃ/ · /z/</p>
+        <p>Âm cuối rơi mất: <b>sees</b> thành <b>see</b>, <b>wished</b> thành <b>wish</b>.</p>
+      </div>
+    </div>
+
+    <div class="e2i-lp-quote">
+      <p>Nguyên tắc của khóa: <b>nghe trước, đọc sau</b>. Mỗi âm luôn được học đối chiếu với chính cái âm bạn hay nhầm nó — chứ không học một mình.</p>
+    </div>
+  </div>
+
+  <!-- ============ 5 HOẠT ĐỘNG ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Một buổi học diễn ra thế nào</span>
+    <h2>Năm bước, lặp lại y hệt suốt 23 buổi.</h2>
+    <p class="e2i-lp-sub">Cấu trúc không đổi, chỉ đổi cặp âm. Từ buổi thứ hai trở đi bạn không phải học lại cách học — mở lên là vào việc.</p>
+
+    <div class="e2i-lp-steps">
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">01</span>
+        <div>
+          <h4>Hear the difference</h4>
+          <p>Nghe hai âm đứng cạnh nhau, chậm rồi bình thường, cho tới khi tách được.</p>
+        </div>
+        <span class="e2i-lp-time">10 phút</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">02</span>
+        <div>
+          <h4>Spot the sound</h4>
+          <p>Bài phân biệt: nghe một từ, chọn đúng âm. Sai ở đâu app chỉ ra ngay ở đó.</p>
+        </div>
+        <span class="e2i-lp-time">15 phút</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">03</span>
+        <div>
+          <h4>Spelling patterns</h4>
+          <p>Nhìn chữ đoán được âm: quy tắc chính tả nào thường cho âm nào, và ngoại lệ.</p>
+        </div>
+        <span class="e2i-lp-time">10 phút</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">04</span>
+        <div>
+          <h4>Say it</h4>
+          <p>Nói vào mic, so với mẫu. Kèm khẩu hình: lưỡi ở đâu, môi thế nào, hơi dài bao lâu.</p>
+        </div>
+        <span class="e2i-lp-time">15 phút</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">05</span>
+        <div>
+          <h4>In connected speech</h4>
+          <p>Đưa âm vừa học vào câu nói thật — nối âm, nhịp, trọng âm. Đây là bước hay bị bỏ.</p>
+        </div>
+        <span class="e2i-lp-time">15 phút</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LỘ TRÌNH ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Lộ trình 4 chặng · 23 cặp âm</span>
+    <h2>Nguyên âm trước, phụ âm sau — theo đúng thứ tự tai học được.</h2>
+    <p class="e2i-lp-sub">Cuối mỗi chặng có một buổi kiểm tra lại toàn bộ các cặp âm trong chặng đó, để không có âm nào bị bỏ lại phía sau.</p>
+
+    <div class="e2i-lp-stages">
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Chặng 1 · Nguyên âm đơn</h3>
+          <span>6 buổi</span>
+        </div>
+        <ul>
+          <li><i>S1</i><b>/ɪ/ – /iː/</b> ship · sheep</li>
+          <li><i>S2</i><b>/e/ – /æ/</b> bed · bad</li>
+          <li><i>S3</i><b>/ʌ/ – /ɑː/</b> cup · carp</li>
+          <li><i>S4</i><b>/ɒ/ – /ɔː/</b> cot · caught</li>
+          <li><i>S5</i><b>/ʊ/ – /uː/</b> full · fool</li>
+          <li><i>S6</i><b>/ə/ – /ɜː/</b> about · bird</li>
+        </ul>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Chặng 2 · Nguyên âm đôi</h3>
+          <span>4 buổi</span>
+        </div>
+        <ul>
+          <li><i>S7</i><b>/eɪ/ – /aɪ/</b> late · light</li>
+          <li><i>S8</i><b>/əʊ/ – /aʊ/</b> so · sow</li>
+          <li><i>S9</i><b>/ɔɪ/ – /ɪə/</b> boy · beer</li>
+          <li><i>S10</i><b>/eə/ – /ʊə/</b> air · tour</li>
+        </ul>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Chặng 3 · Phụ âm I</h3>
+          <span>6 buổi · âm tắc &amp; xát</span>
+        </div>
+        <ul>
+          <li><i>S11</i><b>/p/ – /b/</b> pin · bin</li>
+          <li><i>S12</i><b>/t/ – /d/</b> ten · den</li>
+          <li><i>S13</i><b>/k/ – /g/</b> coat · goat</li>
+          <li><i>S14</i><b>/f/ – /v/</b> fan · van</li>
+          <li><i>S15</i><b>/θ/ – /ð/</b> think · this</li>
+          <li><i>S16</i><b>/s/ – /z/</b> sip · zip</li>
+        </ul>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Chặng 4 · Phụ âm II</h3>
+          <span>7 buổi · âm tắc xát, mũi &amp; tiếp cận</span>
+        </div>
+        <ul>
+          <li><i>S17</i><b>/ʃ/ – /ʒ/</b> ship · measure</li>
+          <li><i>S18</i><b>/tʃ/ – /dʒ/</b> cheap · jeep</li>
+          <li><i>S19</i><b>/m/ – /n/</b> some · sun</li>
+          <li><i>S20</i><b>/n/ – /ŋ/</b> thin · thing</li>
+          <li><i>S21</i><b>/l/ – /r/</b> light · right</li>
+          <li><i>S22</i><b>/w/ – /j/</b> wet · yet</li>
+          <li><i>S23</i><b>/h/ – h câm</b> hour · house</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ HỌC Ở ĐÂU: MỘT NƠI ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Học ở đâu</span>
+    <h2>Học và luyện <span class="e2i-lp-mark">ở cùng một chỗ: trong app.</span></h2>
+    <p class="e2i-lp-sub">Mỗi buổi nằm trọn trong app — phần giải thích khẩu hình và phần luyện đi liền nhau, không phải mở hai nơi.</p>
+
+    <div class="e2i-lp-two">
+      <div class="e2i-lp-place e2i-lp-place-hi">
+        <h4>Trong mỗi buổi · phần hiểu</h4>
+        <ul>
+          <li>Giải thích khẩu hình: lưỡi, môi, độ dài hơi</li>
+          <li>Quy tắc chính tả đi kèm mỗi âm</li>
+          <li>Mở lại bài cũ để ôn khi quên, không giới hạn</li>
+          <li>Ôn nhanh trước khi sang buổi kế</li>
+        </ul>
+      </div>
+      <div class="e2i-lp-place">
+        <h4>Trong mỗi buổi · phần luyện</h4>
+        <ul>
+          <li>Audio từng cặp âm, tốc độ chậm và tốc độ thật</li>
+          <li>Bài nghe phân biệt, chấm ngay từng câu</li>
+          <li>Nói vào mic và so với mẫu</li>
+          <li>Tiến độ 23 buổi, biết còn nợ buổi nào</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ NHỊP HỌC ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Nhịp học</span>
+    <h2>Mỗi ngày 30, 60 hay 90 phút — <span class="e2i-lp-mark">bạn chọn.</span></h2>
+    <p class="e2i-lp-sub">Cả khóa khoảng 25 giờ học. Bạn khai báo mỗi ngày học được bao lâu, app tự cắt 23 buổi thành từng ngày vừa sức và hiện luôn ngày bạn học xong.</p>
+
+    <div class="e2i-lp-pace">
+      <div class="e2i-lp-pacecard">
+        <div class="e2i-lp-min"><b>30</b><span>phút / ngày</span></div>
+        <h4>Xong trong ~7 tuần</h4>
+        <p>Mỗi ngày một nửa buổi. Hợp với người đi làm — học lúc sáng sớm hoặc trước khi ngủ, <b>không bỏ ngày nào</b> là được.</p>
+      </div>
+      <div class="e2i-lp-pacecard">
+        <div class="e2i-lp-min"><b>60</b><span>phút / ngày</span></div>
+        <h4>Xong trong ~25 ngày</h4>
+        <p>Gần trọn một buổi mỗi ngày, học xong là <b>còn nhớ để ngày mai nối tiếp</b>. Đây là nhịp cân bằng nhất.</p>
+      </div>
+      <div class="e2i-lp-pacecard">
+        <div class="e2i-lp-min"><b>90</b><span>phút / ngày</span></div>
+        <h4>Xong trong ~17 ngày</h4>
+        <p>Hơn một buổi mỗi ngày. Hợp với người có <b>mục tiêu gần</b>: phỏng vấn, thuyết trình, kỳ thi nói sắp tới.</p>
+      </div>
+    </div>
+
+    <div class="e2i-lp-paceend">
+      <p><b>Đổi nhịp giữa chừng cũng được.</b> Học chậm lại hay tăng tốc, app chia lại phần còn lại và cập nhật ngày hoàn thành — bạn luôn biết mình đang đứng ở đâu trong 23 buổi.</p>
+    </div>
+  </div>
+
+  <!-- ============ FAQ ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Hỏi nhanh</span>
+    <h2>Trước khi bắt đầu</h2>
+
+    <div class="e2i-lp-faq">
+      <div class="e2i-lp-q">
+        <h4>Tôi mất gốc, học được không?</h4>
+        <p>Được. Khóa ở mức Basic, toàn bộ phần hướng dẫn và giải thích bằng tiếng Việt — chỉ phần tiếng Anh cần học mới để nguyên tiếng Anh. Không cần biết trước ký hiệu phiên âm.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Cần thiết bị gì?</h4>
+        <p>Tai nghe và micro — điện thoại hoặc laptop đều được. Tai nghe quan trọng hơn bạn nghĩ: loa ngoài làm mờ đúng những khác biệt mà khóa này đang dạy bạn nghe.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Bấm nút thì mở được những gì?</h4>
+        <p>Nút bên trên mở thẳng khóa Pronunciation trong app — không cần tài khoản. Buổi 1 thì ai cũng học trọn vẹn. Muốn lưu tiến độ, hãy đăng nhập và bấm <b>Add</b> để khóa nằm trong <b>My learning</b>; từ buổi 2 trở đi mở với gói <b>Pro</b>.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Tôi là giáo viên, giao khóa này cho lớp được không?</h4>
+        <p>Được. Bấm <b>Add</b> để khóa vào <b>My teaching</b>, rồi giao cả 23 buổi cho học viên luyện ở nhà: audio, bài phân biệt và khẩu hình đã soạn sẵn, tiến độ từng em theo dõi được.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Học xong 23 buổi thì được gì?</h4>
+        <p>Bạn nghe ra được cặp âm mình từng nhầm, sửa được lỗi khi tự nghe lại mình nói, và không còn phải nhắc lại câu vừa nói lần thứ hai. Đây là khóa nền — nói trôi chảy là việc của các khóa giao tiếp.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CTA CUỐI ============ -->
+  <div class="e2i-lp-end">
+    <div>
+      <h2>Buổi 1 là ship · sheep.<br>Bắt đầu ngay hôm nay.</h2>
+      <p>Mở app, học buổi đầu tiên trong 65 phút — không cần đăng ký. Ngày mai là cặp âm thứ hai.</p>
+    </div>
+    <a class="e2i-lp-btn" href="https://english2impact.com/?try=pro" target="_blank" rel="noopener noreferrer">Học thử Pronunciation →</a>
+  </div>
+
+</div>

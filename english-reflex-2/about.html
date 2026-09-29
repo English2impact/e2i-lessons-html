@@ -1,0 +1,591 @@
+<!-- =================================================================
+     ENGLISH2IMPACT — LANDING PAGE: ENGLISH REFLEX 2
+     For the "About this course" page of English Reflex 2
+     Built 24/09/2026 · theme copied from the English Reflex 1 landing page
+     Updated 29/09/2026 · lessons now live in the app (learn + practise in one place),
+     buttons use the public trial link
+     =================================================================
+     HOW TO USE
+     1. Open the "About this course" page of English Reflex 2 → Edit.
+     2. Delete the old content → drag an "Embed Code" block into the content area.
+     3. Click Edit (</>) → delete the sample code → paste THIS WHOLE FILE → Save.
+
+     SAFETY
+     - All CSS is scoped inside .e2i-lp — header, footer and other pages are untouched.
+     - Every class starts with e2i-lp- so nothing clashes with Odoo's Bootstrap.
+     - No JavaScript. No <html>, <head> or <body> tags.
+
+     THEME
+     - Light by default. For dark: <div class="e2i-lp e2i-lp-dark">
+
+     TRIAL LINK (used by both buttons — change both if needed)
+     - https://english2impact.com/?try=er2
+       Public trial link: opens English Reflex 2 as a guest, no sign-in and no
+       class code, so any teacher can share this page.
+     ================================================================= -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<style>
+.e2i-lp{
+  --c-paper:#FFFDFB;
+  --c-paper2:#FBF2EC;
+  --c-surface:#FFFFFF;
+  --c-ink:#1A1A19;
+  --c-ink2:#3D3D3A;
+  --c-muted:#6F6D65;
+  --c-rule:#E7E1D8;
+  --c-rule2:#D8D1C6;
+  --c-accent:#A9522C;
+  --c-fill:#B0542F;
+  --c-onfill:#FFFFFF;
+  --c-soft:#FBEEE7;
+  --c-leaf:#006838;
+  --c-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --c-sans:"Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --c-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-family:var(--c-sans);
+  color:var(--c-ink);
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  margin:0 0 30px;
+}
+.e2i-lp.e2i-lp-dark{
+  --c-paper:#1F1F1D;
+  --c-paper2:#2A211C;
+  --c-surface:#232321;
+  --c-ink:#FFFFFF;
+  --c-ink2:#C3C2B7;
+  --c-muted:#8D8B85;
+  --c-rule:#3D3D3A;
+  --c-rule2:#4A4A46;
+  --c-accent:#E89070;
+  --c-fill:#D97757;
+  --c-onfill:#1A1A19;
+  --c-soft:#28201B;
+  --c-leaf:#26A426;
+}
+.e2i-lp *{box-sizing:border-box}
+/* Odoo wraps snippets in centred blocks — force left-align at every level */
+.e2i-lp,.e2i-lp div,.e2i-lp p,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp li,.e2i-lp span{text-align:left}
+.e2i-lp p,.e2i-lp h2,.e2i-lp h3,.e2i-lp h4,.e2i-lp ul,.e2i-lp ol{margin:0}
+.e2i-lp ul{list-style:none;padding:0}
+.e2i-lp a{text-decoration:none}
+.e2i-lp a:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+
+/* ---------- shared ---------- */
+.e2i-lp-sec{margin-top:34px}
+.e2i-lp-eyebrow{
+  display:inline-flex;align-items:center;font-family:var(--c-mono);
+  font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--c-accent);margin-bottom:10px;
+}
+.e2i-lp-eyebrow::after{
+  content:"";width:30px;height:1px;background:var(--c-rule2);margin-left:11px;
+}
+.e2i-lp h2{
+  font-family:var(--c-serif);font-weight:800;
+  font-size:clamp(20px,2.4vw,25px);line-height:1.2;letter-spacing:-.015em;
+  color:var(--c-ink);text-wrap:balance;
+}
+.e2i-lp-sub{margin-top:8px!important;color:var(--c-muted);font-size:14.5px;max-width:64ch}
+.e2i-lp-mark{color:var(--c-accent)}
+
+/* ---------- hero ---------- */
+.e2i-lp-hero{
+  position:relative;
+  background:linear-gradient(135deg,var(--c-paper) 0%,var(--c-paper2) 100%);
+  border:1px solid var(--c-rule);border-radius:14px;
+  padding:34px 34px 30px 36px;overflow:hidden;
+}
+.e2i-lp-hero::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c-fill);
+}
+.e2i-lp-hero h1{
+  font-family:var(--c-serif);font-weight:800;
+  font-size:clamp(26px,4vw,40px);line-height:1.12;letter-spacing:-.02em;
+  color:var(--c-ink);margin:0;text-wrap:balance;
+}
+.e2i-lp-lede{
+  margin-top:14px!important;font-size:16px;color:var(--c-ink2);max-width:60ch;
+}
+.e2i-lp-actions{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;align-items:center}
+.e2i-lp-btn{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--c-sans);
+  font-weight:600;font-size:15.5px;padding:12px 24px;border-radius:8px;
+  border:1px solid transparent;white-space:nowrap;
+  transition:opacity .15s ease,border-color .15s ease,color .15s ease;
+}
+.e2i-lp .e2i-lp-fill{background:var(--c-fill);color:var(--c-onfill)}
+.e2i-lp .e2i-lp-fill:hover{opacity:.88;color:var(--c-onfill)}
+.e2i-lp-note{font-size:12.5px;color:var(--c-muted);line-height:1.4;max-width:36ch}
+
+.e2i-lp-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--c-rule);border:1px solid var(--c-rule);
+  border-radius:10px;overflow:hidden;margin-top:26px;
+}
+.e2i-lp-stat{background:var(--c-surface);padding:13px 15px}
+.e2i-lp-stat b{
+  display:block;font-family:var(--c-serif);font-weight:800;font-size:22px;
+  line-height:1.1;color:var(--c-ink);
+}
+.e2i-lp-stat span{
+  display:block;font-family:var(--c-mono);font-size:9.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted);margin-top:5px;
+}
+
+/* ---------- problem cards ---------- */
+.e2i-lp-pairs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.e2i-lp-pair{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:10px;padding:15px 17px;
+}
+.e2i-lp-pair-top{
+  font-family:var(--c-mono);font-size:13px;font-weight:600;color:var(--c-accent);
+  margin-bottom:7px!important;letter-spacing:.02em;
+}
+.e2i-lp-pair p{font-size:13.5px;line-height:1.5;color:var(--c-ink2)}
+
+.e2i-lp-quote{
+  margin-top:18px;padding:16px 20px;border-left:3px solid var(--c-fill);
+  background:var(--c-soft);border-radius:0 10px 10px 0;
+}
+.e2i-lp-quote p{font-size:15px;color:var(--c-ink);font-weight:500}
+
+/* ---------- four forms ---------- */
+.e2i-lp-forms{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--c-rule);border:1px solid var(--c-rule);
+  border-radius:12px;overflow:hidden;margin-top:18px;
+}
+.e2i-lp-form{background:var(--c-surface);padding:15px 17px}
+.e2i-lp-form span{
+  display:inline-block;font-family:var(--c-mono);font-size:11px;font-weight:600;
+  color:var(--c-accent);background:var(--c-soft);border-radius:5px;
+  padding:2px 8px;margin-bottom:9px;
+}
+.e2i-lp-form b{
+  display:block;font-family:var(--c-mono);font-size:13.5px;font-weight:600;
+  color:var(--c-ink);line-height:1.45;
+}
+.e2i-lp-form i{
+  display:block;font-style:normal;font-size:12.5px;color:var(--c-muted);margin-top:5px;
+}
+
+/* ---------- learn here / practise there ---------- */
+.e2i-lp-flow{
+  display:grid;grid-template-columns:1fr 40px 1fr;align-items:stretch;margin-top:18px;
+}
+.e2i-lp-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--c-mono);font-size:18px;font-weight:600;color:var(--c-accent);
+}
+.e2i-lp-place{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:12px;padding:18px 20px;
+}
+.e2i-lp-place.e2i-lp-place-hi{background:var(--c-soft);border-color:var(--c-rule2)}
+.e2i-lp-place h4{
+  font-family:var(--c-mono);font-size:10px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--c-accent);margin-bottom:9px!important;
+}
+.e2i-lp-place h3{
+  font-family:var(--c-serif);font-weight:700;font-size:18px;color:var(--c-ink);
+  margin-bottom:4px!important;
+}
+.e2i-lp-place .e2i-lp-placesub{font-size:13px;color:var(--c-muted);margin-bottom:9px!important}
+.e2i-lp-place li{
+  font-size:13.5px;color:var(--c-ink2);padding:4px 0 4px 17px;position:relative;line-height:1.5;
+}
+.e2i-lp-place li::before{
+  content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;
+  background:var(--c-fill);
+}
+
+/* ---------- four drill steps ---------- */
+.e2i-lp-steps{margin-top:18px;border:1px solid var(--c-rule);border-radius:12px;overflow:hidden}
+.e2i-lp-step{
+  display:grid;grid-template-columns:34px 1fr 74px;gap:16px;align-items:baseline;
+  padding:15px 20px;background:var(--c-surface);border-top:1px solid var(--c-rule);
+}
+.e2i-lp-step:first-child{border-top:0}
+.e2i-lp-step-n{
+  font-family:var(--c-mono);font-size:11px;font-weight:600;color:var(--c-accent);
+  letter-spacing:.08em;
+}
+.e2i-lp-step h4{font-family:var(--c-sans);font-weight:600;font-size:15px;color:var(--c-ink)}
+.e2i-lp-step p{font-size:13.5px;color:var(--c-muted);margin-top:3px!important;line-height:1.5}
+.e2i-lp-step p q{font-family:var(--c-mono);font-size:12.5px;color:var(--c-ink2);quotes:none}
+.e2i-lp-time{
+  justify-self:end;font-family:var(--c-mono);font-size:11px;font-weight:600;
+  color:var(--c-ink2);background:var(--c-paper2);border:1px solid var(--c-rule);
+  border-radius:20px;padding:3px 10px;white-space:nowrap;
+}
+
+/* ---------- roadmap ---------- */
+.e2i-lp-stages{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+.e2i-lp-stage{
+  background:var(--c-surface);border:1px solid var(--c-rule);
+  border-radius:12px;padding:17px 19px;display:flex;flex-direction:column;
+}
+.e2i-lp-stage-h{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding-bottom:11px;border-bottom:1px solid var(--c-rule);margin-bottom:12px;
+}
+.e2i-lp-stage h3{font-family:var(--c-serif);font-weight:700;font-size:18px;color:var(--c-ink)}
+.e2i-lp-stage-h span{
+  font-family:var(--c-mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--c-muted);white-space:nowrap;
+}
+.e2i-lp-stage li{
+  display:grid;grid-template-columns:30px 1fr;column-gap:8px;
+  padding:7px 0;border-top:1px dashed var(--c-rule);
+}
+.e2i-lp-stage li:first-child{border-top:0}
+.e2i-lp-stage li i{
+  font-style:normal;font-family:var(--c-mono);font-size:10px;font-weight:600;
+  color:var(--c-muted);padding-top:2px;
+}
+.e2i-lp-stage li b{
+  font-family:var(--c-mono);font-weight:600;font-size:13px;color:var(--c-ink);line-height:1.45;
+}
+.e2i-lp-stage li em{
+  grid-column:2;font-style:normal;font-size:12.5px;color:var(--c-muted);margin-top:2px;
+}
+.e2i-lp-outcome{
+  margin-top:auto!important;padding:11px 13px 12px;background:var(--c-soft);
+  border-radius:8px;font-size:13px;line-height:1.5;color:var(--c-ink2);
+}
+.e2i-lp-stage ul{margin-bottom:12px}
+.e2i-lp-outcome b{
+  display:block;font-family:var(--c-mono);font-size:9.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--c-accent);margin-bottom:3px;
+}
+
+/* ---------- FAQ ---------- */
+.e2i-lp-faq{margin-top:18px;border:1px solid var(--c-rule);border-radius:12px;overflow:hidden}
+.e2i-lp-q{padding:16px 20px;background:var(--c-surface);border-top:1px solid var(--c-rule)}
+.e2i-lp-q:first-child{border-top:0}
+.e2i-lp-q h4{font-family:var(--c-sans);font-weight:600;font-size:14.5px;color:var(--c-ink)}
+.e2i-lp-q p{font-size:13.5px;color:var(--c-muted);margin-top:5px!important;line-height:1.55}
+
+/* ---------- closing CTA ---------- */
+.e2i-lp-end{
+  margin-top:34px;background:var(--c-fill);border-radius:14px;
+  padding:30px 34px;display:grid;grid-template-columns:1.3fr .7fr;
+  gap:24px;align-items:center;
+}
+.e2i-lp-end h2{color:var(--c-onfill);font-size:clamp(21px,2.8vw,28px)}
+.e2i-lp-end p{color:var(--c-onfill);opacity:.9;margin-top:9px!important;font-size:14.5px;max-width:48ch}
+.e2i-lp-end .e2i-lp-btn{background:var(--c-onfill);color:var(--c-fill);justify-self:end}
+.e2i-lp-end .e2i-lp-btn:hover{opacity:.9;color:var(--c-fill)}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .e2i-lp-pairs,.e2i-lp-stages{grid-template-columns:1fr}
+  .e2i-lp-flow{grid-template-columns:1fr;grid-template-rows:auto 34px auto}
+  .e2i-lp-arrow{transform:rotate(90deg)}
+  .e2i-lp-stats,.e2i-lp-forms{grid-template-columns:repeat(2,1fr)}
+  .e2i-lp-end{grid-template-columns:1fr}
+  .e2i-lp-end .e2i-lp-btn{justify-self:start}
+}
+@media(max-width:560px){
+  .e2i-lp-hero{padding:24px 20px 22px 22px;border-radius:12px}
+  .e2i-lp-end{padding:24px 20px}
+  .e2i-lp-step{grid-template-columns:26px 1fr;gap:12px;padding:14px 16px}
+  .e2i-lp-time{grid-column:2;justify-self:start;margin-top:7px}
+  .e2i-lp-forms{grid-template-columns:1fr}
+  .e2i-lp-stage-h{flex-direction:column;gap:5px}
+  .e2i-lp-stage-h span{white-space:normal}
+  .e2i-lp-btn{width:100%;justify-content:center;white-space:normal}
+  .e2i-lp-note{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){.e2i-lp *{transition:none!important}}
+</style>
+
+<div class="e2i-lp">
+
+  <!-- ============ HERO ============ -->
+  <div class="e2i-lp-hero">
+    <span class="e2i-lp-eyebrow">English2impact · English Reflex 2</span>
+    <h1>Short sentences come out fast.<br>The long ones <span class="e2i-lp-mark">still start in Vietnamese.</span></h1>
+    <p class="e2i-lp-lede">24 sessions for the structures that make you pause mid-sentence — tense contrast, <b>if</b> and <b>which</b> clauses, passive, reported speech, <b>must have</b>, <b>although</b>. Same drill as Reflex 1: one sentence, <b>four forms</b>, repeated until it comes out before you have time to translate.</p>
+
+    <div class="e2i-lp-actions">
+      <a class="e2i-lp-btn e2i-lp-fill" href="https://english2impact.com/?try=er2" target="_blank" rel="noopener noreferrer">Try English Reflex 2 →</a>
+      <p class="e2i-lp-note">Opens the course in the app — <b>no sign-up needed</b>. Session 1 is free.</p>
+    </div>
+
+    <div class="e2i-lp-stats">
+      <div class="e2i-lp-stat"><b>24</b><span>sessions</span></div>
+      <div class="e2i-lp-stat"><b>4</b><span>stages</span></div>
+      <div class="e2i-lp-stat"><b>90′</b><span>per session</span></div>
+      <div class="e2i-lp-stat"><b>B1→B2</b><span>entry → exit level</span></div>
+    </div>
+  </div>
+
+  <!-- ============ PROBLEM ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Why intermediate learners stall</span>
+    <h2>You know the grammar. You just <span class="e2i-lp-mark">can't build it at speaking speed.</span></h2>
+    <p class="e2i-lp-sub">At intermediate level the problem isn't knowledge — it's assembly time. Every second clause, every tense choice, every "he said that…" is a small calculation. Add them up and the conversation has moved on.</p>
+
+    <div class="e2i-lp-pairs">
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">Tense by guesswork</p>
+        <p>"I have worked here since…" or "I worked here…"? You know the rule, but choosing it live costs two seconds every time.</p>
+      </div>
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">One idea per sentence</p>
+        <p>You say three short sentences where one would do, because joining them with <i>which</i>, <i>if</i> or <i>although</i> still feels risky.</p>
+      </div>
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">Stuck in first person</p>
+        <p>Passing on what a client said, what was decided, or what probably happened — reported speech, passive, <i>must have</i> — is where you freeze.</p>
+      </div>
+    </div>
+
+    <div class="e2i-lp-quote">
+      <p>The rule hasn't changed: <b>one structure — four forms</b>. Only the sentences got longer. Here is session 9:</p>
+    </div>
+
+    <div class="e2i-lp-forms">
+      <div class="e2i-lp-form">
+        <span>[ + ]</span>
+        <b>If we sign it off today, they will deliver on Friday.</b>
+        <i>Statement</i>
+      </div>
+      <div class="e2i-lp-form">
+        <span>[ − ]</span>
+        <b>Unless we sign it off today, they will not deliver on Friday.</b>
+        <i>Negative</i>
+      </div>
+      <div class="e2i-lp-form">
+        <span>[ Y/N ? ]</span>
+        <b>Will they deliver on Friday if we sign it off today?</b>
+        <i>Yes / no question</i>
+      </div>
+      <div class="e2i-lp-form">
+        <span>[ Wh- ? ]</span>
+        <b>What will happen if we do not sign it off today?</b>
+        <i>Information question</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LEARN AND PRACTISE IN THE APP ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">How it works</span>
+    <h2>Learn it and drill it <span class="e2i-lp-mark">in one place: the app.</span></h2>
+    <p class="e2i-lp-sub">Every session lives in the app from start to finish. The explanation and the drill sit side by side, so you read the structure until it makes sense, then repeat it until it's automatic — without switching pages.</p>
+
+    <div class="e2i-lp-flow">
+      <div class="e2i-lp-place">
+        <h4>Part 1 · Understand</h4>
+        <h3>The explanation</h3>
+        <p class="e2i-lp-placesub">In the app · same session</p>
+        <ul>
+          <li>The structure line and the four-form matrix for the session</li>
+          <li>The 10 target chunks — 5 daily, 5 workplace</li>
+          <li>Common mistakes Vietnamese speakers make with that structure</li>
+          <li>Model dialogue — reread it whenever you need</li>
+        </ul>
+      </div>
+      <div class="e2i-lp-arrow" aria-hidden="true">→</div>
+      <div class="e2i-lp-place e2i-lp-place-hi">
+        <h4>Part 2 · Automate</h4>
+        <h3>The drill</h3>
+        <p class="e2i-lp-placesub">In the app · same session</p>
+        <ul>
+          <li>Model audio for every sentence — listen and shadow as often as you like</li>
+          <li>Four-form transformation drills, checked instantly</li>
+          <li>Speak into the mic and play yourself back</li>
+          <li>Progress across all 24 sessions, so you see what's left</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ONE SESSION ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Inside a session</span>
+    <h2>The four steps you know from Reflex 1 — <span class="e2i-lp-mark">at intermediate load.</span></h2>
+    <p class="e2i-lp-sub">The flow is identical in all 24 sessions; only the structure changes. The four steps below are the 60-minute core; the other 30 minutes are warm-up and review of earlier structures.</p>
+
+    <div class="e2i-lp-steps">
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">01</span>
+        <div>
+          <h4>Reflex Mimicry</h4>
+          <p>Rapid repetition of the [+] and [−] forms — now two-clause sentences at natural speed, with contractions, and chunks swapped in and out.</p>
+        </div>
+        <span class="e2i-lp-time">15 min</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">02</span>
+        <div>
+          <h4>Ping-Pong QA</h4>
+          <p>Fast yes/no questions answered with a short answer plus one reason: <q>Yes, we did — because the client pushed the date.</q></p>
+        </div>
+        <span class="e2i-lp-time">15 min</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">03</span>
+        <div>
+          <h4>Information-Gap Discovery</h4>
+          <p>Ask open Wh- questions to find the missing information, then report your partner's answer back — so you use the structure twice.</p>
+        </div>
+        <span class="e2i-lp-time">15 min</span>
+      </div>
+      <div class="e2i-lp-step">
+        <span class="e2i-lp-step-n">04</span>
+        <div>
+          <h4>Reflex Simulation</h4>
+          <p>Unscripted roleplay, half daily life and half workplace, under time pressure. The session structure has to appear at least five times without prompting.</p>
+        </div>
+        <span class="e2i-lp-time">15 min</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ROADMAP ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Roadmap · 4 stages · 24 structures</span>
+    <h2>Reflex 1 grew the sentence outward. <span class="e2i-lp-mark">Reflex 2 grows it inward and backward.</span></h2>
+    <p class="e2i-lp-sub">Two clauses per sentence, tense contrast and unreal time. Each stage closes one complete ability, and from session 7 on every roleplay recycles a structure from an earlier stage so old reflexes don't go cold.</p>
+
+    <div class="e2i-lp-stages">
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Stage 1 · Time Control</h3>
+          <span>Sessions 1–6</span>
+        </div>
+        <ul>
+          <li><i>S1</i><b>We rolled out the new system last quarter.</b><em>Finished past</em></li>
+          <li><i>S2</i><b>I was going over the figures when the client called.</b><em>Interrupted past</em></li>
+          <li><i>S3</i><b>She has dealt with that supplier since March.</b><em>Present perfect vs past simple</em></li>
+          <li><i>S4</i><b>They have been looking into the delay all week.</b><em>How long so far</em></li>
+          <li><i>S5</i><b>By the time we called, they had already gone ahead with it.</b><em>Past before past</em></li>
+          <li><i>S6</i><b>I will be presenting the figures at ten.</b><em>Fixed future</em></li>
+        </ul>
+        <p class="e2i-lp-outcome"><b>You can</b>place any action in past, perfect or future time without translating from Vietnamese.</p>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Stage 2 · Clause Control</h3>
+          <span>Sessions 7–12</span>
+        </div>
+        <ul>
+          <li><i>S7</i><b>The supplier that quoted us has raised the price.</b><em>Defining relative clause</em></li>
+          <li><i>S8</i><b>Our main client, whose office is in Hanoi, wants a call today.</b><em>Non-defining relative clause</em></li>
+          <li><i>S9</i><b>If we sign it off today, they will deliver on Friday.</b><em>Real condition</em></li>
+          <li><i>S10</i><b>If we had more budget, we would bring in a consultant.</b><em>Unreal present</em></li>
+          <li><i>S11</i><b>If we had double-checked the spec, we would have caught the error.</b><em>Unreal past</em></li>
+          <li><i>S12</i><b>I wish we had looped in the legal team earlier.</b><em>Regret — wish / if only</em></li>
+        </ul>
+        <p class="e2i-lp-outcome"><b>You can</b>add a clause to a sentence: identify a thing, set a condition, and talk about what did not happen.</p>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Stage 3 · Voice &amp; Report</h3>
+          <span>Sessions 13–18</span>
+        </div>
+        <ul>
+          <li><i>S13</i><b>The report was approved yesterday.</b><em>Passive voice</em></li>
+          <li><i>S14</i><b>The invoice must be settled this week.</b><em>Modal &amp; perfect passive</em></li>
+          <li><i>S15</i><b>He said they were reviewing the contract.</b><em>Reported statements</em></li>
+          <li><i>S16</i><b>She asked whether we had sent the quote.</b><em>Reported questions &amp; instructions</em></li>
+          <li><i>S17</i><b>They must be waiting for approval.</b><em>Deduction about the present</em></li>
+          <li><i>S18</i><b>They must have missed the email.</b><em>Deduction about the past</em></li>
+        </ul>
+        <p class="e2i-lp-outcome"><b>You can</b>report statements, questions and instructions second-hand, and deduce with modals.</p>
+      </div>
+
+      <div class="e2i-lp-stage">
+        <div class="e2i-lp-stage-h">
+          <h3>Stage 4 · Fluency Polish</h3>
+          <span>Sessions 19–24</span>
+        </div>
+        <ul>
+          <li><i>S19</i><b>We agreed to postpone the launch.</b><em>Verb patterns — to + V / V-ing</em></li>
+          <li><i>S20</i><b>We had the system upgraded last month.</b><em>Causative — have / get something done</em></li>
+          <li><i>S21</i><b>This option is far more cost-effective than the other one.</b><em>Comparison with degree</em></li>
+          <li><i>S22</i><b>We moved the deadline so that the team could finish testing.</b><em>Purpose &amp; result</em></li>
+          <li><i>S23</i><b>Although the budget was tight, we still delivered on time.</b><em>Contrast</em></li>
+          <li><i>S24</i><b>What we need is a clearer brief, wouldn't you say?</b><em>Emphasis &amp; hedging</em></li>
+        </ul>
+        <p class="e2i-lp-outcome"><b>You can</b>choose verb patterns, compare options, signal purpose and contrast, emphasise and hedge.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ WHAT'S NEW VS REFLEX 1 ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Reflex 1 → Reflex 2</span>
+    <h2>Same mechanic. <span class="e2i-lp-mark">Heavier load.</span></h2>
+    <p class="e2i-lp-sub">If you finished Reflex 1, you already know how to study this course. Here is what changes.</p>
+
+    <div class="e2i-lp-pairs">
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">Matrix — unchanged</p>
+        <p>Every session still drills [+], [−], [Y/N ?] and [Wh- ?], so the reflex you built in Reflex 1 transfers directly.</p>
+      </div>
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">Grammar — upgraded</p>
+        <p>From S–V–O plus modals to two-clause sentences, tense contrast, passive, reported speech and unreal time.</p>
+      </div>
+      <div class="e2i-lp-pair">
+        <p class="e2i-lp-pair-top">Vocabulary — in chunks</p>
+        <p>10 chunks per session — 5 daily, 5 workplace — as collocations and phrasal verbs: <i>sign off on</i>, <i>chase up</i>, <i>loop in</i>. Never single words.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FAQ ============ -->
+  <div class="e2i-lp-sec">
+    <span class="e2i-lp-eyebrow">Quick questions</span>
+    <h2>Before you start</h2>
+
+    <div class="e2i-lp-faq">
+      <div class="e2i-lp-q">
+        <h4>Do I need to finish Reflex 1 first?</h4>
+        <p>No, but session 1 assumes the present-tense core is already automatic. If "He gives it to him" or "I have given it to him" still needs thinking time, start with English Reflex 1 — or at least review its sessions 12–13 before session 1 here.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Is the workplace English industry-specific?</h4>
+        <p>No. The workplace chunks are general professional English — meetings, email, deadlines, clients, reporting — the language used in any office job.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>Why is this page in English?</h4>
+        <p>From intermediate level, English2impact courses run fully in English. Vietnamese meanings are kept on the vocabulary flashcards.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>What opens when I click the button?</h4>
+        <p>The button opens English Reflex 2 in the app — no account needed. Session 1 is free for everyone. To keep your progress, sign in and press <b>Add</b> so the course sits in <b>My learning</b>; sessions 2–24 open with <b>Pro</b>.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>I'm a teacher. Can I assign this course to my class?</h4>
+        <p>Yes. Press <b>Add</b> to put the course in <b>My teaching</b>, then assign the 24 sessions as homework — audio, four-form drills and dialogues are ready-made, and you can follow each student's progress.</p>
+      </div>
+      <div class="e2i-lp-q">
+        <h4>What can I do after 24 sessions?</h4>
+        <p>Build long, accurate sentences at speaking speed: choose the right tense without translating, join ideas with clauses, report what others said, reason about what probably happened, and sound diplomatic when it matters.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <div class="e2i-lp-end">
+    <div>
+      <h2>Session 1: "We rolled out the new system last quarter."<br>Start today.</h2>
+      <p>Open the app, learn the first structure and drill it straight away — no sign-up needed.</p>
+    </div>
+    <a class="e2i-lp-btn" href="https://english2impact.com/?try=er2" target="_blank" rel="noopener noreferrer">Try English Reflex 2 →</a>
+  </div>
+
+</div>
