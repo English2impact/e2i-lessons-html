@@ -364,8 +364,8 @@ When a learner opens a lesson **inside the English2impact app**, every activity
 button where its Check button was. It opens once every question is answered.
 Pressing it locks the answers, saves them to the learner's account, and runs
 the page's own Check, so the answers and the score appear straight away. The
-teacher's feedback appears under the activity within seconds. The teacher
-watches the answers arrive from their class card (⋯ → *Bài nộp trực tiếp*).
+teacher opens the same page from their class card (⋯ → *Bài nộp trực tiếp*),
+learner by learner, with each learner's answers in it.
 
 **You do not add the button.** The app adds it as it opens the page, so the
 lessons already published have it too. A page opened on its own (GitHub, Odoo)
